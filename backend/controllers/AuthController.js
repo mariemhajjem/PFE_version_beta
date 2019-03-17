@@ -6,7 +6,7 @@ router.use(bodyParser.json());
 var User = require('../Models/User');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
-
+var VerifyToken = require('./VerifyToken');
 router.post('/register', function(req, res) {
   
     var hashedPassword = bcrypt.hashSync(req.body.password, 8);
@@ -38,15 +38,13 @@ router.post('/register', function(req, res) {
         function (err, user) {
           if (err) return res.status(500).send("There was a problem finding the user.");
           if (!user) return res.status(404).send("No user found.");
-          //res.status(200).send(user);
-          next(user); 
+           res.status(200).send(user);
+         
       });
   });
 });
-//middleware function
-router.use(function (user, req, res, next) {
-    res.status(200).send(user);
-  });
+
+
 
 router.post('/login', function(req, res) {
     User.findOne({ email: req.body.email }, function (err, user) {
