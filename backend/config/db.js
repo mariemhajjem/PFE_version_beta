@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 
+//Configure mongoose's promise to global promise
+mongoose.promise = global.Promise;
+
   const  DB = 'mongodb://localhost:27017/PFE' ;
   //Configure Mongoose
 mongoose.connect(DB, { useNewUrlParser: true }).then(

@@ -13,10 +13,11 @@ export class LoginComponent implements OnInit {
   
 
   constructor(private auth: AuthService) { }
-ngOnInit() {
+    ngOnInit() {
   }
+  
   submit(){
-    this.auth.registerUser(this.registerUserData)
+    this.auth.loginUser(this.registerUserData)
     .subscribe(
       res => {console.log(res),
       localStorage.setItem('token',res.token)} ,

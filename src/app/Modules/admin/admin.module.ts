@@ -2,13 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { CrudComponent } from './formations/crud/crud.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormationService } from './formations/formation.service';
+import { FormationModule } from './formations/formation.module';
 
 @NgModule({
-  declarations: [CrudComponent],
+  declarations: [],
   imports: [
     CommonModule,
-    AdminRoutingModule
-  ]
+     HttpClientModule,
+    AdminRoutingModule,
+    ReactiveFormsModule,
+    FormationModule,
+    
+    FormsModule
+   
+  ],
+  providers: [ ],
 })
 export class AdminModule { }
