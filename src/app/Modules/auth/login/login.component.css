@@ -169,29 +169,6 @@ input {
 	z-index: 2;
 }
 
-.active-dx{
-	animation-name: foregrounding-dx;
-	animation-duration: 0.9s;
-	animation-fill-mode: forwards;
-}
-
-.active-sx{
-	animation-name: foregrounding-sx;
-	animation-duration: 0.9s;
-	animation-fill-mode: forwards;
-}
-
-.inactive-dx{
-	animation-name: overshadowing-dx;
-	animation-duration: 0.9s;
-	animation-fill-mode: forwards;
-}
-
-.inactive-sx{
-	animation-name: overshadowing-sx;
-	animation-duration: 0.9s;
-	animation-fill-mode: forwards;
-}
 
 @keyframes overshadowing-dx {
 	0%{
