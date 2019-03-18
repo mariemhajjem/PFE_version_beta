@@ -7,6 +7,7 @@ import { AuthModule } from './Modules/auth/auth.module';
 import { AdminRoutingModule } from './Modules/admin/admin-routing.module';
 import { AuthGuard } from './auth.guard';
 import { AdminModule } from './Modules/admin/admin.module';
+import { ClientModule } from './Modules/client/client.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +16,7 @@ import { AdminModule } from './Modules/admin/admin.module';
     BrowserModule,
     HttpClientModule,
     AdminModule,
+    ClientModule,
     AuthModule,
     AppRoutingModule,
     AdminRoutingModule
