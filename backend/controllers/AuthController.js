@@ -7,6 +7,7 @@ var User = require('../Models/User');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var VerifyToken = require('./VerifyToken');
+
 router.post('/register', function(req, res) {
   
     var hashedPassword = bcrypt.hashSync(req.body.password, 8);
@@ -22,7 +23,7 @@ router.post('/register', function(req, res) {
       var token = jwt.sign({ id: user._id }, 'secret', {
         expiresIn: 86400 // expires in 24 hours
       });
-      res.status(200).send({ auth: true, token: token });
+      res.status(200).send(token );
     }); 
   });
 

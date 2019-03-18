@@ -1,4 +1,5 @@
 var jwt = require('jsonwebtoken');
+
 //middleware function:handle all the authorization 
 function verifyToken(req, res, next) {
   var token = req.headers['x-access-token'];

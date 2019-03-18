@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<h4 *ngIf="error">{{error}}</h4>
+<form (ngSubmit)="submit()">
+  <div class="form-group col-3">
+    <label for="email">Email</label>
+    <input type="text" name="email" class="form-control" [(ngModel)]="registerUserData.email" required/>
+  </div>
+  <div class="form-group col-3">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control" [(ngModel)]="registerUserData.password" />
+  </div>
+  <div class="form-group col-3">
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
+</form>
