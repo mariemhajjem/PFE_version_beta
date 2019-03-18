@@ -1,3 +1,17 @@
-<p>
-  register works!
-</p>
+<div class="container">
+	<form class="signUp" #registerForm="ngForm" (ngSubmit)="submit()">
+      <h3>Créer votre compte</h3>
+      <br>
+      
+		<p> C'est super facile!  
+      </p>
+		<input class="w100" name="email" type="email" placeholder="Insérer votre email" [(ngModel)]="registerUserData.email" required autocomplete='off' />
+    <br><br>
+    <input type="password" name="password" placeholder="Insérer votre mot de passe" [(ngModel)]="registerUserData.password" required />
+		 
+		<button class="form-btn sx log-in" type="button">Retour</button>
+		<button class="form-btn dx" type="submit">S'inscrire</button>
+	</form>
+ 
+</div>
+ 

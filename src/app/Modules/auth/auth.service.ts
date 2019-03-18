@@ -7,15 +7,15 @@ import decode from 'jwt-decode';
   providedIn: 'root'
 })
 export class AuthService {
-  private url="http://localhost:8000/api/auth/register"
+  private url="http://localhost:8000/api/auth"
 
   constructor(private http: HttpClient) { }
   
      registerUser(user){
-       return this.http.post<any>(this.url,user)
+       return this.http.post<any>(`${this.url}/register`,user)
      }
      loginUser(user){
-       return this.http.post<any>(this.url,user)
+       return this.http.post<any>(`${this.url}/login`,user)
      }
   }
 

@@ -23,7 +23,7 @@ router.post('/register', function(req, res) {
       var token = jwt.sign({ id: user._id }, 'secret', {
         expiresIn: 86400 // expires in 24 hours
       });
-      res.status(200).send(token );
+      res.status(200).send(token);
     }); 
   });
 
@@ -31,7 +31,7 @@ router.post('/register', function(req, res) {
     var token = req.headers['x-access-token'];
     if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
     
-    jwt.verify(token,  'secret', function(err, decoded) {
+    jwt.verify(token,'secret', function(err, decoded) {
       if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
       
       User.findById(decoded.id, 
