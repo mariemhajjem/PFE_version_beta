@@ -2,9 +2,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
+import { ListUserComponent } from './components/list-user/list-user.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { FormListComponent } from './components/form-list/form-list.component';
 import { HomeComponent } from './components/home/home.component';
+
 
 const routes: Routes = [
   {
@@ -20,7 +23,6 @@ const routes: Routes = [
     { path: 'addFormation', component: CrudComponent }
   ]
   }
-
 ];
 
 @NgModule({

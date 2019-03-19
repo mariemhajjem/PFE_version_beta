@@ -7,20 +7,24 @@ import { AdminRoutingModule } from './admin-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { CrudUsersComponent } from './components/crud-users/crud-users.component';
+import { ListUserComponent } from './components/list-user/list-user.component';
+import { UserService } from './components/services/user.service';
 import { FormationService } from './components/services/formation.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent],
+  declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent, CrudUsersComponent, ListUserComponent],
   imports: [
     CommonModule,
-     HttpClientModule,
+    HttpClientModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [FormationService],
+  providers: [FormationService,UserService],
 })
 export class AdminModule { }
