@@ -9,26 +9,25 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  registerUserData={
+  registerUserData = {
     email: '',
     password: ''
   }
-  
+
 
   constructor(private auth: AuthService) { }
     ngOnInit() {
   }
 
-  submit(){
+  submit() {
     this.auth.loginUser(this.registerUserData)
     .subscribe(
       res => {console.log(res),
-      localStorage.setItem('token',res.token)} ,
-      err =>  console.log(err) 
-    )
+      localStorage.setItem('token', res.token)} ,
+      err =>  console.log(err))
   }
- 
 
-  
+
+
 
 }

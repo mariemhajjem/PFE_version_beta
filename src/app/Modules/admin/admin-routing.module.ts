@@ -1,18 +1,26 @@
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CrudComponent } from './formations/crud/crud.component';
-import { FormListComponent } from './formations/form-list/form-list.component';
+
 import { ListUserComponent } from './components/list-user/list-user.component';
+import { CrudComponent } from './components/crud/crud.component';
+import { FormListComponent } from './components/form-list/form-list.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 const routes: Routes = [
   {
   path : 'admin',
-  component : CrudComponent,
-  
-  children: [
-    { path: '', redirectTo: 'admin', pathMatch: 'full' }
+  component : NavbarComponent,
 
+  children: [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    {
+      path: 'home',
+      component: HomeComponent
+    },
+    { path: 'addFormation', component: CrudComponent }
   ]
   }
 ];
