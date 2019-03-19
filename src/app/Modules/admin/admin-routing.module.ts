@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CrudComponent } from './formations/crud/crud.component';
 import { FormListComponent } from './formations/form-list/form-list.component';
+import { ListUserComponent } from './components/list-user/list-user.component';
 
 const routes: Routes = [
   {
@@ -10,14 +11,10 @@ const routes: Routes = [
   component : CrudComponent,
   
   children: [
-    { path: '', redirectTo: 'admin', pathMatch: 'full' },
-    {
-      path: 'admin/formation',
-      component: FormListComponent
-    }
+    { path: '', redirectTo: 'admin', pathMatch: 'full' }
+
   ]
   }
-
 ];
 
 @NgModule({
