@@ -13,7 +13,15 @@ export class UserService {
         return this.http.get<User[]>(`${this.url}/`);
     }
 
-    getById(id: number) {
-        return this.http.get<User>(`${this.url}/users/${id}`);
+    getUserById(id) {
+        return this.http.get<User>(`${this.url}/${id}`);
+    }
+    updateUser(id,user) {
+       
+      return this.http.put<User>(`${this.url}/${id}`, user);
+    }
+
+    deleteUser(id) {
+      return this.http.delete<User>(`${this.url}/${id}`);
     }
 }
