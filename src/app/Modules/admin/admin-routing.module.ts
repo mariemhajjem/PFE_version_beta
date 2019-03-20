@@ -1,3 +1,4 @@
+import { EditFormationComponent } from './components/edit-formation/edit-formation.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -20,7 +21,9 @@ const routes: Routes = [
       path: 'home',
       component: HomeComponent
     },
-    { path: 'addFormation', component: CrudComponent }
+    { path: 'addFormation', component: CrudComponent },
+    { path: 'listFormation', component: FormListComponent },
+    {path: 'editFormation/:id', component: EditFormationComponent}
   ]
   }
 ];
