@@ -16,11 +16,9 @@ export class UserService {
     getUserById(id) {
         return this.http.get<User>(`${this.url}/${id}`);
     }
-    updateUser(id, email) {
-      const user = {
-        email:email 
-      };
-      return this.http.put(`${this.url}/${id}`, user);
+    updateUser(id,user) {
+       
+      return this.http.put<User>(`${this.url}/${id}`, user);
     }
 
     deleteUser(id) {

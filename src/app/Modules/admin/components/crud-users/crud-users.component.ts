@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-crud-users',
@@ -18,6 +18,7 @@ export class CrudUsersComponent implements OnInit {
   } 
    createForm() {
     this.updateForm = this.fb.group({
+       
       email: ['', Validators.required] 
       
     });
@@ -34,10 +35,11 @@ export class CrudUsersComponent implements OnInit {
 })
 
   }
-  // Updates the document with input data and redirects to the /list route.
-updateUser(email) {
+  // Updates the document with input data and redirects to  
+updateUser(user,email) {
+  user.email=email;
   this.route.params.subscribe(params => {
-  this.userService.updateUser(params['id'], email).subscribe(() => {
+  this.userService.updateUser(params['id'],user).subscribe(() => {
     this.router.navigate(['/admin/users']);
   });
 })}

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-   columns =  ['#','Email','Update','Delete'];
+   columns =  ['#','id','Email','Update','Delete'];
    users: User[] = [];
     
   constructor(private userService: UserService,private router :Router) {}
@@ -33,9 +33,10 @@ export class ListUserComponent implements OnInit {
 
 // Deletes the selected issue and refreshes the document view.
 deleteUser(user) {
-  this.userService.deleteUser(user.id).subscribe(() => {
-    this.fetchUsers();
+  this.userService.deleteUser(user._id).subscribe(() => {
+    
   });
+  this.router.navigate(['/admin/users']);
 }
 
 

@@ -16,8 +16,9 @@
             <tbody>
               <tr *ngFor="let user of users; let i=index">
                 <td>{{i}}</td>
+                <td>{{user._id}}</td>
                 <td>{{user.email}}</td>
-                <td> <a [routerLink]="['/admin/editUser', user.id]" class="btn btn-primary">Edit</a> </td>
+                <td> <a [routerLink]="['/admin/editUser', user._id]" class="btn btn-primary">Edit</a> </td>
                 <td><button class=btn btn-danger (click)="deleteUser(user)">Delete</button></td>
               </tr>
               
