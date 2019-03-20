@@ -1,3 +1,29 @@
-<p>
-  crud-users works!
-</p>
+<h1>Edit User</h1>
+
+<form [formGroup]="updateForm">
+  <input type="text"
+         placeholder="id"
+         formControlName="id"
+         #id>
+         <br>
+         <br>
+  <input type="text"
+         placeholder="email"
+         formControlName="email"
+         #email>
+ 
+ 
+  
+</form>
+
+<br>
+<br>
+
+<button routerLink="/admin/users">Go Back</button>
+
+<br/>
+<button type="submit"
+        (click)="updateUser(email.value)"
+        [disabled]="updateForm.pristine || updateForm.invalid">
+  Update User
+</button>
