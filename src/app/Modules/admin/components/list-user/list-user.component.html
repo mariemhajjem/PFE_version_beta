@@ -18,7 +18,7 @@
                 <td>{{i}}</td>
                 <td>{{user.email}}</td>
                 <td> <a [routerLink]="['/admin/editUser', user.id]" class="btn btn-primary">Edit</a> </td>
-                <td><button class=btn btn-danger (click)="deleteUser(user.id)">Delete</button></td>
+                <td><button class=btn btn-danger (click)="deleteUser(user)">Delete</button></td>
               </tr>
               
             </tbody>
