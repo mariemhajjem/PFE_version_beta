@@ -29,10 +29,7 @@ export class ListUserComponent implements OnInit {
     });
   }
  
-  // Redirects to the /edit route.
-editUser(id) {
-  this.router.navigate([`/admin/edit/${id}`]);
-}
+  
 
 // Deletes the selected issue and refreshes the document view.
 deleteUser(id) {

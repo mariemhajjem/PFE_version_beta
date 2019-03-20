@@ -36,9 +36,10 @@ export class CrudUsersComponent implements OnInit {
   }
   // Updates the document with input data and redirects to the /list route.
 updateUser(email) {
-  this.userService.updateUser(this.id, email).subscribe(() => {
+  this.route.params.subscribe(params => {
+  this.userService.updateUser(params['id'], email).subscribe(() => {
     this.router.navigate(['/admin/users']);
   });
-}
+})}
 
 }

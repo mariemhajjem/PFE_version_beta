@@ -23,7 +23,7 @@ const routes: Routes = [
     },
     { path: 'addFormation', component: CrudComponent },
     { path: 'users', component: ListUserComponent },
-    { path: 'edit/:id', component: CrudUsersComponent }
+    { path: 'edit', component: CrudUsersComponent }
   ]
   }
 ];
