@@ -14,10 +14,12 @@ import { UserService } from './components/services/user.service';
 import { FormationService } from './components/services/formation.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { EditFormationComponent } from './components/edit-formation/edit-formation.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent, CrudUsersComponent, ListUserComponent],
+  declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
+     CrudUsersComponent, ListUserComponent, EditFormationComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -25,6 +27,6 @@ import { HomeComponent } from './components/home/home.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [FormationService,UserService],
+  providers: [FormationService, UserService],
 })
 export class AdminModule { }

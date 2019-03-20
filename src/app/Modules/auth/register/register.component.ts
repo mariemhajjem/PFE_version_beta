@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerUserData={
+  registerUserData = {
     email: '',
     password: ''
   }
@@ -15,11 +15,11 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  submit(){
+  submit() {
     this.auth.registerUser(this.registerUserData)
     .subscribe(
       res => {console.log(res),
-      localStorage.setItem('token',res.token)} ,
+      localStorage.setItem('token', res.token)} ,
       err => console.log(err)
     )
   }
