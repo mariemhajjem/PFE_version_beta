@@ -8,6 +8,7 @@ import { ListUserComponent } from './components/list-user/list-user.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { FormListComponent } from './components/form-list/form-list.component';
 import { HomeComponent } from './components/home/home.component';
+import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 
 
 const routes: Routes = [
@@ -22,8 +23,13 @@ const routes: Routes = [
       component: HomeComponent
     },
     { path: 'addFormation', component: CrudComponent },
+ 
+    { path: 'users', component: ListUserComponent },
+    { path: 'editUser/:id', component: CrudUsersComponent },
+ 
     { path: 'listFormation', component: FormListComponent },
     {path: 'editFormation/:id', component: EditFormationComponent}
+ 
   ]
   }
 ];
