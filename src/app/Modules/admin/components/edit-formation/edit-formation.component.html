@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">nameFormation</label>
+        <input type="text" class="form-control" formControlName="nameFormation" #nameFormation [(ngModel)] = "formations.nameFormation" />
+      </div>
+      <div *ngIf="angForm.controls['nameFormation'].invalid && (angForm.controls['nameFormation'].dirty || angForm.controls['nameFormation'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['nameFormation'].errors.required">
+          name formation is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">type</label>
+        <input type="text" class="form-control" formControlName="type" #type [(ngModel)] = "formations.type" />
+      </div>
+      <div *ngIf="angForm.controls['type'].invalid && (angForm.controls['type'].dirty || angForm.controls['type'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['type'].errors.required">
+          Person Business is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">nb</label>
+        <input type="text" class="form-control" formControlName="nb" #nb [(ngModel)] = "formations.nb" />
+      </div>
+      <div *ngIf="angForm.controls['nb'].invalid && (angForm.controls['nb'].dirty || angForm.controls['nb'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['nb'].errors.required">
+          Business GST Number is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="updateBusiness(nameFormation.value, type.value, nb.value)"
+        [disabled]="angForm.invalid"
+        class="btn btn-primary">Update Business</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -11,6 +11,8 @@ let Formation = new Schema({
   nb: {
     type: Number
   }
+},{
+  collection: 'formations'
 });
 
 module.exports = mongoose.model('Formation', Formation);

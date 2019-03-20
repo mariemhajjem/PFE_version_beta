@@ -41,12 +41,12 @@ router.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-router.route('/update/:id').post(function (req, res) {
+router.route('/update/:id').put(function (req, res) {
   Formation.findById(req.params.id, function(err, formation) {
     if (!formation)
       return next(new Error('Could not load Document'));
     else {
-        formation.nameFomation = req.body.nameFormation;
+        formation.nameFormation = req.body.nameFormation;
         formation.type= req.body.type;
         formation.nb = req.body.nb;
 
