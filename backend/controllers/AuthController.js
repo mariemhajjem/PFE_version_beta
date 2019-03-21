@@ -23,7 +23,7 @@ router.post('/register', function(req, res) {
       var token = jwt.sign({ id: user._id }, 'secret', {
         expiresIn: 86400 // expires in 24 hours
       });
-      res.status(200).send(token);
+      res.status(200).send({token:token});
     }); 
   });
 
