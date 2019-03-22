@@ -9,12 +9,15 @@ import { CrudComponent } from './components/crud/crud.component';
 import { FormListComponent } from './components/form-list/form-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
+import { AuthGuard } from 'src/app/auth.guard';
 
 
 const routes: Routes = [
   {
   path : 'admin',
   component : NavbarComponent,
+  canActivate : [AuthGuard],
+  canActivateChild :[AuthGuard],
 
   children: [
     { path: '', redirectTo: 'home', pathMatch: 'full' },

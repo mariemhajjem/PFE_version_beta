@@ -7,7 +7,7 @@ import { User } from '../admin/components/models/user';
   providedIn: 'root'
 })
 export class AuthService {
- 
+   
   private url="http://localhost:8000/api/auth"
   
   constructor(private http: HttpClient) { 
@@ -21,8 +21,20 @@ export class AuthService {
        return this.http.post<any>(`${this.url}/login`,user)
      }
 
-   
-     
+   /* public get loggedIn(): boolean{
+      return localStorage.getItem('access_token') !==  null;
+    } */
+
+     isLoggedIn() {
+      return  !!this.getJwtToken();
+    }
+  
+     getJwtToken() {
+      return localStorage.getItem('token');
+    }
+    logout() {
+      localStorage.removeItem('token');
+    } 
 
   }
 
