@@ -8,6 +8,18 @@ import { AdminRoutingModule } from './Modules/admin/admin-routing.module';
 import { AuthGuard } from './auth.guard';
 import { AdminModule } from './Modules/admin/admin.module';
 import { ClientModule } from './Modules/client/client.module';
+import { AuthService } from './Modules/auth/auth.service';
+import { AuthorizationService } from './Modules/admin/components/services/authorization.service';
+import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
+ 
+const JWT_Module_Options: JwtModuleOptions = {
+  config: {
+      tokenGetter: function  tokenGetter() {
+        return     localStorage.getItem('token');},
+      whitelistedDomains: ['localhost:4200/admin']
+  }
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,10 +31,15 @@ import { ClientModule } from './Modules/client/client.module';
     ClientModule,
     AuthModule,
     AppRoutingModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    JwtModule.forRoot(JWT_Module_Options)
   ],
   
-  providers: [ AuthGuard],
+  providers: [
+     AuthGuard,
+  AuthService,
+  AuthorizationService
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
