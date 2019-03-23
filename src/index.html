@@ -52,18 +52,18 @@
         $('.signUp .progress-bar_item-2').removeClass('active');
         $('.signUp .progress-bar_item-3').removeClass('active');
         $('.signUp .active').css('background-color', '#FF4B47');
-        changeText(pbText, 'Too weak');
+        changeText(pbText, 'faible');
         } else if (len > 4 && len <= 8) {
         $('.signUp .progress-bar_item-2').addClass('active');
         $('.signUp .progress-bar_item-3').removeClass('active');
         $('.signUp .active').css('background-color', '#F9AE35');
-        changeText(pbText, 'Could be stronger');
+        changeText(pbText, 'moyen');
         } else {
         $('.signUp .progress-bar_item').each(function() {
           $(this).addClass('active');
         });
         $('.signUp .active').css('background-color', '#2DAF7D');
-        changeText(pbText, 'Strong password');
+        changeText(pbText, 'fort');
         } 
       });
     })

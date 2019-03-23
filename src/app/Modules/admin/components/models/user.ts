@@ -5,5 +5,11 @@ export class User {
     firstName: string;
     lastName: string;
     role: string;
+    tel: number;
+    age: number;
+    Niveau : string;
+    etude: string;
+    competences:string[];
+    
     token?: string;
 }
