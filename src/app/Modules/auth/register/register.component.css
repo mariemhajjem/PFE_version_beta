@@ -28,6 +28,59 @@ form {
 	box-sizing: border-box;
 }
 
+.progress-bar_wrap {
+	width: 150px;
+	height: 5px;
+	background: #F6F6FA;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+	overflow-x: hidden;
+	border-radius: 5px;
+  }
+  
+.progress-bar_item {
+	display: inline-block;
+	height: 100%;
+	width: 33.33%;
+	float: left;
+	visibility: hidden;
+	transition: background-color .2s, visisility .1s;
+  }
+  .active {
+	visibility: visible;
+  }
+  
+  .progress-bar_item-1 {
+	
+  }
+  
+  .progress-bar_item-2 {
+  
+  }
+  
+  .progress-bar_item-3 {
+	 
+  }
+  
+  .progress-bar_text {
+	display: inline-block;
+	color: #aaa;
+	margin-left: 5px;
+	transition: .2s;
+  }
+  
+
+.progress-bar_wrap {
+	width: 200px;
+	height: 5px;
+	background: #F6F6FA;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+	border-radius: 5px;
+  }
+  
 p {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;

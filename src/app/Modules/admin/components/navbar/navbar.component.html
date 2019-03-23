@@ -35,39 +35,35 @@
           <li class="nav-item">
             <a class="nav-link " routerLink= "/admin/listFormation">
               <i class="material-icons">vertical_split</i>
-              <span>gestion de formation</span>
+              <span>gestion des formations</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " routerLink="/admin/addFormation">
               <i class="material-icons">note_add</i>
-              <span>Add New formation</span>
+              <span>Ajouter une formation</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/admin/users">
+              <i class="material-icons">supervisor_account</i>
+              <span>Gestion des utilisateurs</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " >
-              <i class="material-icons">view_module</i>
-              <span>Edit</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " routerLink="/admin/users">
-              <i class="material-icons">table_chart</i>
-              <span>Tables</span>
+              <i class="material-icons">euro_symbol</i>
+              <span>Demandes de devis</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="user-profile-lite.html">
-              <i class="material-icons">person</i>
-              <span>User Profile</span>
+              <i class="material-icons">forum</i>
+              <span>Messagerie</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="errors.html">
-              <i class="material-icons">error</i>
-              <span>Errors</span>
-            </a>
-          </li>
+           
         </ul>
       </div>
     </aside>
@@ -124,18 +120,18 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <img class="user-avatar rounded-circle mr-2" src=".\assets\admin\images\avatars\0.jpg" alt="User Avatar">
-                <span class="d-none d-md-inline-block">Sierra Brooks</span>
+                <span class="d-none d-md-inline-block">Admin</span>
               </a>
               <div class="dropdown-menu dropdown-menu-small">
                 <a class="dropdown-item" href="user-profile-lite.html">
                   <i class="material-icons">&#xE7FD;</i> Profile</a>
                  
                     <a class="dropdown-item" href="add-new-post.html" routerLink='/'>
-                      <i class="material-icons">note_add</i> HomePage</a>
+                      <i class="material-icons">home</i> HomePage</a>
                 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger">
-                  <i class="material-icons text-danger">&#xE879;</i> Logout </a>
+                <a class="dropdown-item text-danger"  (click)="logout()">
+                  <i class="material-icons text-danger">&#xE879;</i> Se déconnecter </a>
               </div>
             </li>
           </ul>

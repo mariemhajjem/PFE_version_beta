@@ -3,14 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../admin/components/models/user';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
- 
+   
   private url="http://localhost:8000/api/auth"
   
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,private router: Router) { 
      
   }
  
@@ -21,8 +22,21 @@ export class AuthService {
        return this.http.post<any>(`${this.url}/login`,user)
      }
 
-   
-     
+   /* public get loggedIn(): boolean{
+      return localStorage.getItem('access_token') !==  null;
+    } */
+
+     isLoggedIn() {
+      return  !!this.getJwtToken();
+    }
+  
+     getJwtToken() {
+      return localStorage.getItem('token');
+    }
+    logout() {
+      localStorage.removeItem('token');
+      this.router.navigate(['/']);
+    } 
 
   }
 

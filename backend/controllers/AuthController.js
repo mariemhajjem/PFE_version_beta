@@ -15,12 +15,14 @@ router.post('/register', function(req, res) {
     User.create({
       
       email : req.body.email,
+      role : req.body.role,
       password : hashedPassword
     },
     function (err, user) {
       if (err) return res.status(500).send("There was a problem registering the user.")
       // create a token
-      var token = jwt.sign({ id: user._id }, 'secret', {
+      let payload = { id: user._id , role:user.role }
+      var token = jwt.sign(payload, 'secret', {
         expiresIn: 86400 // expires in 24 hours
       });
       res.status(200).send({token:token});
@@ -44,9 +46,7 @@ router.post('/register', function(req, res) {
       });
   });
 });
-
-
-
+ 
 router.post('/login', function(req, res) {
     User.findOne({ email: req.body.email }, function (err, user) {
       if (err) return res.status(500).send('Error on the server.');
@@ -56,8 +56,8 @@ router.post('/login', function(req, res) {
       var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
 
       if (!passwordIsValid) return res.status(401).send({ auth: false, token: null });
-
-      var token = jwt.sign({ id: user._id }, 'secret', {
+       let payload = { id: user._id , role:user.role };
+      var token = jwt.sign(payload, 'secret', {
         expiresIn: 86400 // expires in 24 hours
       });
       res.status(200).send({ auth: true, token: token });
