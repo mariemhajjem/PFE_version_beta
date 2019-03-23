@@ -24,7 +24,7 @@ export class EditFormationComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.fs.editBusiness(params['id']).subscribe(res => {
+      this.fs.editBusiness(params.id).subscribe(res => {
         this.formations = res;
       });
     });
@@ -32,7 +32,7 @@ export class EditFormationComponent implements OnInit {
 
   updateBusiness(nameFormation, type, nb) {
    this.route.params.subscribe(params => {
-      this.fs.updateBusiness(nameFormation, type, nb, params['id']);
+      this.fs.updateBusiness(nameFormation, type, nb, params.id);
       this.router.navigate(['/admin/listFormation']);
    });
 }
