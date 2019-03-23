@@ -59,9 +59,12 @@
     "karma-coverage-istanbul-reporter": "~2.0.5",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "node-sass": "^4.11.0",
     "protractor": "~5.4.2",
+    "sass-loader": "^7.1.0",
     "ts-node": "~8.0.3",
     "tslint": "~5.14.0",
-    "typescript": "3.1.6"
+    "typescript": "3.1.6",
+    "webpack": "^4.29.6"
   }
 }

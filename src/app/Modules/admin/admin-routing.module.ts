@@ -10,6 +10,7 @@ import { FormListComponent } from './components/form-list/form-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 import { AuthGuard } from 'src/app/auth.guard';
+import { CreateComponent } from './components/create/create.component';
 
 
 const routes: Routes = [
@@ -31,8 +32,8 @@ const routes: Routes = [
     { path: 'editUser/:id', component: CrudUsersComponent },
  
     { path: 'listFormation', component: FormListComponent },
-    {path: 'editFormation/:id', component: EditFormationComponent}
- 
+    {path: 'editFormation/:id', component: EditFormationComponent},
+    {path: 'create', component: CreateComponent}
   ]
   }
 ];
