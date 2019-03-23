@@ -15,14 +15,14 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService,private router : Router) { }
     ngOnInit() {
   }
 
   submit() {
     this.auth.loginUser(this.registerUserData)
     .subscribe(
-      res => {console.log(res),
+      res => {this.router.navigate(['/']),
       localStorage.setItem('token', res.token)} ,
       err =>  console.log(err))
   }
