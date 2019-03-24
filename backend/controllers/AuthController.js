@@ -21,7 +21,7 @@ router.post('/register', function(req, res) {
     function (err, user) {
       if (err) return res.status(500).send("There was a problem registering the user.")
       // create a token
-      let payload = { id: user._id , role:user.role }
+      let payload = { id: user._id , role:user.role, email : user.email }
       var token = jwt.sign(payload, 'secret', {
         expiresIn: 86400 // expires in 24 hours
       });
@@ -56,7 +56,7 @@ router.post('/login', function(req, res) {
       var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
 
       if (!passwordIsValid) return res.status(401).send({ auth: false, token: null });
-       let payload = { id: user._id , role:user.role };
+       let payload = { id: user._id , role:user.role, email : user.email };
       var token = jwt.sign(payload, 'secret', {
         expiresIn: 86400 // expires in 24 hours
       });
