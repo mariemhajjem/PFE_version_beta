@@ -1,5 +1,5 @@
 var app = require('./app');
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 3000;
 const cors = require ('cors');
 
 app.use(cors())
