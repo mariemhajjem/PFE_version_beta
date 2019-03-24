@@ -14,12 +14,12 @@ export class FormListComponent implements OnInit {
   constructor(private fs: FormationService, private router: Router) { }
 
   ngOnInit() {
-    this.fs.refreshNeed.subscribe(()=>{
+    this.fs.refreshNeed.subscribe(() => {
       this.getForamtion();
     });
     this.getForamtion();
   }
-  getForamtion(){
+  getForamtion() {
     this.fs
     .getBusinesses()
     .subscribe((data: Formation[]) => {
@@ -30,13 +30,13 @@ export class FormListComponent implements OnInit {
   deleteBusiness(formation) {
     this.fs.deleteBusiness(formation._id).subscribe(
     data => {
-     this.formations.splice(this.formations.indexOf(formation), 1 )
+     this.formations.splice(this.formations.indexOf(formation), 1 );
        },
       error => {
           console.log(error);
          }
 
- )}
+ ); }
 
 
 

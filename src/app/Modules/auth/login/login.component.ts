@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   registerUserData = {
     email: '',
     password: ''
-  }
+  };
 
 
   constructor(private auth: AuthService,private router : Router) { }
