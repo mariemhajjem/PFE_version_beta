@@ -18,6 +18,8 @@ import { EditFormationComponent } from './components/edit-formation/edit-formati
 import { AuthGuard } from 'src/app/auth.guard';
 import { AuthorizationService } from './components/services/authorization.service';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
+import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
+                     
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -31,7 +33,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
-     CrudUsersComponent, ListUserComponent, EditFormationComponent],
+     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -40,10 +42,11 @@ const JWT_Module_Options: JwtModuleOptions = {
     FormsModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
-  providers: [FormationService,
+  providers: [
+     FormationService,
      UserService,
      AuthGuard,
-     AuthorizationService
+     AuthorizationService                             
     ],
 })
 export class AdminModule { }
