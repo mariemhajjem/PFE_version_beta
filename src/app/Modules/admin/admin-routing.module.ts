@@ -28,10 +28,8 @@ const routes: Routes = [
       component: HomeComponent
     },
     { path: 'addFormation', component: CrudComponent },
- 
     { path: 'users', component: ListUserComponent },
     { path: 'editUser/:id', component: CrudUsersComponent },
- 
     { path: 'listFormation', component: FormListComponent },
     {path: 'editFormation/:id', component: EditFormationComponent},
     { path: 'profileadmin', component: ProfileAdminComponent }
