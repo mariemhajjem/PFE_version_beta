@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-   columns =  ['#','id','Email','Update','Delete'];
+   columns =  ['#','id','Email','Update','Supprimer'];
    users: User[] = [];
     
   constructor(private userService: UserService,private router :Router) {}

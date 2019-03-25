@@ -1,21 +1,44 @@
-<div class="profile-page">
-
-  <div class="user-info">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-xs-12 col-md-10 offset-md-1">
+<div class="container">
+    <header>
+      <h1>
           
-          <h4>{{email }}</h4>
+          <img src="../../../../../assets/admin/images/photo.jpg" alt="Authentic Collection">
          
-           <a [routerLink]="['/admin/profileadmin']"
-               
-              class="btn btn-sm btn-outline-secondary action-btn">
-              <i class="ion-gear-a"></i> Edit Profile Settings
-            </a>
-        </div>
-
-      </div>
-    </div>
-  </div> 
+      </h1>
+    </header>
+    <h1 class="text-center">Profile</h1>
+    <form class="registration-form" [formGroup]="updateForm">
+      <label class="col-one-half">
+        <span class="label-text">Nom</span>
+        <input type="text" name="nom" formControlName="nom"
+        #nom >
+      </label>
+      <label class="col-one-half">
+        <span class="label-text">Prénom</span>
+        <input type="text" name="prenom"formControlName="prenom"
+        #prenom>
+      </label>
+      <label>
+        <span class="label-text">Email</span>
+        <input type="text" name="email" placeholder="{{email}}" formControlName="email"
+        #email>
+      </label>
+      <label>
+        <span class="label-text">Numéro de téléphone</span>
+        <input type="text" name="number" formControlName="tel"
+        #tel>
+      </label>
+     <!--<label class="password">
+        <span class="label-text">mot de passe</span>
+        <button class="toggle-visibility" title="toggle password visibility" tabindex="-1">
+          <span class="glyphicon glyphicon-eye-close"></span>
+        </button>
+        <input type="password" name="password">
+      </label>--> 
+       <br>
+      <div class="text-center">
+        <button class="submit" name="register" (click)="updateUser(currentUser,email.value,nom.value,prenom.value,tel.value)">Modifier profile</button>
+      </div> 
+    </form>
   </div>
+  
