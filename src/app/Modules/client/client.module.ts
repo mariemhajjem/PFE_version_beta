@@ -5,10 +5,11 @@ import { ClientRoutingModule } from './client-routing.module';
  
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DemandesdevisComponent } from './demandesdevis/demandesdevis.component';
  
 
 @NgModule({
-  declarations: [ ],
+  declarations: [ DemandesdevisComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
