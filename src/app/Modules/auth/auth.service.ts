@@ -12,7 +12,7 @@ import { JwtHelperService } from '@auth0/angular-jwt/src/jwthelper.service';
 })
 export class AuthService {
    
-  private url="http://localhost:8000/api/auth"
+  private url="http://localhost:3000/api/auth"
   
   
   constructor(private http: HttpClient,private router: Router,private jwtHelperService: JwtHelperService) { 
@@ -45,7 +45,7 @@ export class AuthService {
        
      let email=decodeToken['email'];
       
-     return email;
+     return decodeToken;
 
     }
 

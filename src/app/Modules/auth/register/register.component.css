@@ -7,6 +7,9 @@
 body {
 	background: #ffc185;
 }
+.icon {
+	font-size: 1.7rem;
+  }
 
 .container{
 	position:absolute;
@@ -183,6 +186,25 @@ input {
 	margin-bottom:25px;
 }
 
+.w200 {
+	position: relative;
+  }
+                             
+  .w200 .icon {
+	position: absolute;
+	right: 1em;
+	top: 50%;
+	transform: translateY(-50%)
+  }
+    
+  .w200:valid + .icon::after {
+	content: '😃';
+  }
+   
+  
+  .w200:invalid + .icon::after {
+	content: '😳';
+  }
 ::-webkit-input-placeholder {
    color: #ffc185;
 	font-family: 'Roboto';
