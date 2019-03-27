@@ -6,15 +6,19 @@ import { ClientRoutingModule } from './client-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DemandesdevisComponent } from './demandesdevis/demandesdevis.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AuthModule } from '../auth/auth.module';
+import { BodyComponent } from './body/body.component';
  
 
 @NgModule({
-  declarations: [ DemandesdevisComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, BodyComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    AuthModule,
     HttpClientModule
   ]
 })
