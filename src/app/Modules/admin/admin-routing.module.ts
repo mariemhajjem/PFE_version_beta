@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 import { AuthGuard } from 'src/app/auth.guard';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
+import { DemandesListComponent } from './components/demandes-list/demandes-list.component';
  
 
 
@@ -32,8 +33,8 @@ const routes: Routes = [
     { path: 'editUser/:id', component: CrudUsersComponent },
     { path: 'listFormation', component: FormListComponent },
     {path: 'editFormation/:id', component: EditFormationComponent},
-    { path: 'profileadmin', component: ProfileAdminComponent }
- 
+    { path: 'profileadmin', component: ProfileAdminComponent },
+    { path: 'demandes', component: DemandesListComponent }
   ]
   }
 ];
