@@ -1,3 +1,4 @@
+ 
 <div class="container">
 	<form class="signUp" #registerForm="ngForm" (ngSubmit)="submit()">
             <h3>Re-bienvenue!</h3>
@@ -5,13 +6,15 @@
         
         <br>
 		<input class="w100" name="email" type="email" placeholder="email" [(ngModel)]="registerUserData.email" required autocomplete='off' />
-        <br>
+		<br>
+		<br>
         <input type="password" name="password" placeholder="mot de passe" [(ngModel)]="registerUserData.password" required />
-		 
+		 <p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>
 		<button class="form-btn sx log-in" type="button" routerLink="/">Retour</button>
 		<button class="form-btn dx" type="submit">Se connecter</button>
 	</form>
 
 </div>
-
+ 
+ 
  

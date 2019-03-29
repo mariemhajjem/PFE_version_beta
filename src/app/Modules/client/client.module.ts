@@ -9,10 +9,11 @@ import { DemandesdevisComponent } from './demandesdevis/demandesdevis.component'
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthModule } from '../auth/auth.module';
 import { BodyComponent } from './body/body.component';
+import { SliderComponent } from './slider/slider.component';
  
 
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, BodyComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, BodyComponent, SliderComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,

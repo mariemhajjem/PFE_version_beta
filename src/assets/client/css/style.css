@@ -14,7 +14,7 @@ body {
 	height: 100%;
 	font-family: 'Raleway', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	font-synthesis: antialiased;
 }
 
 h1,
@@ -261,7 +261,7 @@ ol {
 	width: 100%;
 	top: 0;
 	left: 0;
-	padding-top: 60px;
+	padding-top: 20px;
 }
 
 .site-logo {
@@ -279,14 +279,14 @@ ol {
 .main-menu ul li a {
 	display: inline-block;
 	font-size: 16px;
-	color: #fff;
+	color: #d82a4e;
 	margin-left: 45px;
 	font-weight: 600;
 	padding: 20px 0 5px;
 }
 
 .main-menu ul li a:hover {
-	color: #d82a4e;
+	color: #f1c0ca;
 }
 
 .header-btn {

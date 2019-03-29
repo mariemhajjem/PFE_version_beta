@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #ffc185;
+	background: #fa7f98;
 }
 .icon {
 	font-size: 1.7rem;
@@ -104,33 +104,13 @@ h3 {
 	font-family: 'Dosis';
 	font-size: 35px;
 	text-transform: uppercase;
-	color: #87613d;
+	color: #3e3e3e;
 	margin-bottom: 30px;
 }
 
 input,
 button{
 	outline: none !important; 
-}
-
-button.fb {
-	border: none;
-	background: #3b5998;
-	width: 160px;
-	height: 25px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	color: #fff;
-	text-transform: uppercase;
-	border-radius: 4px;
-	border: 1px solid #29487d;
-	cursor: pointer;
-	margin-bottom: 20px;
-	transition:all 0.3s linear;
-}
-button.fb:hover {
-	background: #fff;
-	color: #3b5998;
 }
 
 button.form-btn {
@@ -148,13 +128,13 @@ button.form-btn {
 button.form-btn.sx {
 	left: 0;
 	border-radius: 0 0 0 5px;
-	background-color: rgba(255, 125, 0, 0.35);
+	background-color: rgba(255, 0, 55, 0.35);
 	color: #fff;
 	transition:all 0.3s linear;
 }
 
 button.form-btn.sx:hover {
-	background-color:rgba(255, 125, 0, 0.65);
+	background-color:rgba(255, 0, 55, 0.65);
 	color: #fff;
 }
 
@@ -170,16 +150,16 @@ button.form-btn.sx.back:hover {
 button.form-btn.dx {
 	right: 0;
 	border-radius: 0 0 5px 0;
-	background-color: #ff7d00;
+	background-color: #d82a4e;
 	color: #fff;
 }
 
 input {
 	border: none;
-	border-bottom: 1px solid #ffc185;
+	border-bottom: 1px solid #fa7f98;
 	width: 85%;
 	font-family: 'Roboto';
-	color: #ff7d00;
+	color: #d82a4e;
 	text-align: center;
 	font-size: 21px;
 	font-weight:100;
@@ -206,25 +186,25 @@ input {
 	content: '😳';
   }
 ::-webkit-input-placeholder {
-   color: #ffc185;
+   color: #fa7f98;
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 :-moz-placeholder {
-   color: #ffc185;  
+   color: #fa7f98;  
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 ::-moz-placeholder {
-   color: #ffc185;  
+   color: #fa7f98;  
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 :-ms-input-placeholder {  
-   color: #ffc185; 
+   color: #fa7f98; 
 	font-family: 'Roboto';
 	font-weight:100;
 }
