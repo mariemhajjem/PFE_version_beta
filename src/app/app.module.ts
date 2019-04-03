@@ -11,6 +11,8 @@ import { ClientModule } from './Modules/client/client.module';
 import { AuthService } from './Modules/auth/auth.service';
 import { AuthorizationService } from './Modules/admin/components/services/authorization.service';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
+import { Notfound404Component } from './Modules/notfound404/notfound404.component';
+ 
  
 const JWT_Module_Options: JwtModuleOptions = {
   config: {
@@ -22,7 +24,8 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Notfound404Component
   ],
   imports: [
     BrowserModule,

@@ -40,12 +40,7 @@ export class AuthService {
    getPayload(token){
     // decode token to read the payload details
     const decodeToken = this.jwtHelperService.decodeToken(token);
- 
-    
-       
-     let email=decodeToken['email'];
-      
-     return decodeToken;
+       return decodeToken;
 
     }
 

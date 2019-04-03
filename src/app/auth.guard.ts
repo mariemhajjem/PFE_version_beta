@@ -3,6 +3,7 @@ import { CanActivate, CanActivateChild, CanLoad, Route,Router, UrlSegment, Activ
 import { Observable } from 'rxjs';
 import { AuthService } from './Modules/auth/auth.service';
 import { AuthorizationService } from './Modules/admin/components/services/authorization.service';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,10 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot) {
        var token = this.authenticationService.getJwtToken();
-      return   this.authorizationService.isAuthorized(token) ;
+     if(this.authorizationService.isAuthorized(token)) return true   ;
+     else { 
+       this.router.navigate(['/forbidden']);
+       return false;}
            
                 
     }
