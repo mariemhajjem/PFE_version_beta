@@ -1,0 +1,53 @@
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+  <!-- search section -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-warp">
+        <div class="section-title text-white">
+          <h2>Search your course</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <!-- search form -->
+            <form class="course-search-form" #registerForm="ngForm" (ngSubmit)="search()">
+              <input type="text" (keyup)="searchTerm$.next($event.target.value)">
+               
+              <button class="site-btn" type="submit">Search Course</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  <!-- search section end -->
+  
+  
+<!-- categories section -->
+<section class="categories-section spad" *ngIf="results">
+  <div class="container">
+    <div class="section-title">
+      <h2>Résultats</h2>
+      
+    </div>
+    <div class="row">
+      <!-- categorie -->
+      <div class="col-lg-4 col-md-6" *ngFor="let result of results">
+        <div class="categorie-item" >
+          <div class="ci-thumb set-bg" style="background-image:url(./assets/client/img/categories/1.jpg);" data-setbg="./assets/client/img/categories/1.jpg"></div>
+          <div class="ci-text">
+            <h5> {{ result.nameFormation }}</h5>
+            <p>{{ result.type}}</p>
+            <span>{{ result.nb}}</span>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</section>
+<!-- categories section end -->

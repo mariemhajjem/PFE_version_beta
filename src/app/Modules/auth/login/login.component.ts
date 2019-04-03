@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { first } from 'rxjs/operators';
+ 
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {this.router.navigate(['/']),
       localStorage.setItem('token', res.token)} ,
-      err =>  console.log(err))
+      err => { console.log(err); this.router.navigate(['/404']);})
   }
 
 

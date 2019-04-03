@@ -8,6 +8,8 @@ import { AuthService } from './auth.service';
 import{ HttpClientModule } from '@angular/common/http';
 import { AuthorizationService } from '../admin/components/services/authorization.service';
 import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { LogInAndRegisterComponent } from './log-in-and-register/log-in-and-register.component';
 
 const JWT_Module_Options: JwtModuleOptions = {
   config: {
@@ -18,7 +20,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 };
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, ForbiddenComponent, LogInAndRegisterComponent],
   imports: [
     CommonModule,
     FormsModule,

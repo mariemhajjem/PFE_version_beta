@@ -12,8 +12,12 @@ app.use(function(req, res, next) {
         next();
     });
 
+ var SearchController = require('./controllers/Search'); 
+ app.use('/recherche', SearchController) ;
+
 var UserController = require('./controllers/UserController');
 app.use('/users', UserController);
+
 var ContactController= require('./controllers/ContactController');
 app.use('/contact',ContactController);
 
