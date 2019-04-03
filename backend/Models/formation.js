@@ -10,6 +10,9 @@ let Formation = new Schema({
   },
   nb: {
     type: Number
+  },
+  imageUrl: {
+    type: String
   }
 },{
   collection: 'formations'

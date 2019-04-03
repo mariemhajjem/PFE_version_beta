@@ -1,16 +1,53 @@
 const express = require('express');
-
 const router = express.Router();
 var bodyParser = require('body-parser');
+const multer = require('multer');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
+
+
+
+const fileStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'src/assets/uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, new Date().toISOString().replace(/:/g, '-')+"-"+ file.originalname);
+  }
+});
+
+const fileFilter = (req, file, cb) => {
+  if (
+    file.mimetype === 'image/png' ||
+    file.mimetype === 'image/jpg' ||
+    file.mimetype === 'image/jpeg'
+  ) {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+const upload =multer({
+  storage: fileStorage, fileFilter: fileFilter
+});
+
 // Require formation model in our routes module
 let Formation = require('../Models/formation');
 
 // Defined store route
-router.route('/add').post(function (req, res) {
-  let formation = new Formation (req.body);
+router.route('/add').post(upload.single('image'),function (req, res) {
+  const nameFormation = req.body.nameFormation;
+  const type= req.body.type;
+  const nb = req.body.nb;
+  const image = req.file;
+  const imageUrl = "assets/uploads/"+image.filename ;
+  let formation = new Formation ({
+    nameFormation: nameFormation,
+    type: type,
+    nb: nb,
+    imageUrl: imageUrl,
+  });
   formation.save()
     .then(formation => {
       res.status(200).json({'formation': 'formation is added successfully'});
