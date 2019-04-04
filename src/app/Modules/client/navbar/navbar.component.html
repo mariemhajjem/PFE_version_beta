@@ -21,10 +21,10 @@
               </div>
             </div>
             <div class="col-lg-9 col-md-9">
-                
-                  <button class="site-btn header-btn" routerLink="/auth">S'inscrire</button>
+                  <button *ngIf="loggedIn && isAdmin " class="site-btn header-btn" >Admin</button>
+                  <button *ngIf="!loggedIn" class="site-btn header-btn" routerLink="/auth">S'inscrire</button>
+                  <button *ngIf="loggedIn" class="site-btn header-btn" (click)="logout()">Se déconnecter</button>
                   
-                   
               <nav class="main-menu">
                 <ul>
                   <li><a href="index.html">Home</a></li>

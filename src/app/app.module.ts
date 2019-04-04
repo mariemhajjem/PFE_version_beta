@@ -9,7 +9,6 @@ import { AuthGuard } from './auth.guard';
 import { AdminModule } from './Modules/admin/admin.module';
 import { ClientModule } from './Modules/client/client.module';
 import { AuthService } from './Modules/auth/auth.service';
-import { AuthorizationService } from './Modules/admin/components/services/authorization.service';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { Notfound404Component } from './Modules/notfound404/notfound404.component';
  
@@ -40,8 +39,7 @@ const JWT_Module_Options: JwtModuleOptions = {
   
   providers: [
      AuthGuard,
-  AuthService,
-  AuthorizationService
+  AuthService
  ],
   bootstrap: [AppComponent]
 })

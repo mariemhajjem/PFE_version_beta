@@ -18,12 +18,13 @@ export class CrudComponent implements OnInit {
     this.angForm = this.fb.group({
       nameFormation: ['', Validators.required ],
       type: ['', Validators.required ],
-      nb: ['', Validators.required ]
+      nb: ['', Validators.required ],
+      imageURL : ['', Validators.required]
     });
   }
 
-  addBusiness(nameFormation, type, nb) {
-    this.bs.addBusiness(nameFormation, type, nb);
+  addBusiness(nameFormation, type, nb,imageURL) {
+    this.bs.addBusiness(nameFormation, type, nb,imageURL);
   }
 
   ngOnInit() {
