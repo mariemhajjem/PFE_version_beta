@@ -17,12 +17,7 @@ export class RechercheComponent implements OnInit {
     this.searchService.search(this.searchTerm$)
       .subscribe(results => {
         this.results = results ;
-        
       });
-     
-  }
-  ngAfterContentInit(){
-     this.results= null;
   }
   ngOnInit() {
   }
