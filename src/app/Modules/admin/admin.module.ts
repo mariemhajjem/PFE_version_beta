@@ -16,7 +16,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { EditFormationComponent } from './components/edit-formation/edit-formation.component';
 import { AuthGuard } from 'src/app/auth.guard';
-import { AuthorizationService } from './components/services/authorization.service';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
 import { DemandesListComponent } from './components/demandes-list/demandes-list.component';
@@ -46,8 +45,7 @@ const JWT_Module_Options: JwtModuleOptions = {
   providers: [
      FormationService,
      UserService,
-     AuthGuard,
-     AuthorizationService                             
+     AuthGuard                             
     ],
 })
 export class AdminModule { }

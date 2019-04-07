@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-body">
-    <form [formGroup]="angForm" novalidate>
+    <form [formGroup]="angForm" enctype="multipart/form-data" novalidate  >
       <div class="form-group">
         <label class="col-md-4">nameFormation</label>
         <input type="text" class="form-control" formControlName="nameFormation" #nameFormation />
@@ -29,7 +29,10 @@
         </div>
       </div>
       <div class="form-group">
-        <button (click)="addBusiness(nameFormation.value, type.value, nb.value)"
+      <input type="file" class="form-control" formControlName="imageURL" #imageURL>
+    </div>
+      <div class="form-group">
+        <button (click)="addBusiness(nameFormation.value, type.value, nb.value, imageURL.value)"
         [disabled]="angForm.pristine || angForm.invalid"
         class="btn btn-primary">Add Formation</button>
       </div>

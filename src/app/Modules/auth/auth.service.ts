@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { User } from '../admin/components/models/user';
 import { Router } from '@angular/router';
-import { AuthorizationService } from '../admin/components/services/authorization.service';
+ 
 import { JwtHelperService } from '@auth0/angular-jwt/src/jwthelper.service';
  
 @Injectable({
@@ -26,10 +24,7 @@ export class AuthService {
      loginUser(user){
        return this.http.post<any>(`${this.url}/login`,user)
      }
-
-   /* public get loggedIn(): boolean{
-      return localStorage.getItem('access_token') !==  null;
-    } */
+ 
     public getUserDetails() {
       const token = this.getJwtToken();
        
@@ -55,6 +50,25 @@ export class AuthService {
       localStorage.removeItem('token');
       this.router.navigate(['/']);
     } 
+
+    isAdmin(): boolean {
+      var token = this.getJwtToken();
+      // check  token
+      if (token  === null) {
+        return false;
+      }
+      // decode token to read   payload  
+      const decodeToken = this.jwtHelperService.decodeToken(token);
+   
+       if(decodeToken['role']==='Admin')
+      // check if the user role  is allowed role , return true if allowed and false if not allowed
+          return true;
+          else
+          return false;
+    }
+
+   
+   
 
   }
 

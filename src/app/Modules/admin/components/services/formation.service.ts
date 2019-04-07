@@ -15,11 +15,12 @@ export class FormationService {
     return this.refreshNeeds;
   }
 
-  addBusiness(nameFormation, type, nb) {
+  addBusiness(nameFormation, type, nb,imageURL) {
     const obj = {
       nameFormation: nameFormation,
       type: type,
-      nb: nb
+      nb: nb,
+      imageURL : imageURL
     };
     console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
