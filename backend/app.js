@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var db = require('./config/db');
-
+require('./config/passport');
 
 //create a cors middleware
 app.use(function(req, res, next) {
@@ -27,4 +27,13 @@ app.use('/api/auth', AuthController);
 var FormationController = require('./controllers/FormationController');
 app.use('/formation',FormationController);
 
+var AbonneController = require('./controllers/AbonneController');
+app.use('/abonne',AbonneController);
+ 
+/// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  });
 module.exports = app;
