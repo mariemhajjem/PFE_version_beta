@@ -59,7 +59,7 @@ router.route('/add').post(upload.single('image'),function (req, res) {
 
 // Defined get data(index or listing) route
 router.route('/').get(function (req, res) {
-    Formation.find(function (err, formations){
+  Formation.find(function (err, formations){
     if(err){
       console.log(err);
     }
