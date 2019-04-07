@@ -22,10 +22,7 @@ const routes: Routes = [
       },
       { path: 'home',
            component: BodyComponent
-      },
-      { path: 'search',
-           component: RechercheComponent
-      }
+      } 
     ]
   }
 ];

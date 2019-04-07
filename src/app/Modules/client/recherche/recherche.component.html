@@ -1,32 +1,52 @@
-  
-<br>
-<br>
-<br>
-<br>
-<br>
+ 
   <!-- search section -->
   <section class="search-section">
-    <div class="container">
-      <div class="search-warp">
-        <div class="section-title text-white">
-          <h2>Search your course</h2>
-        </div>
-        <div class="row">
+      
           <div class="col-md-10 offset-md-1">
             <!-- search form -->
             <form class="course-search-form" #registerForm="ngForm" (ngSubmit)="search()">
               <input type="text" (keyup)="searchTerm$.next($event.target.value)">
                
-              <button class="site-btn" type="submit">Search Course</button>
+              <button class="site-btn" type="submit">chercher formation</button>
             </form>
           </div>
-        </div>
-      </div>
-    </div>
+        
   </section>
    
   <!-- search section end -->
   
+    
+  <!-- course section -->
+  <section class="course-section spad" *ngIf="results">
+   
+    <div class="course-warp">
+                                             
+      <div class="row course-items-area">
+        <!-- course -->
+        <div class="mix col-lg-3 col-md-4 col-sm-6 finance" *ngFor="let result of results">
+          <div class="course-item">
+            <div class="course-thumb set-bg"  style="background-image:url(./assets/client/img/courses/1.jpg);" data-setbg="./assets/client/img/courses/1.jpg">
+              <div class="price">Prix: </div>
+            </div>
+            <div class="course-info">
+              <div class="course-text">
+                <h5> {{ result.nameFormation }}</h5>
+                <p>{{ result.type}}</p>
+                <span>{{ result.nb}}</span>
+              </div>
+              <div class="course-author">
+                <div class="ca-pic set-bg" data-setbg="./assets/client/img/authors/1.jpg"></div>
+                <p>William Parker, <span>Developer</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- course -->
+         
+       </div>
+    </div>
+  </section>
+  <!-- course section end -->
   
 <!-- categories section -->
 <section class="categories-section spad" *ngIf="results">

@@ -21,9 +21,9 @@ LoggedIn = false;
     this.auth.logout();
   }
   ngOnInit() {
-    if( this.auth.isAdmin()){
+    if(this.auth.isAdmin()){
      this.isAdmin=true;
-   };
+    };
 
    if(this.auth.isLoggedIn()){
     this.LoggedIn= true;
