@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
         next();
     });
 
- var SearchController = require('./controllers/Search'); 
+ var SearchController = require('./controllers/Search');
  app.use('/recherche', SearchController) ;
 
 var UserController = require('./controllers/UserController');
@@ -26,5 +26,7 @@ app.use('/api/auth', AuthController);
 
 var FormationController = require('./controllers/FormationController');
 app.use('/formation',FormationController);
+var session = require('./controllers/Session');
+app.use('/session',session);
 
 module.exports = app;

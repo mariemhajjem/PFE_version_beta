@@ -34,6 +34,7 @@ const upload =multer({
 
 // Require formation model in our routes module
 let Formation = require('../Models/formation');
+let Session = require('../Models/Session');
 
 // Defined store route
 router.route('/add').post(upload.single('image'),function (req, res) {
@@ -104,5 +105,4 @@ router.route('/delete/:id').get(function (req, res) {
         else res.json('Successfully removed');
     });
 });
-
 module.exports = router;
