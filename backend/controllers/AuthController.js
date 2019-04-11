@@ -7,6 +7,7 @@ var User = require('../Models/User');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var VerifyToken = require('./VerifyToken');
+var auth = require('./auth');
 
 router.post('/register', function(req, res) {
 
@@ -29,22 +30,14 @@ router.post('/register', function(req, res) {
     });
   });
 
-  router.get('/me', function(req, res, next) {
-    var token = req.headers['x-access-token'];
-    if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
+  router.get('/profile',VerifyToken, function(req, res, next) {
 
-    jwt.verify(token,'secret', function(err, decoded) {
-      if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
-
-      User.findById(decoded.id,
-        { password: 0 }, // projection
-        function (err, user) {
-          if (err) return res.status(500).send("There was a problem finding the user.");
-          if (!user) return res.status(404).send("No user found.");
-           res.status(200).send(user);
-
-      });
-  });
+    User.findById(req.userId, { password: 0 }, function (err, user) {
+      if (err) return res.status(500).send("There was a problem finding the user.");
+      if (!user) return res.status(404).send("No user found.");
+      
+      res.status(200).send({user:user});
+    });
 });
 
 router.post('/login', function(req, res) {
