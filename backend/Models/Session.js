@@ -14,6 +14,18 @@ let Session = new Schema({
     },
 
     Formations:{type: mongoose.Schema.Types.ObjectId, ref:'Formation'},
+    Formateur : {
+      type : String
+    },
+    NbPlaces : {
+      type : Number
+    },
+    Horaires : {
+      type : Date
+    },
+    NbHeures : {
+      type : Number
+    }
   },
   {
     collection: 'sessions'

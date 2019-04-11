@@ -13,7 +13,16 @@ let Formation = new Schema({
   },
   imageUrl: {
     type: String
-  }
+  },
+   Plan:{
+     type : String
+   },
+   Sujet : {
+     type : String
+   },
+   Description : {
+     type : String
+   }
 },{
   collection: 'formations'
 });

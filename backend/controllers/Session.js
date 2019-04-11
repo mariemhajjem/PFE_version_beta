@@ -47,7 +47,7 @@ router.route('/delete/:id').get(function (req, res) {
         else res.json('Successfully removed');
     });
 });
-router.route('/:id/session').post(async (req, res)=> {
+router.route('/:id').post(async (req, res)=> {
   let id = req.params.id;
   const formation = await Formation.findOne({_id : id});
   var session = new Session();
@@ -65,7 +65,7 @@ router.route('/:id/session').post(async (req, res)=> {
 
 
 });
-router.route('/aa').get(function (req, res) {
+router.route('/').get(function (req, res) {
     Session.find().populate('Formations').exec(function (err, session){
       if(err){
         console.log(err);
