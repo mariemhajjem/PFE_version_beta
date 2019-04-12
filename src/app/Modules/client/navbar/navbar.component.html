@@ -10,19 +10,28 @@
 						<div class="col">
 							<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
 								<ul class="top_bar_contact_list">
-									<li><div class="question">Have any questions?</div></li>
+									<li><div class="question">Vous avez des questions?</div></li>
 									<li>
 										<i class="fa fa-phone" aria-hidden="true"></i>
-										<div>001-1234-88888</div>
+										<div>+21623255036</div>
 									</li>
-									<li>
-										<i class="fa fa-envelope-o" aria-hidden="true"></i>
-										<div>info.deercreative@gmail.com</div>
+									<li *ngIf="!isAdmin">
+										 
+										<div>hedijawedi@gmail.com</div>
 									</li>
 								</ul>
-								<div class="top_bar_login ml-auto">
-									<div class="login_button"><a routerLink="/auth/login">Register or Login</a></div>
-								</div>
+								
+								<div class="top_bar_login ml-auto" *ngIf="!LoggedIn">
+										<div class="login_button" ><a routerLink="/auth/login">Se connecter</a> </div>
+									</div>
+								<div class="top_bar_login ml-auto" *ngIf="isAdmin; else notShow">
+										<div class="login_button"><a routerLink="/admin">AdminPanel</a></div>
+									</div>
+									<ng-template #notShow> 
+										  <div class="top_bar_login ml-auto" *ngIf="LoggedIn">
+											<div class="login_button"><a (click)="logout()">Se déconnecter</a></div>
+										</div>
+									</ng-template>
 							</div>
 						</div>
 					</div>
