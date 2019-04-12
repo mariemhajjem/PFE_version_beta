@@ -1,0 +1,90 @@
+<div class="home_slider_form_container">
+<form id="home_search_form_3" class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between" #registerForm="ngForm" (ngSubmit)="search()">
+    <div class="d-flex flex-row align-items-center justify-content-start">
+      <input type="search" class="home_search_input" placeholder="Keyword Search" required="required" (keyup)="searchTerm$.next($event.target.value)">
+      <select class="dropdown_item_select home_search_input">
+        <option>Category Courses</option>
+        <option>Category</option>
+        <option>Category</option>
+      </select>
+      <select class="dropdown_item_select home_search_input">
+        <option>Select Price Type</option>
+        <option>Price Type</option>
+        <option>Price Type</option>
+      </select>
+    </div>
+    <button type="submit" class="home_search_button">search</button>
+  </form>
+</div>
+  <div class="courses" *ngIf="results">
+      
+          <div class="row courses_row" >
+             
+              <!-- Course -->
+              <div class="col-lg-4 course_col" *ngFor="let result of results">
+                  <div class="course">
+                      <div class="course_image"><img src="images/course_1.jpg" alt=""></div>
+                      <div class="course_body">
+                          <h3 class="course_title"><a href="course.html">{{ result.nameFormation }}</a></h3>
+                          <div class="course_teacher">{{ result.type}}</div>
+                          <div class="course_text">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
+                          </div>
+                      </div>
+                      <div class="course_footer">
+                          <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                              <div class="course_info">
+                                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                  <span>20 Student</span>
+                              </div>
+                              <div class="course_info">
+                                  <i class="fa fa-star" aria-hidden="true"></i>
+                                  <span>5 Ratings</span>
+                              </div>
+                              <div class="course_price ml-auto">$130</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            
+               <!-- Course -->
+            <div class="col-lg-4 course_col">
+                <div class="course">
+                    <div class="course_image"><img src="images/course_1.jpg" alt=""></div>
+                    <div class="course_body">
+                        <h3 class="course_title"><a href="course.html">Software Training</a></h3>
+                        <div class="course_teacher">Mr. John Taylor</div>
+                        <div class="course_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
+                        </div>
+                    </div>
+                    <div class="course_footer">
+                        <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="course_info">
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                <span>20 Student</span>
+                            </div>
+                            <div class="course_info">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <span>5 Ratings</span>
+                            </div>
+                            <div class="course_price ml-auto">$130</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+              </div>
+  
+           
+  
+           
+          <div class="row">
+              <div class="col">
+                  <div class="courses_button trans_200"><a href="#">afficher plus</a></div>
+              </div>
+          </div>
+      </div>
+   
+
+ 
