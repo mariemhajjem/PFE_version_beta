@@ -5,12 +5,23 @@
 }
 
 body {
-	background: #fa7f98;
+	background: #7fd9f1;
 }
 .icon {
 	font-size: 1.7rem;
   }
-
+  .image{
+	background-image: url(../../../../assets/client/images/computer.jpg);
+	background-repeat : no-repeat;
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	top: 0;
+	bottom:0;
+	height:100vh; 
+	
+ 
+}
 .container{
 	position:absolute;
 	width: auto;
@@ -30,59 +41,6 @@ form {
 	box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
 	box-sizing: border-box;
 }
-
-.progress-bar_wrap {
-	width: 150px;
-	height: 5px;
-	background: #F6F6FA;
-	display: inline-block;
-	vertical-align: middle;
-	overflow: hidden;
-	overflow-x: hidden;
-	border-radius: 5px;
-  }
-  
-.progress-bar_item {
-	display: inline-block;
-	height: 100%;
-	width: 33.33%;
-	float: left;
-	visibility: hidden;
-	transition: background-color .2s, visisility .1s;
-  }
-  .active {
-	visibility: visible;
-  }
-  
-  .progress-bar_item-1 {
-	
-  }
-  
-  .progress-bar_item-2 {
-  
-  }
-  
-  .progress-bar_item-3 {
-	 
-  }
-  
-  .progress-bar_text {
-	display: inline-block;
-	color: #aaa;
-	margin-left: 5px;
-	transition: .2s;
-  }
-  
-
-.progress-bar_wrap {
-	width: 200px;
-	height: 5px;
-	background: #F6F6FA;
-	display: inline-block;
-	vertical-align: middle;
-	overflow: hidden;
-	border-radius: 5px;
-  }
   
 p {
 	font-family: 'Roboto', sans-serif;
@@ -128,13 +86,13 @@ button.form-btn {
 button.form-btn.sx {
 	left: 0;
 	border-radius: 0 0 0 5px;
-	background-color: rgba(255, 0, 55, 0.35);
+	background-color: rgba(29,34,47,0.15);
 	color: #fff;
 	transition:all 0.3s linear;
 }
 
 button.form-btn.sx:hover {
-	background-color:rgba(255, 0, 55, 0.65);
+	background-color:rgba(29,34,47,0.45);
 	color: #fff;
 }
 
@@ -150,16 +108,16 @@ button.form-btn.sx.back:hover {
 button.form-btn.dx {
 	right: 0;
 	border-radius: 0 0 5px 0;
-	background-color: #d82a4e;
+	background-color: #14bdee;
 	color: #fff;
 }
 
 input {
 	border: none;
-	border-bottom: 1px solid #fa7f98;
+	border-bottom: 1px solid #7fd9f1;
 	width: 85%;
 	font-family: 'Roboto';
-	color: #d82a4e;
+	color: #14bdee;
 	text-align: center;
 	font-size: 21px;
 	font-weight:100;
@@ -186,25 +144,25 @@ input {
 	content: '😳';
   }
 ::-webkit-input-placeholder {
-   color: #fa7f98;
+   color: #7fd9f1;
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 :-moz-placeholder {
-   color: #fa7f98;  
+   color: #7fd9f1;  
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 ::-moz-placeholder {
-   color: #fa7f98;  
+   color: #7fd9f1;  
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 :-ms-input-placeholder {  
-   color: #fa7f98; 
+   color: #7fd9f1; 
 	font-family: 'Roboto';
 	font-weight:100;
 }
