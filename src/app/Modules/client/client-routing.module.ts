@@ -1,3 +1,4 @@
+import { ContactComponent } from './contact/contact.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DemandesdevisComponent } from './demandesdevis/demandesdevis.component';
@@ -5,8 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BodyComponent } from './body/body.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
 import { RechercheComponent } from './recherche/recherche.component';
-         
- 
+
+
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
       },
       { path: 'search',
            component: RechercheComponent
+      },
+      { path: 'contact',
+           component: ContactComponent
       }
     ]
   }

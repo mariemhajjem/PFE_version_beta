@@ -1,3 +1,4 @@
+import { ContactService } from './../service/contact.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  registerContact = {
+    name: '',
+    email: '',
+    message : ''
+  }
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
+  }
+  submit() {
+    this.contactService.sendMessage(this.registerContact);
   }
 
 }
