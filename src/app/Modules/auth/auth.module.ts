@@ -5,10 +5,11 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
-import{ HttpClientModule } from '@angular/common/http';
+import{ HttpClientModule} from '@angular/common/http';
 import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { LogInAndRegisterComponent } from './log-in-and-register/log-in-and-register.component';
+ 
 
 const JWT_Module_Options: JwtModuleOptions = {
   config: {
