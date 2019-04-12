@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,12 +10,14 @@ import { AuthService } from '../../auth/auth.service';
 export class NavbarComponent implements OnInit {
 isAdmin = false ;
 LoggedIn = false;
-
-  constructor(private auth:AuthService) { 
+ 
+constructor(private chat: ChatService,private auth :AuthService){
     
-   
-  }
-  
+}
+
+sendMessage() {
+  this.chat.sendMsg("Test Message");
+}
   logout(){
     this.isAdmin= false;
     this.LoggedIn= false;
@@ -23,11 +26,16 @@ LoggedIn = false;
   ngOnInit() {
     if(this.auth.isAdmin()){
      this.isAdmin=true;
+ 
     };
 
    if(this.auth.isLoggedIn()){
     this.LoggedIn= true;
    }
+
+   this.chat.messages.subscribe(msg => {
+    console.log(msg);
+  })
   }
 
 

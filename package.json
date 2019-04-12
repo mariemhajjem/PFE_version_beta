@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~7.2.9",
     "@angular/router": "~7.2.9",
     "@auth0/angular-jwt": "^2.1.0",
+    "@types/socket.io-client": "^1.4.32",
     "auth0-lock": "^11.14.0",
     "bcrypt": "^3.0.4",
     "bcryptjs": "^2.4.3",
@@ -51,13 +52,14 @@
     "sass-loader": "^7.1.0",
     "slug": "^1.1.0",
     "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
     "tslib": "^1.9.3",
     "webpack": "^4.29.6",
     "xoauth2": "^1.2.0",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.6",
+    "@angular-devkit/build-angular": "^0.13.8",
     "@angular/cli": "~7.3.6",
     "@angular/compiler-cli": "~7.2.9",
     "@angular/language-service": "~7.2.9",

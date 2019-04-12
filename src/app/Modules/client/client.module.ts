@@ -15,6 +15,7 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { ChatService } from './services/chat.service';
  
 
 @NgModule({
@@ -26,6 +27,7 @@ import { RechercheComponent } from './recherche/recherche.component';
     FormsModule,
     AuthModule,
     HttpClientModule
-  ] 
+  ] ,
+  providers: [ChatService]
 })
 export class ClientModule { }
