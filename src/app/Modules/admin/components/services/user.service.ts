@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,11 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
   private url="http://localhost:3000/users"
   constructor(private http: HttpClient) { }
+  private refreshNeeds = new Subject<void>();
 
+  get refreshNeed() {
+    return this.refreshNeeds;
+  }
     getAll() {
         return this.http.get<User[]>(`${this.url}/`);
     }
@@ -22,6 +28,8 @@ export class UserService {
     }
 
     deleteUser(id) {
-      return this.http.delete<User>(`${this.url}/${id}`);
+      return this.http.delete<User>(`${this.url}/${id}`).pipe(tap(()=>{
+        this.refreshNeed.next();
+      }));
     }
 }

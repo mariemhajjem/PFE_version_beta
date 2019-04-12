@@ -20,8 +20,8 @@
             <td>{{i}}</td>
             <td>{{user._id}}</td>
             <td>{{user.email}}</td>
-            <td> <a [routerLink]="['/admin/editUser', user._id]" class="btn btn-primary">Edit</a> </td>
-            <td><button class=btn btn-danger (click)="deleteUser(user)">Supprimer</button></td>
+             
+            <td><a (click)="deleteUser(user)" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')">Supprimer</a></td>
           </tr>
         </tbody>
       </table>
