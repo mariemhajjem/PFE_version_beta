@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { SearchingService } from './searching.service';
+import { SearchingService } from '../service/searching.service';
+ 
 
 @Component({
   selector: 'app-recherche',
