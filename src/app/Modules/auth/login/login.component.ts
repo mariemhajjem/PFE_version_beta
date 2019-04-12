@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {this.router.navigate(['/']),
       localStorage.setItem('token', res.token)} ,
-      err => { console.log(err); this.router.navigate(['/404']);})
+      err => { console.log(err); this.router.navigate(['/']);})
   }
 
 
