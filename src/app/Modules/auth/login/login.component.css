@@ -4,8 +4,19 @@
 	padding: 0;
 }
  
+.image{
+	background-image: url(../../../../assets/client/images/computer.jpg);
+	background-repeat : no-repeat;
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	top: 0;
+	bottom:0;
+	height:100vh;
+    
+}
 
-.container{
+.container{ 
 	position:absolute;
 	width: auto;
 	height:auto;
@@ -54,13 +65,13 @@ button.form-btn {
 button.form-btn.sx {
 	left: 0;
 	border-radius: 0 0 0 5px;
-	background-color: rgba(255, 0, 55, 0.35);
+	background-color: rgba(29,34,47,0.15);
 	color: #fff;
 	transition:all 0.3s linear;
 }
 
 button.form-btn.sx:hover {
-	background-color:rgba(255, 0, 55, 0.65);
+	background-color:rgba(29,34,47,0.45);
 	color: #fff;
 }
 
@@ -76,16 +87,16 @@ button.form-btn.sx.back:hover {
 button.form-btn.dx {
 	right: 0;
 	border-radius: 0 0 5px 0;
-	background-color: #d82a4e;
+	background-color: #14bdee;
 	color: #fff;
 }
 
 input {
 	border: none;
-	border-bottom: 1px solid #fa7f98;
+	border-bottom: 1px solid #7fd9f1;
 	width: 85%;
 	font-family: 'Roboto';
-	color: #d82a4e;
+	color: #14bdee;
 	text-align: center;
 	font-size: 21px;
 	font-weight:100;
@@ -93,25 +104,25 @@ input {
 }
 
 ::-webkit-input-placeholder {
-   color: #fa7f98;
+   color: #7fd9f1;
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 :-moz-placeholder {
-   color: #fa7f98;  
+   color: #7fd9f1;  
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 ::-moz-placeholder {
-   color: #fa7f98;  
+   color: #7fd9f1;  
 	font-family: 'Roboto';
 	font-weight:100;
 }
 
 :-ms-input-placeholder {  
-   color: #fa7f98; 
+   color: #7fd9f1; 
 	font-family: 'Roboto';
 	font-weight:100;
 }
