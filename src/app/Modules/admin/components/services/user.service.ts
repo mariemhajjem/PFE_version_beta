@@ -24,7 +24,9 @@ export class UserService {
     }
     updateUser(id,user) {
        
-      return this.http.put<User>(`${this.url}/${id}`, user);
+      return this.http.put<User>(`${this.url}/${id}`, user).pipe(tap(()=>{
+        this.refreshNeed.next();
+      }));;
     }
 
     deleteUser(id) {

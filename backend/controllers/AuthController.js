@@ -29,7 +29,7 @@ router.post('/register', function(req, res) {
     });
   });
  
-router.get('/profile',VerifyToken, function(req, res, next) {
+router.get('/profile', VerifyToken, function(req, res, next) {
 
   User.findById(req.userId, { password: 0 }, function (err, user) {
     if (err) return res.status(500).send("There was a problem finding the user.");

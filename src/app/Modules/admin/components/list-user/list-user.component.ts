@@ -43,8 +43,7 @@ deleteUser(user) {
        error => {
            console.log(error);
           }
- 
-   );
+  );
    
 }
 

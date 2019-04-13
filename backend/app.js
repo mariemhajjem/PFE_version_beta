@@ -24,8 +24,12 @@ app.use('/contact',ContactController);
 var AuthController = require('./controllers/AuthController');
 app.use('/api/auth', AuthController);
 
+var DemandeDevisController = require('./controllers/DemandeDevisController');
+app.use('/demande',DemandeDevisController);
+
 var FormationController = require('./controllers/FormationController');
 app.use('/formation',FormationController);
+
 var session = require('./controllers/Session');
 app.use('/session',session);
 

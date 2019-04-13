@@ -11,8 +11,7 @@ var DemandeSchema = new mongoose.Schema({
     DomaineActivite: String,
      Description: String,
     Message: String,       
-   
-    Services: String[5],
+    
     
     cahierDeCharge: String,
                                                                                                  
