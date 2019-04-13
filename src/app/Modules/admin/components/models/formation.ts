@@ -1,7 +1,9 @@
 export default class Formation {
   nameFormation: string;
   type: string;
-  nb: number;
+  Plan: string;
+  Description: string;
+  Sujet: string;
   imageUrl: string;
   _id: number;
 }

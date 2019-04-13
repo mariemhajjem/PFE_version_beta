@@ -40,7 +40,6 @@ let Session = require('../Models/Session');
 router.route('/add').post(upload.single('imageUrl'),function (req, res) {
   const nameFormation = req.body.nameFormation;
   const type= req.body.type;
-  const nb = req.body.nb;
   const Description = req.body.Description;
   const Sujet =req.body.Sujet;
   const Plan = req.body.Plan;
@@ -48,7 +47,6 @@ router.route('/add').post(upload.single('imageUrl'),function (req, res) {
   let formation = new Formation ({
     nameFormation: nameFormation,
     type: type,
-    nb: nb,
     imageUrl: imageUrl,
     Description: Description,
     Sujet: Sujet,

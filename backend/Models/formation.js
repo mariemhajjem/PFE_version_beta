@@ -8,9 +8,6 @@ let Formation = new Schema({
   type: {
     type: String
   },
-  nb: {
-    type: Number
-  },
   imageUrl: {
     type: String
   },

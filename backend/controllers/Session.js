@@ -22,15 +22,16 @@ router.route('/edit/:id').get(function (req, res) {
 
 //  Defined update route
 router.route('/update/:id').put(function (req, res) {
-  Formation.findById(req.params.id, function(err, formation) {
-    if (!formation)
+  Session.findById(req.params.id, function(err, session) {
+    if (!session)
       return next(new Error('Could not load Document'));
     else {
-        formation.nameFormation = req.body.nameFormation;
-        formation.type= req.body.type;
-        formation.nb = req.body.nb;
+      session.name = req.body.name;
+      session.dateDebut = req.body.dateDebut;
+      session.Formations= formation._id;
+      session.dateFin = req.body.dateFin;
 
-        formation.save().then(formation => {
+       session.save().then(formation => {
           res.json('Update complete');
       })
       .catch(err => {
@@ -42,7 +43,7 @@ router.route('/update/:id').put(function (req, res) {
 
 // Defined delete | remove | destroy route
 router.route('/delete/:id').get(function (req, res) {
-    Formation.findByIdAndRemove({_id: req.params.id}, function(err, formation){
+    Session.findByIdAndRemove({_id: req.params.id}, function(err, formation){
         if(err) res.json(err);
         else res.json('Successfully removed');
     });

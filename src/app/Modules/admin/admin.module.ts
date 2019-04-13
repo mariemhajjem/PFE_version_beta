@@ -20,7 +20,7 @@ import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
 import { DemandesComponent } from './components/demandes/demandes.component';
 import { ProfileComponent } from './components/profile/profile.component';
-                     
+ 
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -46,7 +46,7 @@ const JWT_Module_Options: JwtModuleOptions = {
   providers: [
      FormationService,
      UserService,
-     AuthGuard                             
+     AuthGuard
     ],
 })
 export class AdminModule { }
