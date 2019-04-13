@@ -11,7 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 import { AuthGuard } from 'src/app/auth.guard';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
-import { DemandesListComponent } from './components/demandes-list/demandes-list.component';
+import { DemandesComponent } from './components/demandes/demandes.component';
+import { ProfileComponent } from './components/profile/profile.component';
  
 
 
@@ -34,7 +35,8 @@ const routes: Routes = [
     { path: 'listFormation', component: FormListComponent },
     {path: 'editFormation/:id', component: EditFormationComponent},
     { path: 'profileadmin', component: ProfileAdminComponent },
-    { path: 'demandes', component: DemandesListComponent }
+    { path: 'profile', component: ProfileComponent },
+    { path: 'demandes', component: DemandesComponent }
   ]
   }
 ];

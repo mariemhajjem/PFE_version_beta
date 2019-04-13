@@ -1,3 +1,9 @@
+<div class="alert alert-success alert-dismissible fade show mb-0" role="alert" *ngIf="Updated">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+  <i class="fa fa-check mx-2"></i>
+  <strong>Success!</strong> Your profile has been updated! </div>
 <div class="container">
     <header>
       <h1>
@@ -7,26 +13,22 @@
       </h1>
     </header>
     <h1 class="text-center">Profile</h1>
-    <form class="registration-form" [formGroup]="updateForm">
+    <form  >
       <label class="col-one-half">
         <span class="label-text">Nom</span>
-        <input type="text" name="nom" formControlName="nom"
-        #nom >
+        <p>{{nom}}</p>
       </label>
       <label class="col-one-half">
         <span class="label-text">Prénom</span>
-        <input type="text" name="prenom"formControlName="prenom"
-        #prenom>
+        <p>{{prenom}}</p>
       </label>
       <label>
         <span class="label-text">Email</span>
-        <input type="text" name="email" formControlName="email"
-        #email>
+        <p>{{email}}</p>
       </label>
       <label>
         <span class="label-text">Numéro de téléphone</span>
-        <input type="text" name="number" formControlName="tel"
-        #tel>
+        <p>{{tel}}</p>
       </label>
      <!--<label class="password">
         <span class="label-text">mot de passe</span>
@@ -37,7 +39,7 @@
       </label>--> 
        <br>
       <div class="text-center">
-        <button class="submit" name="register" (click)="updateUser(currentUser,email.value,nom.value,prenom.value,tel.value)">Modifier profile</button>
+        <button class="btn btn-accent" routerLink="/admin/profile">Modifier profile</button>
       </div> 
     </form>
   </div>

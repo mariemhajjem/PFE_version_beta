@@ -19,49 +19,25 @@ export class ProfileAdminComponent implements OnInit {
   currentUser: User;
   email:string;
  id: string;
+ nom : string;
+ prenom : string;
+ tel :Number;
+ updated : boolean;
   constructor(
     private authService: AuthService, 
     private userService: UserService,
     private router: Router,
-    private fb: FormBuilder
-  ) {
-    this.createForm();
-  }
-
-  createForm() {
-    this.updateForm = this.fb.group({
-       
-      email: ['', Validators.required] ,
-      nom :    ['', Validators.required] ,            
-      prenom : ['', Validators.required] ,    
-      tel :    ['', Validators.required] ,    
-    });
-  }
- 
- 
+    
+  ) { }
+  
   ngOnInit() {
        this.authService.getProfile().subscribe((data : User) => {
        this.currentUser= data;
-       this.updateForm.get('email').setValue(this.currentUser.email);
-       this.updateForm.get('nom').setValue(this.currentUser.nom);
-       this.updateForm.get('prenom').setValue(this.currentUser.prenom);
-       this.updateForm.get('tel').setValue(this.currentUser.tel);
+       this.email=this.currentUser.email;
+       this.nom=this.currentUser.nom;
+       this.prenom=this.currentUser.prenom;
+       this.tel=this.currentUser.tel;
        });
-      
-  }
-
-
-       // Updates the document with input data and redirects to  
-updateUser(currentUser,email,nom,prenom,tel) {
-  currentUser.email=email;
-  currentUser.nom=nom;
-  currentUser.prenom=prenom;
-  currentUser.tel=tel;
-
-  //this.route.params.subscribe(params => {
-  this.userService.updateUser(this.currentUser.id,currentUser).subscribe(() => {
-    this.router.navigate(['/admin/profileadmin']);
- // });
-})}
-
+        //this.route.params.subscribe(params => {});
+  } 
 }

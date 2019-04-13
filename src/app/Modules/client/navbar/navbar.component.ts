@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
-import { logging } from 'protractor';
+import { AuthService } from '../../auth/auth.service'; 
 import { NavbarService } from '../service/navbar.service';
 
 @Component({

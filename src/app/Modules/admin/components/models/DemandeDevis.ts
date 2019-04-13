@@ -7,11 +7,10 @@ export  class Demande {
     Entreprise: string;
     Fonction : string;
     DomaineActivite: string;
-     Description: string;
+    Description: string;
     Message: string;       
-   
-    Services: string[];
+    
     
     cahierDeCharge: string;
-    _id: number;
+    id :string;
   }

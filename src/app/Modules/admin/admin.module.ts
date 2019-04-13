@@ -18,7 +18,9 @@ import { EditFormationComponent } from './components/edit-formation/edit-formati
 import { AuthGuard } from 'src/app/auth.guard';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
-import { DemandesListComponent } from './components/demandes-list/demandes-list.component';
+import { DemandesComponent } from './components/demandes/demandes.component';
+import { ProfileComponent } from './components/profile/profile.component';
+ 
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -32,7 +34,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
-     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent, DemandesListComponent],
+     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent],
   imports: [
     CommonModule,
     HttpClientModule,

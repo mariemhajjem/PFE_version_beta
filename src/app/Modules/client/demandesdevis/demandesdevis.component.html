@@ -1,21 +1,21 @@
  
 <div class="form-style-10">
   <h1> Demande de devis</h1>
-  <form>
+  <form #registerForm="ngForm" (ngSubmit)="send()">
       <div class="section"><span>1</span>Informations personnelles</div>
       <div class="inner-wrap">
-          <label>Nom <input type="text" name="field1" /></label>
-          <label>Prénom <input type="text" name="field2" /></label>
-          <label>Adresse <textarea name="field3"></textarea></label>
-          <label>Email <input type="email" name="field4" /></label>
-          <label>Tél <input type="text" name="field5" /></label>
+          <label>Nom <input type="text" name="field1" [(ngModel)]="demandeDevis.Nom" /></label>
+          <label>Prénom <input type="text" name="field2" [(ngModel)]="demandeDevis.Prenom" /></label>
+          <label>Adresse <textarea name="field3" [(ngModel)]="demandeDevis.Adresse"></textarea></label>
+          <label>Email <input type="email" name="field4" [(ngModel)]="demandeDevis.Email"/></label>
+          <label>Tél <input type="text" name="field5" [(ngModel)]="demandeDevis.Tel"/></label>
       </div>
   
       <div class="section"><span>2</span>Entreprise</div>
       <div class="inner-wrap">
-          <label>Entreprise <input type="text" name="field6" /></label>
-          <label>Fonction dans l'entreprise<input type="text" name="field7" /></label>
-          <label>Domaine d'activité<input type="text" name="field8" /></label>
+          <label>Entreprise <input type="text" name="field6" [(ngModel)]="demandeDevis.Entreprise" /></label>
+          <label>Fonction dans l'entreprise<input type="text" name="field7" [(ngModel)]="demandeDevis.Fonction"/></label>
+          <label>Domaine d'activité<input type="text" name="field8" [(ngModel)]="demandeDevis.DomaineActivite" /></label>
       </div>
   
       <div class="section"><span>3</span>Services</div>
@@ -23,9 +23,9 @@
             <label>Services <input type="text" name="field9" /></label>
             <label>Plus de services<input type="text" name="field10" /></label>
              
-            <label>Description<input type="text" name="field11" /></label>
+            <label>Description<input type="text" name="field11" [(ngModel)]="demandeDevis.Description"/></label>
             <label>Cahier de charge</label><input type="file" name="field12" /><br><br>
-            <label>Message <textarea name="field13"></textarea></label>
+            <label>Message <textarea name="field13" [(ngModel)]="demandeDevis.Message"></textarea></label>
 
            
           
