@@ -14,12 +14,7 @@ const routes: Routes = [
     component : NavbarComponent,
     children:[
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'demandes',
-          component: DemandesdevisComponent
-      },
-      { path: 'formulaires',
-          component: FormulaireformationComponent
-      },
+       
       { path: 'search',
            component: RechercheComponent
       },
@@ -27,7 +22,13 @@ const routes: Routes = [
            component: ContactComponent
       }
     ]
-  }
+  },
+  { path: 'demandes',
+          component: DemandesdevisComponent
+      },
+      { path: 'formulaires',
+          component: FormulaireformationComponent
+      }
 ];
 
 @NgModule({
