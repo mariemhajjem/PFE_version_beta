@@ -14,7 +14,6 @@
       <tr *ngFor="let formation of formations">
           <td>{{ formation.nameFormation }}</td>
           <td>{{ formation.type }}</td>
-          <td>{{ formation.nb }}</td>
           <td><img src="{{formation.imageUrl}}" alt=""></td>
           <td><a [routerLink]="['/admin/editFormation', formation._id]" class="btn btn-primary">Edit</a></td>
           <td><a (click) = "deleteBusiness(formation)" class="btn btn-danger">Delete</a></td>
