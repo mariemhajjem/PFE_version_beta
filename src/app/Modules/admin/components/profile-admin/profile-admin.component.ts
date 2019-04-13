@@ -15,15 +15,11 @@ import { UserService } from '../services/user.service';
 })
 export class ProfileAdminComponent implements OnInit {
   
-  
   updateForm: FormGroup;
-  currentUser: any={
-                                         
-    };
+  currentUser: User;
   email:string;
  id: string;
   constructor(
-    private route: ActivatedRoute,
     private authService: AuthService, 
     private userService: UserService,
     private router: Router,
@@ -36,40 +32,24 @@ export class ProfileAdminComponent implements OnInit {
     this.updateForm = this.fb.group({
        
       email: ['', Validators.required] ,
-       nom :    ['', Validators.required] ,            
-       prenom :    ['', Validators.required] ,    
-       tel :    ['', Validators.required] ,    
+      nom :    ['', Validators.required] ,            
+      prenom : ['', Validators.required] ,    
+      tel :    ['', Validators.required] ,    
     });
   }
  
  
   ngOnInit() {
-        // Autopopulates the input fields with the selected document data.
-      /*  this.route.params.subscribe(params => {
-          this.id = params.id;
-          this.userService.getUserById(this.id).subscribe(res => {
-           this.currentUser = res;
-           this.updateForm.get('email').setValue(this.currentUser.email);
-            
-     })
-   }) */
-
-   let decodeToken  = this.authService.getUserDetails();
-    // Load the current user's data
-   this.email =decodeToken['email'];
-   this.id= decodeToken['id'];
-    // this.email = this.authService.getUserDetails();
-     this.updateForm.get('email').setValue(this.email);
-     
-     // this.setData();
-    
+       this.authService.getProfile().subscribe((data : User) => {
+       this.currentUser= data;
+       this.updateForm.get('email').setValue(this.currentUser.email);
+       this.updateForm.get('nom').setValue(this.currentUser.nom);
+       this.updateForm.get('prenom').setValue(this.currentUser.prenom);
+       this.updateForm.get('tel').setValue(this.currentUser.tel);
+       });
+      
   }
 
-
- setData(){
-
-       this.currentUser.email=this.email;
- }
 
        // Updates the document with input data and redirects to  
 updateUser(currentUser,email,nom,prenom,tel) {
@@ -79,7 +59,7 @@ updateUser(currentUser,email,nom,prenom,tel) {
   currentUser.tel=tel;
 
   //this.route.params.subscribe(params => {
-  this.userService.updateUser(this.id,currentUser).subscribe(() => {
+  this.userService.updateUser(this.currentUser.id,currentUser).subscribe(() => {
     this.router.navigate(['/admin/profileadmin']);
  // });
 })}

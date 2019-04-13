@@ -67,7 +67,9 @@ export class AuthService {
           return false;
     }
 
-   
+    getProfile(){
+      return this.http.get(`${this.url}/profile`);
+    }
    
 
   }
