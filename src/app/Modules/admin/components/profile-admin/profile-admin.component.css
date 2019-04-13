@@ -177,10 +177,12 @@ h1{
 	font-family: 'Cookie', cursive;
 }
 h1 img{
-	height: auto;
+	height: 190px;
 	margin: 0 auto;
 	max-width: 150px;
 	width: 100%;
+    border-radius: 70%;
+ 
 }
 html{
 	font-size: 18px;

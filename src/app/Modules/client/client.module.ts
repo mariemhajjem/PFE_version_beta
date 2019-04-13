@@ -14,6 +14,7 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { NavbarService } from './service/navbar.service';
  
 
 @NgModule({
@@ -25,6 +26,9 @@ import { RechercheComponent } from './recherche/recherche.component';
     FormsModule,
     AuthModule,
     HttpClientModule
-  ] 
+  ] ,
+  providers :[
+    NavbarService
+  ]
 })
 export class ClientModule { }

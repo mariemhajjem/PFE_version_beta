@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { logging } from 'protractor';
+import { NavbarService } from '../service/navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,33 +9,25 @@ import { logging } from 'protractor';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-isAdmin : Object ;
-LoggedIn : Object;
 
-  constructor(private auth:AuthService) { 
-    
-   
+
+  constructor(private auth:AuthService,public nav: NavbarService) {  
   }
-  
- 
-  ngOnInit() {
-    this.isAdmin= false;
-    this.LoggedIn= false;
-    console.log(this.isAdmin);
-    console.log(this.LoggedIn);
+   
+  ngOnInit() { 
+    this.nav.show();
     if( this.auth.isAdmin()){
-     this.isAdmin=true;  
-     console.log(this.isAdmin);
+     this.nav.isAdmin=true;   
    };
 
    if(this.auth.isLoggedIn()){
-    this.LoggedIn= true;
-    console.log(this.LoggedIn);
+    this.nav.LoggedIn= true; 
    }
   }
+
  logout(){
-    this.isAdmin= false;
-    this.LoggedIn= false;
+    this.nav.isAdmin= false;
+    this.nav.LoggedIn= false;
     this.auth.logout();
   }
 
