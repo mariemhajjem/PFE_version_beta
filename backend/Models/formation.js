@@ -19,7 +19,8 @@ let Formation = new Schema({
    },
    Description : {
      type : String
-   }
+   },
+   Sessions:{type: mongoose.Schema.Types.ObjectId, ref:'Session'},
 },{
   collection: 'formations'
 });

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../service/session.service';
 
 @Component({
   selector: 'app-formations',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formations.component.css']
 })
 export class FormationsComponent implements OnInit {
+  sessions: any;
 
-  constructor() { }
+  constructor(private sessionService : SessionService) { }
 
   ngOnInit() {
+    this.getAll();
   }
-
+  getAll(){
+    return this.sessionService.getAll().subscribe(data =>
+      {
+        this.sessions = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+      )
+  }
 }
