@@ -48,6 +48,7 @@ router.route('/delete/:id').get(function (req, res) {
         else res.json('Successfully removed');
     });
 });
+
 router.route('/:id').post(async (req, res)=> {
   let id = req.params.id;
   const formation = await Formation.findOne({_id : id});
@@ -67,7 +68,7 @@ router.route('/:id').post(async (req, res)=> {
 
 });
 router.route('/').get(function (req, res) {
-    Session.find().populate('Formations').exec(function (err, session){
+    Session.find().populate({ path:'Formations' , model: 'Formation', select: { 'nameFormation': 1, '_id' : 0} }).exec(function (err, session){
       if(err){
         console.log(err);
       }

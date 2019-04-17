@@ -13,7 +13,9 @@ let Session = new Schema({
       type: Date
     },
 
-    Formations:{type: mongoose.Schema.Types.ObjectId, ref:'Formation'},
+    Formations:{
+      type: mongoose.Schema.Types.ObjectId, ref:'Formation'
+    },
     Formateur : {
       type : String
     },

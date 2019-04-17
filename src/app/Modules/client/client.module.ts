@@ -15,10 +15,11 @@ import { ContactComponent } from './contact/contact.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { NavbarService } from './service/navbar.service';
+import { HomeComponent } from './home/home.component';
  
 
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, RechercheComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, RechercheComponent, HomeComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,

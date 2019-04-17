@@ -5,6 +5,7 @@ import { DemandesdevisComponent } from './demandesdevis/demandesdevis.component'
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -14,7 +15,7 @@ const routes: Routes = [
     component : NavbarComponent,
     children:[
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-       
+      { path :'home' , component : HomeComponent},
       { path: 'search',
            component: RechercheComponent
       },
