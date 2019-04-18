@@ -32,6 +32,7 @@ export class ProfileAdminComponent implements OnInit {
   
   ngOnInit() {
        this.authService.getProfile().subscribe((data : User) => {
+         console.log(data);
        this.currentUser= data;
        this.email=this.currentUser.email;
        this.nom=this.currentUser.nom;
