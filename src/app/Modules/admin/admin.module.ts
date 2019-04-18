@@ -20,6 +20,7 @@ import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
 import { DemandesComponent } from './components/demandes/demandes.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { PartenaireComponent } from './partenaire/partenaire.component';
  
 export function getToken() {
   return localStorage.getItem('token');
@@ -34,7 +35,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
-     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent],
+     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent],
   imports: [
     CommonModule,
     HttpClientModule,

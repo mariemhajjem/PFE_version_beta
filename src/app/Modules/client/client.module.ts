@@ -16,10 +16,12 @@ import { FormulaireformationComponent } from './formulaireformation/formulairefo
 import { RechercheComponent } from './recherche/recherche.component';
 import { NavbarService } from './service/navbar.service';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { PartenairesComponent } from './partenaires/partenaires.component';
  
 
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, RechercheComponent, HomeComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, RechercheComponent, HomeComponent, FooterComponent, PartenairesComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,

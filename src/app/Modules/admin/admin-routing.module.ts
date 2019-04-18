@@ -1,8 +1,9 @@
+import { PartenaireComponent } from './partenaire/partenaire.component';
 import { EditFormationComponent } from './components/edit-formation/edit-formation.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
- 
+
 
 import { ListUserComponent } from './components/list-user/list-user.component';
 import { CrudComponent } from './components/crud/crud.component';
@@ -13,7 +14,7 @@ import { AuthGuard } from 'src/app/auth.guard';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
 import { DemandesComponent } from './components/demandes/demandes.component';
 import { ProfileComponent } from './components/profile/profile.component';
- 
+
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     {path: 'editFormation/:id', component: EditFormationComponent},
     { path: 'profileadmin', component: ProfileAdminComponent },
     { path: 'profile', component: ProfileComponent },
-    { path: 'demandes', component: DemandesComponent }
+    { path: 'demandes', component: DemandesComponent },
+    { path: 'partenaire', component: PartenaireComponent}
   ]
   }
 ];

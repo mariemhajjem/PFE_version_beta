@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SearchingService } from '../service/searching.service';
- 
+
 
 @Component({
   selector: 'app-recherche',
@@ -21,6 +21,8 @@ export class RechercheComponent implements OnInit {
       });
   }
   ngOnInit() {
+  }
+  search() {
   }
 
 }
