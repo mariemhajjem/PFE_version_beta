@@ -32,5 +32,7 @@ app.use('/formation',FormationController);
 
 var session = require('./controllers/Session');
 app.use('/session',session);
+var partenaire = require('./controllers/PartenaireController');
+app.use('/partenaire',partenaire);
 
 module.exports = app;

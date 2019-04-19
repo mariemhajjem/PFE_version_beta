@@ -9,7 +9,7 @@ var Partenaire = require('../Models/Partenaire');
 // CREATES A NEW DemandeDevis
 router.post('/Create', function (req, res) {
     Partenaire.create({
-        Nom : req.body.Nom,
+        name : req.body.name,
         job: req.body.job
         },
         function (err, partenaire) {

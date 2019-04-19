@@ -1,3 +1,14 @@
-<p>
-  partenaire works!
-</p>
+
+<div class="form-style-10">
+  <h1> Ajouter partenaire</h1>
+  <form #registerForm="ngForm" (ngSubmit)="send()">
+      <div class="section"><span>1</span>partenaire</div>
+      <div class="inner-wrap">
+          <label>Nom <input type="text" name="field1" [(ngModel)]="partenaire.name" /></label>
+          <label>job<input type="text" name="field2" [(ngModel)]="partenaire.job" /></label>
+      </div>
+      <div class="button-section">
+       <input type="submit" name="Ajouter" />
+      </div>
+  </form>
+  </div>
