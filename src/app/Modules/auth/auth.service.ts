@@ -48,7 +48,9 @@ export class AuthService {
     }
     logout() {
       localStorage.removeItem('token');
-      this.router.navigate(['/']);
+     // this.router.navigate(['/']);
+     this.router.navigateByUrl('/auth/login', {skipLocationChange: true}).then(()=>
+     this.router.navigate(['/']));
     } 
 
     isAdmin(): boolean {

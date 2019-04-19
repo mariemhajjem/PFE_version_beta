@@ -18,6 +18,7 @@ import { NavbarService } from './service/navbar.service';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { PartenairesComponent } from './partenaires/partenaires.component';
+import { DynamicScriptLoaderService } from './service/dynamic-script-loader.service';
  
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PartenairesComponent } from './partenaires/partenaires.component';
     HttpClientModule
   ] ,
   providers :[
-    NavbarService
+    NavbarService,
+    DynamicScriptLoaderService
   ]
 })
 export class ClientModule { }

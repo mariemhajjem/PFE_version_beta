@@ -22,7 +22,8 @@ const routes: Routes = [
       { path: 'contact',
            component: ContactComponent
       }
-    ]
+    ],
+    runGuardsAndResolvers: 'always',
   },
   { path: 'demandes',
           component: DemandesdevisComponent
