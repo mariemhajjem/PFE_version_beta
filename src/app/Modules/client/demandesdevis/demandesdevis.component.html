@@ -1,4 +1,4 @@
- 
+
 <div class="form-style-10">
   <h1> Demande de devis</h1>
   <form #registerForm="ngForm" (ngSubmit)="send()">
@@ -10,28 +10,28 @@
           <label>Email <input type="email" name="field4" [(ngModel)]="demandeDevis.Email"/></label>
           <label>Tél <input type="text" name="field5" [(ngModel)]="demandeDevis.Tel"/></label>
       </div>
-  
+
       <div class="section"><span>2</span>Entreprise</div>
       <div class="inner-wrap">
           <label>Entreprise <input type="text" name="field6" [(ngModel)]="demandeDevis.Entreprise" /></label>
           <label>Fonction dans l'entreprise<input type="text" name="field7" [(ngModel)]="demandeDevis.Fonction"/></label>
           <label>Domaine d'activité<input type="text" name="field8" [(ngModel)]="demandeDevis.DomaineActivite" /></label>
       </div>
-  
+
       <div class="section"><span>3</span>Services</div>
           <div class="inner-wrap">
             <label>Services <input type="text" name="field9" /></label>
             <label>Plus de services<input type="text" name="field10" /></label>
-             
+
             <label>Description<input type="text" name="field11" [(ngModel)]="demandeDevis.Description"/></label>
             <label>Cahier de charge</label><input type="file" name="field12" /><br><br>
             <label>Message <textarea name="field13" [(ngModel)]="demandeDevis.Message"></textarea></label>
 
-           
-          
+
+
       </div>
       <div class="button-section">
-       <input type="submit" name="Sign Up" /> 
+       <input type="submit" name="Sign Up" />
       </div>
   </form>
   </div>
