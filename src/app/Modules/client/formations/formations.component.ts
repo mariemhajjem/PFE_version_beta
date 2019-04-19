@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../service/session.service';
+import { FormationService } from '../../admin/components/services/formation.service';
 
 @Component({
   selector: 'app-formations',
@@ -9,16 +10,15 @@ import { SessionService } from '../service/session.service';
 export class FormationsComponent implements OnInit {
   sessions: any;
 
-  constructor(private sessionService : SessionService) { }
+  constructor(private formationService:FormationService) { }
 
   ngOnInit() {
     this.getAll();
   }
   getAll(){
-    return this.sessionService.getAll().subscribe(data =>
+    return this.formationService.getBusinesses().subscribe(data =>
       {
-        this.sessions = data;
-        console.log(data);
+        this.sessions = data; 
       },
       error => {
         console.log(error);

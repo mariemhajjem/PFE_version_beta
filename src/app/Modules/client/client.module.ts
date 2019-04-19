@@ -18,11 +18,12 @@ import { NavbarService } from './service/navbar.service';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { PartenairesComponent } from './partenaires/partenaires.component';
-import { DynamicScriptLoaderService } from './service/dynamic-script-loader.service';
+import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
+import { FormationDetailsComponent } from './formation-details/formation-details.component';
  
 
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, RechercheComponent, HomeComponent, FooterComponent, PartenairesComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, RechercheComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
@@ -32,8 +33,7 @@ import { DynamicScriptLoaderService } from './service/dynamic-script-loader.serv
     HttpClientModule
   ] ,
   providers :[
-    NavbarService,
-    DynamicScriptLoaderService
+    NavbarService 
   ]
 })
 export class ClientModule { }

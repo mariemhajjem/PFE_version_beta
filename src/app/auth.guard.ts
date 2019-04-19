@@ -8,12 +8,12 @@ import { AuthService } from './Modules/auth/auth.service';
 })
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(  private authService: AuthService,private router: Router, private authenticationService: AuthService) { }
+  constructor(  private authService: AuthService,private router: Router) { }
   
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot) {
-       var token = this.authenticationService.getJwtToken();
+       var token = this.authService.getJwtToken();
      if(this.authService.isAdmin()) return true   ;
      else { 
        this.router.navigate(['/forbidden']);
