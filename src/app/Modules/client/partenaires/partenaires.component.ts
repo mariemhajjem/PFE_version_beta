@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PartenaireService } from '../../admin/components/services/partenaire.service';
 
 @Component({
   selector: 'app-partenaires',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartenairesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private partenaireService: PartenaireService ) { }
+partenaires :any;
   ngOnInit() {
+    this.getAll();
   }
-
+getAll(){
+  return this.partenaireService.getDemandes().subscribe(
+   data =>  {
+     this.partenaires = data;
+    },
+   error => {
+     console.log(error)
+    }
+  );
+}
 }

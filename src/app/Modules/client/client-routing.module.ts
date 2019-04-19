@@ -6,6 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { HomeComponent } from './home/home.component';
+import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
+import { FormationDetailsComponent } from './formation-details/formation-details.component';
 
 
 
@@ -21,6 +23,13 @@ const routes: Routes = [
       },
       { path: 'contact',
            component: ContactComponent
+      }
+      ,
+      { path: 'list',
+           component: ListeFormationsComponent
+      } ,
+      { path: 'list/:id',
+           component: FormationDetailsComponent
       }
     ],
     runGuardsAndResolvers: 'always',
