@@ -57,13 +57,13 @@ router.route('/:id').post(async (req, res)=> {
   session.dateDebut = req.body.dateDebut;
   session.Formations= formation._id;
   session.dateFin = req.body.dateFin;
-  session.save()
-  .then(session => {
-    res.status(200).json({'session': 'session is added successfully'});
+  session.save();
+
+  formation.Sessions.push(formation);
+  formation.save()
+  .then(formation => {
+    res.status(200).json({'formation': 'session is added successfully'});
   })
-  .catch(err => {
-  res.status(400).send("unable to save to database");
-  });
 
 
 });
