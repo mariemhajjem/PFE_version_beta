@@ -28,8 +28,7 @@ const routes: Routes = [
       { path: 'list/:id',
            component: FormationDetailsComponent
       }
-    ],
-    runGuardsAndResolvers: 'always',
+    ]
   },
   { path: 'demandes',
           component: DemandesdevisComponent

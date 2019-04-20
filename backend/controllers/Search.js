@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../Models/User');
 var formation = require('../Models/formation');
-
+var Session = require('../Models/Session');
 
 router.get('/form', function(req,res,next) {
                           
@@ -34,6 +34,20 @@ router.get('/form', function(req,res,next) {
         });
     }
 });
+router.get('/bestformation', function(req,res,next) {
+                          
+    var noMatch = null;
+ 
+        // Get all formations from DB
+        formation.find({}, function(err, allformations){
+            if(err){
+                console.log(err);
+            } else {
+               res.json(allformations);
+            }
+         }).sort({nb: -1}).limit(3);
+    });
+
 router.get('/user', function(req,res,next) {
     var q = req.query.q;
 

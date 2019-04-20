@@ -14,6 +14,7 @@ export class ListeFormationsComponent implements OnInit {
   results: Object;
   searchTerm$ = new Subject<string>();
   sessions: any;
+  bestFormations: any;
   constructor(private searchService: SearchingService,private formationService:FormationService) {
     this.searchService.search(this.searchTerm$)
       .subscribe(results => {
@@ -22,8 +23,15 @@ export class ListeFormationsComponent implements OnInit {
   }
   ngOnInit() {
       this.getAll();
+      this.search();
   }
   search() {
+  return this.searchService.searchBestFormation().subscribe(data =>{
+    this.bestFormations = data;
+  },
+  error => {
+    console.log(error);
+  })
   }
  
  

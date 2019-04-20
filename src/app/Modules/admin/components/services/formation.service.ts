@@ -18,14 +18,15 @@ export class FormationService {
     return this.refreshNeeds;
   }
 
-  addFormation(nameFormation: string, type: string, imageUrl: File, Sujet: string, Description: string, Plan: string) {
+  addFormation(nameFormation: string, type: string, imageUrl: File,D: string,Sujet: string ) {
     const formationData = new FormData();
     formationData.append("nameFormation", nameFormation);
     formationData.append("type", type);
     formationData.append("imageUrl", imageUrl);
+    formationData.append("Description", D);
+   
     formationData.append("Sujet", Sujet);
-    formationData.append("Description", Description);
-    formationData.append("Plan", Plan);
+  
 
     this.http.post(`${this.uri}/add`, formationData)
     .subscribe(res => console.log('Done'));

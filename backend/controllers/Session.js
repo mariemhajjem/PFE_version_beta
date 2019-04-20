@@ -57,6 +57,7 @@ router.route('/:id').post(async (req, res)=> {
   session.dateDebut = req.body.dateDebut;
   session.Formations= formation._id;
   session.dateFin = req.body.dateFin;
+  session.NbPlaces=req.body.NbPlaces;
   session.save()
   .then(session => {
     res.status(200).json({'session': 'session is added successfully'});

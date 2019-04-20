@@ -11,7 +11,7 @@ import {
 export class SearchingService {
 
   
-  baseUrl: string = 'http://localhost:3000/recherche/form';
+  baseUrl: string = 'http://localhost:3000/recherche';
   queryUrl: string = '?q=';
 
   constructor(private http: HttpClient) { }
@@ -24,8 +24,11 @@ export class SearchingService {
   }
 
   searchEntries(term) {
-    return this.http.get(this.baseUrl + this.queryUrl + term) ;
+    return this.http.get(this.baseUrl+'/form' + this.queryUrl + term) ;
         
-}
-
+  }
+  
+  searchBestFormation(){
+    return this.http.get(this.baseUrl+'/bestformation');
+  }
 }
