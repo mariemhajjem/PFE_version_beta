@@ -28,7 +28,7 @@
           <div class="col-lg-8">
             
             <div class="course_container">
-              <div class="course_title">Software Training</div>
+              <div class="course_title">{{formation.nameFormation}}</div>
               <div class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
   
                 <!-- Course Info Item -->
@@ -46,7 +46,7 @@
                 <!-- Course Info Item -->
                 <div class="course_info_item">
                   <div class="course_info_title">Categories:</div>
-                  <div class="course_info_text"><a href="#">Languages</a></div>
+                  <div class="course_info_text"><a href="#">{{formation.type}}</a></div>
                 </div>
   
               </div>
@@ -65,13 +65,13 @@
   
                   <!-- Description -->
                   <div class="tab_panel active">
-                    <div class="tab_panel_title">Software Training</div>
+                    <div class="tab_panel_title">{{formation.nameFormation}}</div>
                     <div class="tab_panel_content">
                       <div class="tab_panel_text">
                         <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosquad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Lorem Ipsn gravida nibh vel velit auctor aliquet. Class aptent taciti sociosquad litora torquent per conubia nostra, per inceptos himenaeos.</p>
                       </div>
                       <div class="tab_panel_section">
-                        <div class="tab_panel_subtitle">Requirements</div>
+                        <div class="tab_panel_subtitle">Prérequis</div>
                         <ul class="tab_panel_bullets">
                           <li>Lorem Ipsn gravida nibh vel velit auctor aliquet. Class aptent taciti sociosquad litora torquent.</li>
                           <li>Cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a.</li>
@@ -80,7 +80,14 @@
                         </ul>
                       </div>
                       <div class="tab_panel_section">
-                        <div class="tab_panel_subtitle">What is the target audience?</div>
+                        <div class="tab_panel_subtitle">À qui cette formation s'adresse-t-elle ?</div>
+                        <div class="tab_panel_text">
+                          <p>This course is intended for anyone interested in learning to master his or her own body.This course is aimed at beginners, so no previous experience with hand balancing skillts is necessary Aenean viverra tincidunt nibh, in imperdiet nunc. Suspendisse eu ante pretium, consectetur leo at, congue quam. Nullam hendrerit porta ante vitae tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                        </div>
+                      </div>
+                     
+                      <div class="tab_panel_section">
+                        <div class="tab_panel_subtitle"> Au cours de votre formation, vous apprendrez à :</div>
                         <div class="tab_panel_text">
                           <p>This course is intended for anyone interested in learning to master his or her own body.This course is aimed at beginners, so no previous experience with hand balancing skillts is necessary Aenean viverra tincidunt nibh, in imperdiet nunc. Suspendisse eu ante pretium, consectetur leo at, congue quam. Nullam hendrerit porta ante vitae tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                         </div>
@@ -138,10 +145,10 @@
                   <!-- Curriculum -->
                   <div class="tab_panel tab_panel_2">
                     <div class="tab_panel_content">
-                      <div class="tab_panel_title">Software Training</div>
+                      <div class="tab_panel_title">{{formation.nameFormation}}</div>
                       <div class="tab_panel_content">
                         <div class="tab_panel_text">
-                          <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+                          <p>Contenu de la formation</p>
                         </div>
   
                         <!-- Dropdowns -->
@@ -315,7 +322,7 @@
                         </li>
                       </ul>
                       <div class="add_comment_container">
-                        <div class="add_comment_title">Add a review</div>
+                        <div class="add_comment_title">Ajouter un commentaire</div>
                         <div class="add_comment_text">You must be <a href="#">logged</a> in to post a comment.</div>
                       </div>
                     </div>
@@ -332,8 +339,10 @@
   
               <!-- Feature -->
               <div class="sidebar_section">
-                <div class="sidebar_section_title">Course Feature</div>
+                <div class="sidebar_section_title">Les détails de la prochaine</div><br>
+                <div class="sidebar_section_title">session</div>
                 <div class="sidebar_feature">
+                  <br>
                   <div class="course_price">$180</div>
   
                   <!-- Features -->
@@ -373,43 +382,10 @@
                 </div>
               </div>
   
-              <!-- Feature -->
-              <div class="sidebar_section">
-                <div class="sidebar_section_title">Teacher</div>
-                <div class="sidebar_teacher">
-                  <div class="teacher_title_container d-flex flex-row align-items-center justify-content-start">
-                    <div class="teacher_image"><img src="../../../../assets/client/images/teacher.jpg" alt=""></div>
-                    <div class="teacher_title">
-                      <div class="teacher_name"><a href="#">Jacke Masito</a></div>
-                      <div class="teacher_position">Marketing & Management</div>
-                    </div>
-                  </div>
-                  <div class="teacher_meta_container">
-                    <!-- Teacher Rating -->
-                    <div class="teacher_meta d-flex flex-row align-items-center justify-content-start">
-                      <div class="teacher_meta_title">Average Rating:</div>
-                      <div class="teacher_meta_text ml-auto"><span>4.7</span><i class="fa fa-star" aria-hidden="true"></i></div>
-                    </div>
-                    <!-- Teacher Review -->
-                    <div class="teacher_meta d-flex flex-row align-items-center justify-content-start">
-                      <div class="teacher_meta_title">Review:</div>
-                      <div class="teacher_meta_text ml-auto"><span>12k</span><i class="fa fa-comment" aria-hidden="true"></i></div>
-                    </div>
-                    <!-- Teacher Quizzes -->
-                    <div class="teacher_meta d-flex flex-row align-items-center justify-content-start">
-                      <div class="teacher_meta_title">Quizzes:</div>
-                      <div class="teacher_meta_text ml-auto"><span>600</span><i class="fa fa-user" aria-hidden="true"></i></div>
-                    </div>
-                  </div>
-                  <div class="teacher_info">
-                    <p>Hi! I am Masion, I’m a marketing & management  eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum nam nulla ipsum.</p>
-                  </div>
-                </div>
-              </div>
   
               <!-- Latest Course -->
               <div class="sidebar_section">
-                <div class="sidebar_section_title">Latest Courses</div>
+                <div class="sidebar_section_title">Les sessions</div>
                 <div class="sidebar_latest">
   
                   <!-- Latest Course -->
@@ -447,4 +423,3 @@
         </div>
       </div>
     </div>
-    <script src="../../../../assets/client/js/course.js"></script>
