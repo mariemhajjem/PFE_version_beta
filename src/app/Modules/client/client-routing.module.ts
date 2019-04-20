@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { DemandesdevisComponent } from './demandesdevis/demandesdevis.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
-import { RechercheComponent } from './recherche/recherche.component';
 import { HomeComponent } from './home/home.component';
 import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
 import { FormationDetailsComponent } from './formation-details/formation-details.component';
@@ -18,9 +17,7 @@ const routes: Routes = [
     children:[
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path :'home' , component : HomeComponent},
-      { path: 'search',
-           component: RechercheComponent
-      },
+    
       { path: 'contact',
            component: ContactComponent
       }
@@ -31,8 +28,7 @@ const routes: Routes = [
       { path: 'list/:id',
            component: FormationDetailsComponent
       }
-    ],
-    runGuardsAndResolvers: 'always',
+    ]
   },
   { path: 'demandes',
           component: DemandesdevisComponent

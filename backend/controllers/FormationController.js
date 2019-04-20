@@ -41,16 +41,17 @@ router.route('/add').post(upload.single('imageUrl'),function (req, res) {
   const nameFormation = req.body.nameFormation;
   const type= req.body.type;
   const Description = req.body.Description;
-  const Sujet =req.body.Sujet;
   const Plan = req.body.Plan;
+  const Sujet =req.body.Sujet;
   const imageUrl = "assets/uploads/"+req.file.filename ;
   let formation = new Formation ({
     nameFormation: nameFormation,
     type: type,
     imageUrl: imageUrl,
     Description: Description,
-    Sujet: Sujet,
-    Plan: Plan
+    Plan: Plan,
+    Sujet: Sujet
+    
   });
   formation.save()
     .then(formation => {

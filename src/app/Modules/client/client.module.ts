@@ -13,7 +13,6 @@ import { FormationsComponent } from './formations/formations.component';
 import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
-import { RechercheComponent } from './recherche/recherche.component';
 import { NavbarService } from './service/navbar.service';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -23,7 +22,7 @@ import { FormationDetailsComponent } from './formation-details/formation-details
  
 
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, RechercheComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,

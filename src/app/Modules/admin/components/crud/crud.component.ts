@@ -27,7 +27,7 @@ export class CrudComponent implements OnInit {
       }),
       type: new FormControl(null, { validators: [Validators.required] }),
       imageUrl: new FormControl(null, {validators: [Validators.required] }),
-      Description: new FormControl(null, { validators: [Validators.required] }),
+      D: new FormControl(null, { validators: [Validators.required] }),
       Plan: new FormControl(null, { validators: [Validators.required] }),
       Sujet: new FormControl(null, { validators: [Validators.required] }),
     });
@@ -43,13 +43,13 @@ export class CrudComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   submit() {
+    console.log(this.form.value.D);
       this.fs.addFormation(
         this.form.value.nameFormation,
         this.form.value.type,
         this.form.value.imageUrl,
-        this.form.value.Description,
-        this.form.value.plan,
-        this.form.value.Sujet,
+        this.form.value.D,
+        this.form.value.Sujet
       );
     }
   }
