@@ -47,7 +47,7 @@
                 <!-- Course -->
                 <div class="col-lg-6 course_col"  *ngFor="let result of results">
                   <div class="course">
-                    <div class="course_image"><img src="../../../../assets/client/images/course_9.jpg" alt=""></div>
+                    <div class="course_image"><img src="{{result.imageUrl}}" alt=""></div>
                     <div class="course_body">
                       <h3 class="course_title"><a [routerLink]="['/list', result._id]">{{ result.nameFormation }}</a></h3>
                       <div class="course_teacher">{{ result.type}}</div>
