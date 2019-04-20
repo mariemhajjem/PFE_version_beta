@@ -1,5 +1,412 @@
 @charset "utf-8";
+/***********
+1. Fonts
+***********/
 
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900');
+
+
+
+/*********************************
+2. Body and some general stuff
+*********************************/
+
+*
+{
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+div
+{
+	 
+	 
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul
+{
+	list-style: none;
+	margin-bottom: 0px;
+}
+p
+{
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	line-height: 1.85;
+	font-weight: 400;
+	color: #76777a;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a
+{
+	display: inline;
+	position: relative;
+	color: inherit;
+	border-bottom: solid 1px #ffa07f;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+p:last-of-type
+{
+	margin-bottom: 0;
+}
+a, a:hover, a:visited, a:active, a:link
+{
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a:active
+{
+	position: relative;
+	color: #FF6347;
+}
+p a:hover
+{
+	color: #FFFFFF;
+	background: #ffa07f;
+}
+p a:hover::after
+{
+	opacity: 0.2;
+}
+::selection
+{
+	
+}
+p::selection
+{
+	
+}
+h1{font-size: 48px;}
+h2{font-size: 36px;}
+h3{font-size: 24px;}
+h4{font-size: 18px;}
+h5{font-size: 14px;}
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	color: #384158;
+	margin-bottom: 0;
+}
+h1::selection, 
+h2::selection, 
+h3::selection, 
+h4::selection, 
+h5::selection, 
+h6::selection
+{
+	
+}
+.form-control
+{
+	color: #db5246;
+}
+section
+{
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+}
+.clear
+{
+	clear: both;
+}
+.clearfix::before, .clearfix::after
+{
+	content: "";
+	display: table;
+}
+.clearfix::after
+{
+	clear: both;
+}
+.clearfix
+{
+	zoom: 1;
+}
+.float_left
+{
+	float: left;
+}
+.float_right
+{
+	float: right;
+}
+.trans_200
+{
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.trans_300
+{
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+.trans_400
+{
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+.trans_500
+{
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+.fill_height
+{
+	height: 100%;
+}
+.super_container
+{
+	width: 100%;
+	overflow: hidden;
+}
+.prlx_parent
+{
+	overflow: hidden;
+}
+.prlx
+{
+	height: 130% !important;
+}
+.parallax-window
+{
+    min-height: 400px;
+    background: transparent;
+}
+.nopadding
+{
+	padding: 0px !important;
+}
+/*********************************
+5. Section
+*********************************/
+
+.section_title_container
+{
+	max-width: 600px;
+	margin: 0 auto;
+}
+.section_title
+{
+	line-height: 1.2;
+}
+.section_subtitle
+{
+	line-height: 1.85;
+	margin-top: 14px;
+}
+.section_background
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*****/
+.sidebar
+{
+	width: 100%;
+	padding-left: 40px;
+	padding-top: 120px;
+}
+.sidebar_section:not(:last-child)
+{
+	margin-bottom: 60px;
+}
+.sidebar_section_title
+{
+	font-family: 'Roboto Slab', serif;
+	font-size: 24px;
+	font-weight: 700;
+	color: #384158;
+	line-height: 0.75;
+}
+.sidebar_feature
+{
+	margin-top: 33px;
+}
+.course_price
+{
+	font-family: 'Roboto Slab', serif;
+	font-size: 24px;
+	font-weight: 400;
+	color: #14bdee;
+}
+.feature_list
+{
+	margin-top: 16px;
+}
+.feature:not(:last-child)
+{
+	margin-bottom: 21px;
+}
+.feature_title
+{
+	padding-left: 31px;
+}
+.feature_title i
+{
+	position: absolute;
+	top: calc(50% - 1px);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	left: 0;
+	font-size: 18px;
+	color: #14bdee;
+}
+.sidebar_teacher
+{
+	margin-top: 40px;
+}
+.teacher_image
+{
+	width: 102px;
+	height: 102px;
+}
+.teacher_image img
+{
+	max-width: 100%;
+}
+.teacher_title
+{
+	padding-left: 35px;
+}
+.teacher_position
+{
+	font-size: 14px;
+	color: #76777a;
+	margin-top: 4px;
+}
+.teacher_name a
+{
+	font-family: 'Roboto Slab', serif;
+	font-size: 24px;
+	font-weight: 700;
+	color: #384158;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.teacher_name a:hover
+{
+	color: #14bdee;
+}
+.teacher_meta_container
+{
+	margin-top: 27px;
+}
+.teacher_meta:not(:last-child)
+{
+	margin-bottom: 9px;
+}
+.teacher_meta_title,
+.teacher_meta_text span
+{
+	font-size: 14px;
+	font-weight: 400;
+	color: #76777a;
+}
+.teacher_meta_text span
+{
+	margin-right: 4px;
+}
+.teacher_meta_text i
+{
+	color: #14bdee;
+}
+.teacher_info
+{
+	margin-top: 17px;
+}
+.teacher_info p
+{
+	line-height: 2;
+}
+.sidebar_latest
+{
+	margin-top: 31px;
+}
+.latest:not(:last-child)
+{
+	margin-bottom: 20px;
+}
+.latest_image div
+{
+	width: 90px;
+	height: 74px;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.latest_image div img
+{
+	max-width: 100%;
+}
+.latest_content
+{
+	padding-left: 21px;
+	margin-top: -4px;
+}
+.latest_title a
+{
+	font-family: 'Roboto Slab', serif;
+	font-size: 16px;
+	font-weight: 700;
+	color: #383749;
+	line-height: 1.625;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.latest_title a:hover
+{
+	color: #14bdee;
+}
+.latest_price
+{
+	font-family: 'Roboto Slab', serif;
+	font-size: 14px;
+	font-weight: 700;
+	color: #14bdee;
+	line-height: 0.75;
+	margin-top: 16px;
+}
 
 /*********************************
 6. Home
@@ -60,6 +467,7 @@
 	width: 100%;
 	padding-top: 57px;
 	padding-bottom: 100px;
+	padding-left: 100px;
 	background: #FFFFFF;
 }
 .course_container
