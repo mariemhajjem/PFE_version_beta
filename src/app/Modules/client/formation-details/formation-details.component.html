@@ -46,7 +46,7 @@
                 <!-- Course Info Item -->
                 <div class="course_info_item">
                   <div class="course_info_title">Categories:</div>
-                  <div class="course_info_text"><a href="#">{{formation.type}}</a></div>
+                  <div class="course_info_text">{{formation.type}}</div>
                 </div>
 
               </div>
@@ -236,29 +236,7 @@
 
                   <!-- Reviews -->
                   <div class="tab_panel tab_panel_3">
-                    <div class="tab_panel_title">Course Review</div>
-
-                    <!-- Rating -->
-                    <div class="review_rating_container">
-                      <div class="review_rating">
-                        <div class="review_rating_num">4.5</div>
-                        <div class="review_rating_stars">
-                          <div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div>
-                        </div>
-                        <div class="review_rating_text">(28 Ratings)</div>
-                      </div>
-                      <div class="review_rating_bars">
-                        <ul>
-                          <li><span>5 Star</span><div class="review_rating_bar"><div style="width:90%;"></div></div></li>
-                          <li><span>4 Star</span><div class="review_rating_bar"><div style="width:75%;"></div></div></li>
-                          <li><span>3 Star</span><div class="review_rating_bar"><div style="width:32%;"></div></div></li>
-                          <li><span>2 Star</span><div class="review_rating_bar"><div style="width:10%;"></div></div></li>
-                          <li><span>1 Star</span><div class="review_rating_bar"><div style="width:3%;"></div></div></li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <!-- Comments -->
+                       <!-- Comments -->
                     <div class="comments_container">
                       <ul class="comments_list">
                         <li>
@@ -266,7 +244,7 @@
                             <div class="comment_image"><div><img src="../../../../assets/client/images/comment_1.jpg" alt=""></div></div>
                             <div class="comment_content">
                               <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_author"><a href="#">Milley Cyrus</a></div>
+                                <div class="comment_author">Milley Cyrus</div>
                                 <div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
                                 <div class="comment_time ml-auto">1 day ago</div>
                               </div>
@@ -285,7 +263,7 @@
                                 <div class="comment_image"><div><img src="../../../../assets/client/images/comment_2.jpg" alt=""></div></div>
                                 <div class="comment_content">
                                   <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                                    <div class="comment_author"><a href="#">John Tyler</a></div>
+                                    <div class="comment_author">John Tyler</div>
                                     <div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
                                     <div class="comment_time ml-auto">1 day ago</div>
                                   </div>
@@ -323,7 +301,7 @@
                       </ul>
                       <div class="add_comment_container">
                         <div class="add_comment_title">Ajouter un commentaire</div>
-                        <div class="add_comment_text">You must be <a href="#">logged</a> in to post a comment.</div>
+                        <div class="add_comment_text">Vous devez <a routerLink="/auth/login">se connecter</a> pour ajouter un commentaire.</div>
                       </div>
                     </div>
                   </div>

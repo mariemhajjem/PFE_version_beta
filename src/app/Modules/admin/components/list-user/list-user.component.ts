@@ -36,6 +36,7 @@ export class ListUserComponent implements OnInit {
 
 // Deletes the selected issue and refreshes the document view.
 deleteUser(user) {
+  if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
   this.userService.deleteUser(user._id).subscribe( 
     data => { 
       this.users.splice(this.users.indexOf(user), 1 );
@@ -45,7 +46,7 @@ deleteUser(user) {
           }
   );
    
+  }
 }
-
 
 }

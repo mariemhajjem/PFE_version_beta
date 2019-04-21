@@ -28,6 +28,7 @@ export class DemandesComponent implements OnInit {
   }
 
   deleteDemande(demande) {
+    if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
       this.demandeService.delete(demande._id).subscribe( data => { 
         this.demandes.splice(this.demandes.indexOf(demande), 1 );
           },
@@ -35,5 +36,5 @@ export class DemandesComponent implements OnInit {
              console.log(error);
             });
        
-  }
+  }}
 }

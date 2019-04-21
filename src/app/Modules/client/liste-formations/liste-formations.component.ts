@@ -33,7 +33,10 @@ export class ListeFormationsComponent implements OnInit {
     console.log(error);
   })
   }
- 
+  
+  searchRecherche(){
+
+  }
  
   getAll(){
     return this.formationService.getBusinesses().subscribe(data =>
