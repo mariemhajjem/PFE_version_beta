@@ -64,14 +64,14 @@ router.route('/add').post(upload.single('imageUrl'),function (req, res) {
 
 // Defined get data(index or listing) route
 router.route('/').get(function (req, res) {
-  Formation.find(function (err, formations){
+  Formation.find().populate({ path:'Sessions' , model: 'Session', select: { 'name': 1,'dateDebut': 1,'dateFin': 1,'Formateur': 1,'NbPlaces': 1,'NbHeures': 1, '_id' : 0} }).exec(function (err, formations){
     if(err){
       console.log(err);
     }
     else {
       res.json(formations);
     }
-  });
+  });;
 });
 
 // Defined edit route

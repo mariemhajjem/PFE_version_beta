@@ -28,6 +28,7 @@ export class FormListComponent implements OnInit {
   }
 
   deleteBusiness(formation) {
+    if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
     this.fs.deleteBusiness(formation._id).subscribe(
     data => {
      this.formations.splice(this.formations.indexOf(formation), 1 );
@@ -37,6 +38,7 @@ export class FormListComponent implements OnInit {
          }
 
  ); }
+}
 
 
 

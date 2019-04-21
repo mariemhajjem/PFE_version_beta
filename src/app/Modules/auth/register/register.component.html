@@ -1,22 +1,31 @@
 <div class="image">
 <div class="container">
 
-	<form class="signUp" #registerForm="ngForm" (ngSubmit)="submit()">
+	<form class="signUp" [formGroup]="angForm" novalidate>
       <h3>Créer votre compte</h3>
      
       
 		<p> C'est super facile!  
       </p>
-		<input class="w100" name="email" type="email" placeholder="email" [(ngModel)]="registerUserData.email" required autocomplete='off' />
-	
+		<input class="w100" name="email" type="email" placeholder="email" formControlName="email" #email  required autocomplete='off' />
+		<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+			<div *ngIf="angForm.controls['email'].errors.required">
+			  Veuillez renseigner ce champ.
+			</div>
+		  </div>
 		<div class="form__field">
-    <input class="w200" type="password" name="password" placeholder="mot de passe" [(ngModel)]="registerUserData.password" required />
+    <input class="w200" type="password" name="password" placeholder="mot de passe" formControlName="password" #password required />
 		<span class="icon"></span>
      </div>
-	 
+	  <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+		<div *ngIf="angForm.controls['password'].errors.required">
+		  Veuillez renseigner ce champ.
+		</div>
+	  </div><br>
 		<p>Vous avez déjà un compte ? <a routerLink="/auth/login"> Se connecter</a></p> 
 		<button class="form-btn sx log-in" type="button" routerLink="/">Retour</button>
-		<button class="form-btn dx" type="submit">S'inscrire</button>
+		<button class="form-btn dx" (click)="submit(email.value, password.value)"
+		[disabled]="angForm.invalid">S'inscrire</button>
 	</form>
  
 </div>

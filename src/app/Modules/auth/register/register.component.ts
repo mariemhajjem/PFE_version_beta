@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,17 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerUserData = {
-    email: '',
-    password: '',
-    role : 'User'
-  }
-  constructor(private auth: AuthService,private router : Router) { }
+  
+  angForm: FormGroup;
+  constructor(private auth: AuthService,private router : Router, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.createForm();
   }
-  submit() {
-    this.auth.registerUser(this.registerUserData)
+  
+  createForm() {
+    this.angForm = this.fb.group({
+      email: ['', Validators.required ],
+      password: ['', Validators.required ] 
+    });
+  }
+  submit(email,password) {
+    let registerUserData = {
+    email: email,
+    password: password,
+    role : 'User'
+  }
+    this.auth.registerUser(registerUserData)
     .subscribe(
       res => {this.router.navigate(['/']),
       localStorage.setItem('token', res.token)} ,

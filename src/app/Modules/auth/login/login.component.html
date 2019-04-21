@@ -1,4 +1,4 @@
- <div class="image">
+<!--<div class="image">
 <div class="container">
 	<form class="signUp" #registerForm="ngForm" (ngSubmit)="submit()">
             <h3>Re-bienvenue!</h3>
@@ -15,6 +15,36 @@
 	</form>
 
 </div>
- </div>
+ </div>-->
+ <div class="image">
+	<div class="container">
+		<form class="signUp" [formGroup]="angForm" novalidate>
+				<h3>Re-bienvenue!</h3>
+			 
+			
+			<br>
+			<input class="w100"  name="email" type="email" placeholder="email" formControlName="email" #email  required autocomplete='off' />
+			<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+				<div *ngIf="angForm.controls['email'].errors.required">
+				  Veuillez renseigner ce champ.
+				</div>
+			  </div>
+			<br>
+			<br>
+			
+			<input type="password" class="form-control" name="password" placeholder="mot de passe" formControlName="password" #password required />
+			<div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+				<div *ngIf="angForm.controls['password'].errors.required">
+				  Veuillez renseigner ce champ.
+				</div>
+			  </div>
+			<p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>
+			<button class="form-btn sx log-in" type="button" routerLink="/">Retour</button>
+			<button class="form-btn dx" (click)="submit(email.value, password.value)"
+			[disabled]="angForm.invalid">Se connecter</button>
+		</form>
+	
+	</div>
+	 </div>
  
  
