@@ -11,6 +11,7 @@ export class DemandesComponent implements OnInit {
   columns =  ['#','Email','Entreprise','Afficher','Supprimer'];
   demandes : Demande[];
   demande : Demande;
+  public searchText;
   constructor(private demandeService : DemandeService) { }
 
   ngOnInit() {

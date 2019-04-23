@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-   columns =  ['#','id','Email','Supprimer'];
+   columns =  ['#','prénom','nom','Email','Supprimer'];
    users: User[];
-    
+   public searchText;
   constructor(private userService: UserService,private router :Router) {}
 
   ngOnInit() {

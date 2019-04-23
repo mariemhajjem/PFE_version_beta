@@ -32,7 +32,11 @@ app.use('/formation',FormationController);
 
 var session = require('./controllers/Session');
 app.use('/session',session);
+
 var partenaire = require('./controllers/PartenaireController');
 app.use('/partenaire',partenaire);
+
+var cmt = require('./controllers/Comment');
+app.use('/cmt',cmt);
 
 module.exports = app;

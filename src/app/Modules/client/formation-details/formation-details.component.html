@@ -299,7 +299,7 @@
                           </div>
                         </li>
                       </ul>
-                      <div class="add_comment_container">
+                      <div class="add_comment_container" *ngIf="!nav.LoggedIn">
                         <div class="add_comment_title">Ajouter un commentaire</div>
                         <div class="add_comment_text">Vous devez <a routerLink="/auth/login">se connecter</a> pour ajouter un commentaire.</div>
                       </div>
@@ -358,28 +358,11 @@
                   <div class="latest d-flex flex-row align-items-start justify-content-start">
                     <div class="latest_image"><div><img src="../../../../assets/client/images/latest_1.jpg" alt=""></div></div>
                     <div class="latest_content">
-                      <div class="latest_title"><a href="course.html">How to Design a Logo a Beginners Course</a></div>
+                      <div class="latest_title"> How to Design a Logo a Beginners Course </div>
                       <div class="latest_price">Free</div>
                     </div>
                   </div>
-
-                  <!-- Latest Course -->
-                  <div class="latest d-flex flex-row align-items-start justify-content-start">
-                    <div class="latest_image"><div><img src="../../../../assets/client/images/latest_2.jpg" alt=""></div></div>
-                    <div class="latest_content">
-                      <div class="latest_title"><a href="course.html">Photography for Beginners Masterclass</a></div>
-                      <div class="latest_price">$170</div>
-                    </div>
-                  </div>
-
-                  <!-- Latest Course -->
-                  <div class="latest d-flex flex-row align-items-start justify-content-start">
-                    <div class="latest_image"><div><img src="../../../../assets/client/images/latest_3.jpg" alt=""></div></div>
-                    <div class="latest_content">
-                      <div class="latest_title"><a href="course.html">The Secrets of Body Language</a></div>
-                      <div class="latest_price">$220</div>
-                    </div>
-                  </div>
+ 
 
                 </div>
               </div>
