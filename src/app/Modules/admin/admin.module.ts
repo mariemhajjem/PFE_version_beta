@@ -21,7 +21,7 @@ import { ProfileAdminComponent } from './components/profile-admin/profile-admin.
 import { DemandesComponent } from './components/demandes/demandes.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
- 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -42,6 +42,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+     Ng2SearchPipeModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [

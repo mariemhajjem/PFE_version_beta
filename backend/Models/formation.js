@@ -21,6 +21,7 @@ let Formation = new Schema({
      type : String
    },
    Sessions:[{type: mongoose.Schema.Types.ObjectId, ref:'Session'}],
+   Cmts:[{type: mongoose.Schema.Types.ObjectId, ref:'Comment'}]
 },{
   collection: 'formations'
 });

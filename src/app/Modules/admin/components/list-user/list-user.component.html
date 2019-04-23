@@ -1,4 +1,4 @@
-
+<input class="navbar-search form-control" type="text" autocomplete="off" placeholder="Search for something..." aria-label="Search" name="search" [(ngModel)]="searchText">  
   <section>
      
     <h1>Utilisateurs</h1>
@@ -16,9 +16,10 @@
       <table cellpadding="0" cellspacing="0" border="0">
         <tbody>
           
-          <tr *ngFor="let user of users; let i=index">
+          <tr *ngFor="let user of users | filter:searchText ; let i=index">
             <td>{{i}}</td>
-            <td>{{user._id}}</td>
+            <td>{{user.prenom}}</td>
+            <td>{{user.nom}}</td>
             <td>{{user.email}}</td>
              
             <td><a (click)="deleteUser(user)" class="btn btn-danger">Supprimer</a></td>

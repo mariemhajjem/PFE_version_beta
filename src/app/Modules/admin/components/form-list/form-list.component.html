@@ -1,4 +1,5 @@
-<table class="table table-hover">
+
+<input class="navbar-search form-control" type="text" autocomplete="off" placeholder="Search for something..." aria-label="Search" name="search" [(ngModel)]="searchText"><table class="table table-hover">
   <thead>
   <tr>
       <td>formation name</td>
@@ -11,7 +12,7 @@
   </thead>
 
   <tbody>
-      <tr *ngFor="let formation of formations">
+      <tr *ngFor="let formation of formations | filter:searchText">
           <td>{{ formation.nameFormation }}</td>
           <td>{{ formation.type }}</td>
           <td><img src="{{formation.imageUrl}}" alt=""></td>

@@ -11,6 +11,7 @@ import Formation from '../models/formation';
 })
 export class FormListComponent implements OnInit {
   formations: Formation[];
+  public searchText;
   constructor(private fs: FormationService, private router: Router) { }
 
   ngOnInit() {
