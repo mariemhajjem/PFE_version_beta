@@ -30,8 +30,6 @@ export class UserService {
     }
 
     deleteUser(id) {
-      return this.http.delete<User>(`${this.url}/${id}`).pipe(tap(()=>{
-        this.refreshNeed.next();
-      }));
+      return this.http.delete<User>(`${this.url}/${id}`);
     }
 }

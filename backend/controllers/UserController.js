@@ -40,7 +40,7 @@ router.get('/:id', function (req, res) {
 router.delete('/:id', function (req, res) {
     User.findByIdAndDelete(req.params.id, function (err, user) {
         if (err) return res.status(500).send("There was a problem deleting the user.");
-        res.status(200).send("User: "+ user.email +" was deleted.");
+        res.status(200).send(user);
     });
 });
 

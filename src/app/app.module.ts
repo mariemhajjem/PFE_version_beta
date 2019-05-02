@@ -12,8 +12,9 @@ import { AuthService } from './Modules/auth/auth.service';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { Notfound404Component } from './Modules/notfound404/notfound404.component';
 import { TokenInterceptorService } from './token-interceptor.service';
- 
- 
+import {ShoppingCartModule} from 'ng-shopping-cart';
+import { CartItem } from 'ng-shopping-cart';
+
 const JWT_Module_Options: JwtModuleOptions = {
   config: {
       tokenGetter: function  tokenGetter() {
@@ -28,6 +29,14 @@ const JWT_Module_Options: JwtModuleOptions = {
     Notfound404Component
   ],
   imports: [
+    ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
+      itemType: CartItem, // <-- Configuration is optional
+      serviceType: 'localStorage',
+      serviceOptions: {
+        storageKey: 'ShoppingCart',
+        clearOnError: true
+      }
+    }),
     BrowserModule,
     HttpClientModule,
     AdminModule,

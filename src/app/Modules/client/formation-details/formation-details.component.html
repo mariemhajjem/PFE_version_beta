@@ -239,69 +239,37 @@
                        <!-- Comments -->
                     <div class="comments_container">
                       <ul class="comments_list">
-                        <li>
+                        <li *ngFor="let cmt of formation.Cmts  ; let i=index">
                           <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
                             <div class="comment_image"><div><img src="../../../../assets/client/images/comment_1.jpg" alt=""></div></div>
                             <div class="comment_content">
                               <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_author">Milley Cyrus</div>
-                                <div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
+                                <div class="comment_author">{{cmt.User}}</div> 
                                 <div class="comment_time ml-auto">1 day ago</div>
                               </div>
                               <div class="comment_text">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have alteration in some form, by injected humour.</p>
+                                <p>{{cmt.Sujet}}</p>
                               </div>
                               <div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div>
-                                <div class="comment_extra comment_reply"><a href="#"><i class="fa fa-reply" aria-hidden="true"></i><span>Reply</span></a></div>
+                                <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div> 
                               </div>
                             </div>
                           </div>
-                          <ul>
-                            <li>
-                              <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-                                <div class="comment_image"><div><img src="../../../../assets/client/images/comment_2.jpg" alt=""></div></div>
-                                <div class="comment_content">
-                                  <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                                    <div class="comment_author">John Tyler</div>
-                                    <div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
-                                    <div class="comment_time ml-auto">1 day ago</div>
-                                  </div>
-                                  <div class="comment_text">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have alteration in some form, by injected humour.</p>
-                                  </div>
-                                  <div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-                                    <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div>
-                                    <div class="comment_extra comment_reply"><a href="#"><i class="fa fa-reply" aria-hidden="true"></i><span>Reply</span></a></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
+                           
                         </li>
-                        <li>
-                          <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-                            <div class="comment_image"><div><img src="../../../../assets/client/images/comment_3.jpg" alt=""></div></div>
-                            <div class="comment_content">
-                              <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_author"><a href="#">Milley Cyrus</a></div>
-                                <div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
-                                <div class="comment_time ml-auto">1 day ago</div>
-                              </div>
-                              <div class="comment_text">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have alteration in some form, by injected humour.</p>
-                              </div>
-                              <div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div>
-                                <div class="comment_extra comment_reply"><a href="#"><i class="fa fa-reply" aria-hidden="true"></i><span>Reply</span></a></div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
+                        
                       </ul>
                       <div class="add_comment_container" *ngIf="!nav.LoggedIn">
                         <div class="add_comment_title">Ajouter un commentaire</div>
+
                         <div class="add_comment_text">Vous devez <a routerLink="/auth/login">se connecter</a> pour ajouter un commentaire.</div>
+                      </div>
+                      <div class="add_comment_container" *ngIf="nav.LoggedIn">
+                        <div class="add_comment_title">Ajouter un commentaire</div> 
+                        <form id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start" #registerForm="ngForm" (ngSubmit)="AjouterCmt()">
+                          <input type="text" name="cmt" class="courses_search_input" placeholder=" Ajouter commentaire" required="required" [(ngModel)]="cmt.Sujet">
+                          <button type="submit" class="courses_search_button ml-auto">envoyer</button>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -352,14 +320,14 @@
               <!-- Latest Course -->
               <div class="sidebar_section">
                 <div class="sidebar_section_title">Les sessions</div>
-                <div class="sidebar_latest">
+                <div class="sidebar_latest" *ngFor="let session of formation.Sessions  ; let i=index">
 
                   <!-- Latest Course -->
                   <div class="latest d-flex flex-row align-items-start justify-content-start">
                     <div class="latest_image"><div><img src="../../../../assets/client/images/latest_1.jpg" alt=""></div></div>
                     <div class="latest_content">
                       <div class="latest_title"> How to Design a Logo a Beginners Course </div>
-                      <div class="latest_price">Free</div>
+                      <button (click)="AjouterAuPanier(formation.Sessions[i])">Ajouter au panier</button>
                     </div>
                   </div>
  
