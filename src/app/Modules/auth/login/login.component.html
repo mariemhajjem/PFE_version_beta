@@ -19,9 +19,10 @@
  <div class="image">
 	<div class="container">
 		<form class="signUp" [formGroup]="angForm" novalidate>
-				<h3>Re-bienvenue!</h3>
+			<br>
+				<h4>Heureux de vous revoir !</h4>
 			 
-			
+			<br>
 			<br>
 			<input class="w100"  name="email" type="email" placeholder="email" formControlName="email" #email  required autocomplete='off' />
 			<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">

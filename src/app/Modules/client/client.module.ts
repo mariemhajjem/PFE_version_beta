@@ -19,7 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PartenairesComponent } from './partenaires/partenaires.component';
 import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
 import { FormationDetailsComponent } from './formation-details/formation-details.component';
- 
+import {ShoppingCartModule} from 'ng-shopping-cart'; 
 
 @NgModule({
   declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent],
@@ -29,7 +29,8 @@ import { FormationDetailsComponent } from './formation-details/formation-details
     ReactiveFormsModule,
     FormsModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    ShoppingCartModule
   ] ,
   providers :[
     NavbarService 

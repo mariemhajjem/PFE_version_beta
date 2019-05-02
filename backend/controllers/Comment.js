@@ -28,7 +28,7 @@ router.post('/:formation', VerifyToken,async (req, res)=> {
   const formation = await Formation.findOne({_id : id});
 
   var cmt = new Comment();
-  cmt.Sujet = req.body.sujet; 
+  cmt.Sujet = req.body.Sujet; 
   cmt.User= user._id;
   cmt.formation= formation._id;
   
