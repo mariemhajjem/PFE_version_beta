@@ -17,18 +17,18 @@
 										<div>+21623255036</div>
 									</li>
 									<li>
-										 
+
 										<div>hedijawedi@gmail.com</div>
 									</li>
 								</ul>
-								
+
 								<div class="top_bar_login ml-auto" *ngIf="!nav.LoggedIn">
 										<div class="login_button" ><a routerLink="/auth/login">Se connecter</a> </div>
 									</div>
 								<div class="top_bar_login ml-auto" *ngIf="nav.isAdmin; else notShow">
 										<div class="login_button"><a routerLink="/admin">AdminPanel</a></div>
 									</div>
-									<ng-template #notShow> 
+									<ng-template #notShow>
 										  <div class="top_bar_login ml-auto" *ngIf="nav.LoggedIn">
 											<div class="login_button"><a (click)="logout()">Se déconnecter</a></div>
 										</div>
@@ -55,12 +55,12 @@
 								<ul class="main_nav">
 									<li ><a routerLink="/">ACCUEIL</a></li>
 									<li ><a routerLink="/list">FORMATIONS</a></li>
-									 
+
 									<li><a routerLink="/demandes">DEMANDE DE DEVIS</a></li>
-									<li><a routerLink="/">NOS REFERENCES</a></li>
+									<li><a routerLink="/about">About</a></li>
 									<li><a routerLink="/contact">CONTACT</a></li>
 								</ul>
-								 
+
 
 								<!-- Hamburger -->
 
@@ -120,7 +120,7 @@
 			 
 		</nav>
   </div>
-   
+
   <router-outlet></router-outlet>
 
 </div>
