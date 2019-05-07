@@ -1,3 +1,4 @@
+import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -17,7 +18,7 @@ const routes: Routes = [
     children:[
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path :'home' , component : HomeComponent},
-    
+
       { path: 'contact',
            component: ContactComponent
       }
@@ -27,6 +28,10 @@ const routes: Routes = [
       } ,
       { path: 'list/:id',
            component: FormationDetailsComponent
+      },
+      {
+        path: 'about',
+        component: AboutComponent
       }
     ]
   },

@@ -244,20 +244,20 @@
                             <div class="comment_image"><div><img src="../../../../assets/client/images/comment_1.jpg" alt=""></div></div>
                             <div class="comment_content">
                               <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_author">{{cmt.User}}</div> 
+                                <div class="comment_author">{{cmt.User}}</div>
                                 <div class="comment_time ml-auto">1 day ago</div>
                               </div>
                               <div class="comment_text">
                                 <p>{{cmt.Sujet}}</p>
                               </div>
                               <div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div> 
+                                <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div>
                               </div>
                             </div>
                           </div>
-                           
+
                         </li>
-                        
+
                       </ul>
                       <div class="add_comment_container" *ngIf="!nav.LoggedIn">
                         <div class="add_comment_title">Ajouter un commentaire</div>
@@ -265,7 +265,7 @@
                         <div class="add_comment_text">Vous devez <a routerLink="/auth/login">se connecter</a> pour ajouter un commentaire.</div>
                       </div>
                       <div class="add_comment_container" *ngIf="nav.LoggedIn">
-                        <div class="add_comment_title">Ajouter un commentaire</div> 
+                        <div class="add_comment_title">Ajouter un commentaire</div>
                         <form id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start" #registerForm="ngForm" (ngSubmit)="AjouterCmt()">
                           <input type="text" name="cmt" class="courses_search_input" placeholder=" Ajouter commentaire" required="required" [(ngModel)]="cmt.Sujet">
                           <button type="submit" class="courses_search_button ml-auto">envoyer</button>
@@ -330,7 +330,7 @@
                       <button (click)="AjouterAuPanier(formation.Sessions[i])">Ajouter au panier</button>
                     </div>
                   </div>
- 
+
 
                 </div>
               </div>

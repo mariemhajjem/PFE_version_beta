@@ -7,6 +7,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {AccordionModule} from 'primeng/accordion';
 
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
@@ -22,6 +23,10 @@ import { DemandesComponent } from './components/demandes/demandes.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {CardModule} from 'primeng/card';
+import {TabViewModule} from 'primeng/tabview';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -38,10 +43,15 @@ const JWT_Module_Options: JwtModuleOptions = {
      CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
+    BrowserModule,
     HttpClientModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    AccordionModule,
+    CardModule,
+    TabViewModule,
      Ng2SearchPipeModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
