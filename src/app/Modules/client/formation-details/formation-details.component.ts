@@ -7,7 +7,9 @@ import { AuthService } from '../../auth/auth.service';
 import { CartService, BaseCartItem } from 'ng-shopping-cart';
 import { CommentaireService } from '../service/commentaire.service';
 import  Commentaire   from '../models/commentaire';
+
 import { map} from 'rxjs/operators';
+
 @Component({
   selector: 'app-formation-details',
   templateUrl: './formation-details.component.html',
