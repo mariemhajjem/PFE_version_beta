@@ -22,12 +22,15 @@ import { FormationDetailsComponent } from './formation-details/formation-details
 import {ShoppingCartModule} from 'ng-shopping-cart';
 import {AccordionModule} from 'primeng/accordion';
 import { AboutComponent } from './about/about.component';
-import {TabViewModule} from 'primeng/tabview';
-
+import {TabViewModule} from 'primeng/tabview'; 
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent],
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     ClientRoutingModule,
     ReactiveFormsModule,
     FormsModule,
