@@ -6,5 +6,6 @@ export default class Formation {
   Sujet: string;
   imageUrl: string;
   Sessions: [{id:string}];
+  Cmts: [{id: string}];
   _id: number;
 }

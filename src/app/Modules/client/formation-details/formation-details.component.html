@@ -55,16 +55,11 @@
               <div class="course_image"><img src="../../../../assets/client/images/course_image.jpg" alt=""></div>
 
               <!-- Course Tabs -->
-              <div class="course_tabs_container">
-                <div class="tabs d-flex flex-row align-items-center justify-content-start">
-                  <div class="tab active">description</div>
-                  <div class="tab">curriculum</div>
-                  <div class="tab">reviews</div>
-                </div>
-                <div class="tab_panels">
+              <p-tabView>
+
 
                   <!-- Description -->
-                  <div class="tab_panel active">
+                  <p-tabPanel header="Godfather I" leftIcon="pi pi-calendar">
                     <div class="tab_panel_title">{{formation.nameFormation}}</div>
                     <div class="tab_panel_content">
                       <div class="tab_panel_text">
@@ -96,54 +91,25 @@
                         <div class="tab_panel_title">FAQ</div>
 
                         <!-- Accordions -->
-                        <div class="accordions">
 
-                          <div class="elements_accordions">
+                        <p-accordion [multiple]="true">
+                          <p-accordionTab header="Godfather I">
+                              The story begins  as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son ichael has just come home from the war, but does not intend to become part of his father's business. T hrough Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+                          </p-accordionTab>
+                          <p-accordionTab header="Godfather II">
+                              Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows.
+                          </p-accordionTab>
+                          <p-accordionTab header="Godfather III">
+                              After a break of more than  15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
+                          </p-accordionTab>
+                        </p-accordion>
 
-                            <div class="accordion_container">
-                              <div class="accordion d-flex flex-row align-items-center"><div>Can I just enroll in a single course?</div></div>
-                              <div class="accordion_panel">
-                                <p>Lorem ipsun gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
-                              </div>
-                            </div>
-
-                            <div class="accordion_container">
-                              <div class="accordion d-flex flex-row align-items-center active"><div>I'm not interested in the entire Specialization?</div></div>
-                              <div class="accordion_panel">
-                                <p>Lorem ipsun gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
-                              </div>
-                            </div>
-
-                            <div class="accordion_container">
-                              <div class="accordion d-flex flex-row align-items-center"><div>What is the refund policy?</div></div>
-                              <div class="accordion_panel">
-                                <p>Lorem ipsun gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
-                              </div>
-                            </div>
-
-                            <div class="accordion_container">
-                              <div class="accordion d-flex flex-row align-items-center"><div>What background knowledge is necessary?</div></div>
-                              <div class="accordion_panel">
-                                <p>Lorem ipsun gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
-                              </div>
-                            </div>
-
-                            <div class="accordion_container">
-                              <div class="accordion d-flex flex-row align-items-center"><div>Do i need to take the courses in a specific order?</div></div>
-                              <div class="accordion_panel">
-                                <p>Lorem ipsun gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a.</p>
-                              </div>
-                            </div>
-
-                          </div>
-
-                        </div>
                       </div>
                     </div>
-                  </div>
+                  </p-tabPanel>
 
                   <!-- Curriculum -->
-                  <div class="tab_panel tab_panel_2">
+                  <p-tabPanel header="Godfather II" leftIcon="pi pi-inbox">
                     <div class="tab_panel_content">
                       <div class="tab_panel_title">{{formation.nameFormation}}</div>
                       <div class="tab_panel_content">
@@ -232,7 +198,7 @@
                         </ul>
                       </div>
                     </div>
-                  </div>
+                 </p-tabPanel>
 
                   <!-- Reviews -->
                   <div class="tab_panel tab_panel_3">
@@ -244,20 +210,20 @@
                             <div class="comment_image"><div><img src="../../../../assets/client/images/comment_1.jpg" alt=""></div></div>
                             <div class="comment_content">
                               <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_author">{{cmt.User}}</div> 
+                                <div class="comment_author">{{cmt.User}}</div>
                                 <div class="comment_time ml-auto">1 day ago</div>
                               </div>
                               <div class="comment_text">
                                 <p>{{cmt.Sujet}}</p>
                               </div>
                               <div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-                                <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div> 
+                                <div class="comment_extra comment_likes"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i><span>15</span></a></div>
                               </div>
                             </div>
                           </div>
-                           
+
                         </li>
-                        
+
                       </ul>
                       <div class="add_comment_container" *ngIf="!nav.LoggedIn">
                         <div class="add_comment_title">Ajouter un commentaire</div>
@@ -265,7 +231,7 @@
                         <div class="add_comment_text">Vous devez <a routerLink="/auth/login">se connecter</a> pour ajouter un commentaire.</div>
                       </div>
                       <div class="add_comment_container" *ngIf="nav.LoggedIn">
-                        <div class="add_comment_title">Ajouter un commentaire</div> 
+                        <div class="add_comment_title">Ajouter un commentaire</div>
                         <form id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start" #registerForm="ngForm" (ngSubmit)="AjouterCmt()">
                           <input type="text" name="cmt" class="courses_search_input" placeholder=" Ajouter commentaire" required="required" [(ngModel)]="cmt.Sujet">
                           <button type="submit" class="courses_search_button ml-auto">envoyer</button>
@@ -274,8 +240,8 @@
                     </div>
                   </div>
 
-                </div>
-              </div>
+
+              </p-tabView>
             </div>
           </div>
 
@@ -330,7 +296,7 @@
                       <button (click)="AjouterAuPanier(formation.Sessions[i])">Ajouter au panier</button>
                     </div>
                   </div>
- 
+
 
                 </div>
               </div>
