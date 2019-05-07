@@ -34,13 +34,11 @@ export class FormationDetailsComponent implements OnInit  {
       });
     });
     if(this.auth.isLoggedIn()){
-
       this.nav.LoggedIn = true; 
      }  
     //const array = [{ id: 123, value: "value1", name:"Name1" }, { id: 124, value: "value2", name: "Name1" }, { id: 125, value: "value3", name: "Name2" }, { id: 126, value: "value4", name: "Name2" }],
     // names = [...new Set(array.map(a => a.name))];
     //  console.log(names);
-
   }
   AjouterCmt(){
     console.log(this.idformation);
@@ -54,7 +52,6 @@ export class FormationDetailsComponent implements OnInit  {
       item.setPrice(10);
       item.setQuantity(1);
       const form = JSON.stringify(item);
-
      // items.push(form);
       localStorage.setItem('Cart', JSON.stringify(items));  
      // console.log(form);
@@ -65,7 +62,6 @@ export class FormationDetailsComponent implements OnInit  {
       items.push(form); 
       local['Cart'] = items; 
       localStorage.setItem('Cart', JSON.stringify(local));  
-
   }
 
 }
