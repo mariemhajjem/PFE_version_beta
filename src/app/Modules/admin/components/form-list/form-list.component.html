@@ -1,23 +1,26 @@
+<h3>Liste formations</h3>
+<p-table [value]="formations">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 4em"></th>
+            <th>formation</th>
+            <th>formation name</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-formation>
+        <tr >
+            <td>
+                <button type="button" pButton (click)="selectFormation($event,formation,op3)" icon="pi pi-image"></button>
+              <p-overlayPanel #op3>
+               <img src="{{selectedForm.imageUrl}}" *ngIf="selectedForm"/>
+              </p-overlayPanel></td>
+            <td>{{ formation.nameFormation }}</td>
+            <td>{{ formation.type }}</td>
+            <td><a [routerLink]="['/admin/editFormation', formation._id]" class="btn btn-primary">Modifier</a></td>
+            <td><a (click) = "deleteBusiness(formation)" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+    </ng-template>
+</p-table>
 
-<input class="navbar-search form-control" type="text" autocomplete="off" placeholder="Search for something..." aria-label="Search" name="search" [(ngModel)]="searchText"><table class="table table-hover">
-  <thead>
-  <tr>
-      <td>formation name</td>
-      <td>type</td>
-      <td>nb</td>
-      <td>imageURl</td>
-      <td>image</td>
-      <td colspan="2">Actions</td>
-  </tr>
-  </thead>
-
-  <tbody>
-      <tr *ngFor="let formation of formations | filter:searchText">
-          <td>{{ formation.nameFormation }}</td>
-          <td>{{ formation.type }}</td>
-          <td><img src="{{formation.imageUrl}}" alt=""></td>
-          <td><a [routerLink]="['/admin/editFormation', formation._id]" class="btn btn-primary">Edit</a></td>
-          <td><a (click) = "deleteBusiness(formation)" class="btn btn-danger">Delete</a></td>
-      </tr>
-  </tbody>
-</table>

@@ -18,7 +18,8 @@ router.post('/Create', function (req, res) {
         Fonction :  req.body.Fonction,
         DomaineActivite: req.body.DomaineActivite,
          Description: req.body.Description,
-        Message:  req.body.Mssage,   
+        Message:  req.body.Message, 
+        cahierDeCharge : req.body.cahierDeCharge
         }, 
         function (err, demandeDevis) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
