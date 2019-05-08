@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { FormationService } from './../services/formation.service';
 import { Component, OnInit } from '@angular/core';
 import Formation from '../models/formation';
+import { OverlayPanel } from 'primeng/overlaypanel';
 
 
 @Component({
@@ -12,6 +13,7 @@ import Formation from '../models/formation';
 export class FormListComponent implements OnInit {
   formations: Formation[];
   public searchText;
+  selectedForm: Formation;
   constructor(private fs: FormationService, private router: Router) { }
 
   ngOnInit() {
@@ -39,6 +41,10 @@ export class FormListComponent implements OnInit {
          }
 
  ); }
+}
+selectFormation(event,form: Formation, overlaypanel: OverlayPanel) {
+  this.selectedForm = form;
+  overlaypanel.toggle(event);
 }
 
 

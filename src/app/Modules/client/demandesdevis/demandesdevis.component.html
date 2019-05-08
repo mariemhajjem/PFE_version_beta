@@ -24,7 +24,7 @@
             <label>Plus de services<input type="text" name="field10" /></label>
 
             <label>Description<input type="text" name="field11" [(ngModel)]="demandeDevis.Description"/></label>
-            <label>Cahier de charge</label><input type="file" name="field12" /><br><br>
+            <label>Cahier de charge</label><input type="file" name="field12" /><br><br><p-fileUpload mode="basic" name="demo[]" url="./assets/uploads" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
             <label>Message <textarea name="field13" [(ngModel)]="demandeDevis.Message"></textarea></label>
 
 

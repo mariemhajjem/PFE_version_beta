@@ -26,6 +26,9 @@ import {TabViewModule} from 'primeng/tabview';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {PaginatorModule} from 'primeng/paginator';
+import {FileUploadModule} from 'primeng/fileupload';
+import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent],
   imports: [
@@ -40,10 +43,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ShoppingCartModule,
     AccordionModule,
     TabViewModule,
-    NgbModule
+    NgbModule,
+    PaginatorModule,
+    FileUploadModule
   ] ,
   providers :[
-    NavbarService
+    NavbarService,
+    MessageService
   ]
 })
 export class ClientModule { }

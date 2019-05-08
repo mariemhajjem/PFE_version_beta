@@ -11,6 +11,6 @@ export  class Demande {
     Message: string;       
     
     
-    cahierDeCharge: string;
+    cahierDeCharge: File[];
     id :string;
   }

@@ -8,6 +8,8 @@
       </div>
     </div>
     <!-- End Page Header -->
+    <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" [style]="{width: '50vw'}"></p-confirmDialog>
+ <p-messages [value]="msgs"></p-messages>
 
     <!-- Default Dark Table -->
     <div class="row">
@@ -29,8 +31,8 @@
                   <td>{{i}}</td> 
                   <td>{{demande.Email}}</td>
                   <td>{{demande.Entreprise}}</td>
-                  <td><a (click)="deleteDemande(demande)" class="btn btn-danger" >Afficher</a></td>
-                  <td><a (click)="deleteDemande(demande)" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')">Supprimer</a></td>
+                <!--  <td><a (click)="deleteDemande(demande)" class="btn btn-danger" >Afficher</a></td>-->  <td> <button type="text" (click)="confirm1()" pButton icon="pi pi-check" label="Confirm"></button></td> 
+                  <td><!--<a (click)="deleteDemande(demande)" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')">Supprimer</a>--> <button type="button" (click)="confirm2(demande)" pButton icon="pi pi-times" label="Delete"></button></td>
                 </tr>
               </tbody>
             </table>

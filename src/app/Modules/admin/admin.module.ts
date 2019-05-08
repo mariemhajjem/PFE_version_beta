@@ -27,6 +27,15 @@ import {CardModule} from 'primeng/card';
 import {TabViewModule} from 'primeng/tabview';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {TableModule} from 'primeng/table';
+import {ButtonModule} from 'primeng/button';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {CalendarModule} from 'primeng/calendar';
+import {ListboxModule} from 'primeng/listbox';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -52,12 +61,21 @@ const JWT_Module_Options: JwtModuleOptions = {
     AccordionModule,
     CardModule,
     TabViewModule,
+    OverlayPanelModule,
+    ButtonModule,
+    TableModule,
+    ConfirmDialogModule,
+    MessagesModule,
+    MessageModule,
+    CalendarModule,
+    ListboxModule,
      Ng2SearchPipeModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [
      FormationService,
      UserService,
+     ConfirmationService,
      AuthGuard
     ],
 })
