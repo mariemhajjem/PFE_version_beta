@@ -8,9 +8,11 @@ export  class Demande {
     Fonction : string;
     DomaineActivite: string;
     Description: string;
-    Message: string;       
-    
-    
+
+    Message: string;
+
+
+
     cahierDeCharge: string;
     id :string;
   }
