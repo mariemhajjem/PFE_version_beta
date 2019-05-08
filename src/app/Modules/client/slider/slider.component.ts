@@ -8,7 +8,7 @@ declare var $ :any;
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`)
+  images = ['../../../../assets/client/images/computer.jpg', '../../../../assets/client/images/women.jpg', '../../../../assets/client/images/student.jpg'];
   constructor() { }
 
   ngOnInit() {

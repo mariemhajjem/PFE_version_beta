@@ -6,8 +6,10 @@ var UserSchema = new mongoose.Schema({
   role: String,
   nom:String,
   prenom: String,
-
-  tel: Number
+  tel: Number,
+  Panier : {
+    type : mongoose.Schema.Types.ObjectId, ref:'Session'
+  }
 });
 
 UserSchema.methods.toAuthJSON = function(){
