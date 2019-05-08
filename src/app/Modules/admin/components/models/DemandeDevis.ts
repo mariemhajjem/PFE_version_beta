@@ -8,9 +8,9 @@ export  class Demande {
     Fonction : string;
     DomaineActivite: string;
     Description: string;
-    Message: string;       
-    
-    
-    cahierDeCharge: File[];
+    Message: string;
+
+
+    cahierDeCharge: string;
     id :string;
   }
