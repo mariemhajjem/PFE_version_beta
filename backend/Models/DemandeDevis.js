@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');  
-var DemandeSchema = new mongoose.Schema({  
- 
+var mongoose = require('mongoose');
+var DemandeSchema = new mongoose.Schema({
+
     Nom: String,
     Prenom: String,
     Tel: String,
@@ -10,11 +10,11 @@ var DemandeSchema = new mongoose.Schema({
     Fonction : String,
     DomaineActivite: String,
      Description: String,
-    Message: String,       
-    
-    
-    cahierDeCharge: File,
-                                                                                                 
+    Message: String,
+
+
+    cahierDeCharge: String,
+
 });
 mongoose.model('Demande', DemandeSchema);
 
