@@ -3,7 +3,7 @@ var DemandeSchema = new mongoose.Schema({
 
     Nom: String,
     Prenom: String,
-    Tel: String,
+    Tel: Number,
     Email: String,
     Adresse: String,
     Entreprise: String,
