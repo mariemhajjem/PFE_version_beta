@@ -24,16 +24,13 @@ export class DemandesdevisComponent implements OnInit {
     DomaineActivite: "",
     Description: "",
     Message: "", 
-    cahierDeCharge: this.uploadedFiles
+    cahierDeCharge: ""
  
   };
  
 
     onUpload(event) {
-        for(let file of event.files) {
-            this.uploadedFiles.push(file);
-            this.demandeDevis.cahierDeCharge=this.uploadedFiles;
-        }
+       
 
         this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
     }

@@ -13,7 +13,7 @@ var DemandeSchema = new mongoose.Schema({
     Message: String,       
     
     
-    cahierDeCharge: File,
+    cahierDeCharge: String,
                                                                                                  
 });
 mongoose.model('Demande', DemandeSchema);
