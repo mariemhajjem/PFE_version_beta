@@ -36,10 +36,30 @@
   }
 
   /* Centered text */
-  .centered {
+ .centered {
 	position: absolute;
-	top: 50%;
+	top: 42%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 34px;
 
-  }
+	}
+	.centered1 {
+		position: absolute;
+		top: 27%;
+		left: 80%;
+		transform: translate(-50%, -50%);
+		color: white; 
+		font-size: 24px;
+	
+		}
+		.centered2 {
+			position: absolute;
+			top: 42%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: white;
+			font-size: 34px;
+		
+			}
