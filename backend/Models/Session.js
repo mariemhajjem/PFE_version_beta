@@ -27,7 +27,11 @@ let Session = new Schema({
     },
     NbHeures : {
       type : Number
-    }
+    },
+      Users : {
+        type : mongoose.Schema.Types.ObjectId, ref:'User'
+      }
+   
   },
   {
     collection: 'sessions'
