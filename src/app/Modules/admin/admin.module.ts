@@ -36,6 +36,7 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {CalendarModule} from 'primeng/calendar';
 import {ListboxModule} from 'primeng/listbox';
+import { CrudSessionsComponent } from './components/crud-sessions/crud-sessions.component';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -49,7 +50,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
-     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent],
+     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent, CrudSessionsComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

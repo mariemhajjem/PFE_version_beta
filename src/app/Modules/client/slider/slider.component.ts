@@ -8,7 +8,7 @@ declare var $ :any;
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  images = ['../../../../assets/client/images/apple1.jpg', '../../../../assets/client/images/paperwork.jpg', '../../../../assets/client/images/student.jpg'];
+  images = ['../../../../assets/client/images/Capture1.JPG', '../../../../assets/client/images/Capture.JPG', '../../../../assets/client/images/Capture3.JPG','../../../../assets/client/images/Capture4.JPG'];
   constructor() { }
 
   ngOnInit() {

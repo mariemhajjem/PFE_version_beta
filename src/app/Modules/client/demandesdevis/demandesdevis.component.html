@@ -1,21 +1,38 @@
 
+	<div class="home">
+        <div class="breadcrumbs_container">
+          <div class="container">
+            <div class="row">
+               
+                <div class="breadcrumbs">
+                  <ul>
+                    <li><a routerLink="/">Accueil</a></li>
+                    <li><a  routerLink="/demandes">Demande de devis</a></li>
+                   
+                  </ul>
+                </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
 <div class="form-style-10">
   <h1> Demande de devis</h1>
   <form [formGroup]="form" (submit)="send()"enctype="multipart/form-data">
       <div class="section"><span>1</span>Informations personnelles</div>
       <div class="inner-wrap">
-          <label>Nom <input type="text" name="field1" [(ngModel)]="demandeDevis.Nom" /></label>
-          <label>Prénom <input type="text" name="field2" [(ngModel)]="demandeDevis.Prenom" /></label>
-          <label>Adresse <textarea name="field3" [(ngModel)]="demandeDevis.Adresse"></textarea></label>
-          <label>Email <input type="email" name="field4" [(ngModel)]="demandeDevis.Email"/></label>
-          <label>Tél <input type="text" name="field5" [(ngModel)]="demandeDevis.Tel"/></label>
+          <label>Nom <input id="feFirstName" type="text" name="field1" formControlName="Nom" /></label>
+          <label>Prénom <input id="feFPre" type="text" name="field2" formControlName="Prenom" /></label>
+          <label>Adresse <textarea id="feFirst" name="field3" formControlName="Adresse"></textarea></label>
+          <label>Email <input type="email" id="fe" name="field4" formControlName="Email"/></label>
+          <label>Tél <input type="text" id="feFi" name="field5" formControlName="Tel"/></label>
       </div>
 
       <div class="section"><span>2</span>Entreprise</div>
       <div class="inner-wrap">
-          <label>Entreprise <input type="text" name="field6" [(ngModel)]="demandeDevis.Entreprise" /></label>
-          <label>Fonction dans l'entreprise<input type="text" name="field7" [(ngModel)]="demandeDevis.Fonction"/></label>
-          <label>Domaine d'activité<input type="text" name="field8" [(ngModel)]="demandeDevis.DomaineActivite" /></label>
+          <label>Entreprise <input type="text" name="field6" formControlName="Entreprise" /></label>
+          <label>Fonction dans l'entreprise<input type="text" name="field7" formControlName="Fonction"/></label>
+          <label>Domaine d'activité<input type="text" name="field8" formControlName="DomaineActivite" /></label>
       </div>
 
       <div class="section"><span>3</span>Services</div>
@@ -23,15 +40,15 @@
             <label>Services <input type="text" name="field9" /></label>
             <label>Plus de services<input type="text" name="field10" /></label>
 
-            <label>Description<input type="text" name="field11" [(ngModel)]="demandeDevis.Description"/></label>
-            <label>Cahier de charge</label><input type="file" name="field12" /><br><br><p-fileUpload mode="basic" name="demo[]" url="./assets/uploads" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
-            <label>Message <textarea name="field13" [(ngModel)]="demandeDevis.Message"></textarea></label>
+            <label>Description<input type="text" name="field11" formControlName="Description"/></label>
+            <label>Cahier de charge</label><input type="file" name="field12" (change)="onFilePicked($event)"/><br><br>
+            <label>Message <textarea name="field13" formControlName="Message"></textarea></label>
 
 
 
       </div>
       <div class="button-section">
-       <input type="submit" name="Sign Up" />
+       <button type="submit" class="btn btn-accent">Envoyer</button>
       </div>
   </form>
   </div>

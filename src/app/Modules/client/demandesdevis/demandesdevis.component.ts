@@ -12,7 +12,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 })
 export class DemandesdevisComponent implements OnInit {
 
-  uploadedFiles: File[] = [];
+  uploadedFile: File;
   demandeDevis :Demande={
     id:"",
     Nom: "",
@@ -25,7 +25,7 @@ export class DemandesdevisComponent implements OnInit {
     DomaineActivite: "",
     Description: "",
     Message: "", 
-    cahierDeCharge: ""
+    cahierDeCharge: this.uploadedFile
  
   };
  
@@ -55,11 +55,11 @@ export class DemandesdevisComponent implements OnInit {
       Fonction: new FormControl(null, { validators: [Validators.required] }),
       DomaineActivite: new FormControl(null, { validators: [Validators.required] }),
       Description: new FormControl(null, { validators: [Validators.required] }),
-      Message: new FormControl(null, { validators: [Validators.required] }),
+      Message: new FormControl(null),
       cahierDeCharge: new FormControl(null, { validators: [Validators.required] }),
     });
   }
-  onImagePicked(event: Event) {
+  onFilePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({ cahierDeCharge: file });
     this.form.get('cahierDeCharge').updateValueAndValidity();
@@ -70,6 +70,7 @@ export class DemandesdevisComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   send(){
+    this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''}); 
     this.demandeService.sendDemande(
       this.form.value.Nom,
       this.form.value.Prenom,
