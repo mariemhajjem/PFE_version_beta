@@ -1,26 +1,38 @@
 var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
+const multer = require('multer');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var DemandeDevis = require('../Models/DemandeDevis');
+const fileStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'src/assets/uploads');
+  },
+  filename: (req, file, cb) => {
+    cb(null, new Date().toISOString().replace(/:/g, '-')+"-"+ file.originalname);
+  }
+});
+const upload =multer({
+  storage: fileStorage
+});
 
 // CREATES A NEW DemandeDevis
-router.post('/Create', function (req, res) {
+router.post('/Create',upload.single('cahierDeCharge'), function (req, res) {
     DemandeDevis.create({
         Nom : req.body.Nom,
-        Prenom : req.body.Prenom   ,              
-        Tel : req.body.Tel,                                                  
+        Prenom : req.body.Prenom   ,
+        Tel : req.body.Tel,
         Email : req.body.Email,
         Adresse : req.body.Adresse,
         Entreprise : req.body.Entreprise,
         Fonction :  req.body.Fonction,
         DomaineActivite: req.body.DomaineActivite,
          Description: req.body.Description,
-        Message:  req.body.Message, 
-        cahierDeCharge : req.body.cahierDeCharge
-        }, 
+        Message:  req.body.Message,
+        cahierDeCharge : "assets/uploads/"+req.file.filename
+        },
         function (err, demandeDevis) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
             res.status(200).send(demandeDevis);

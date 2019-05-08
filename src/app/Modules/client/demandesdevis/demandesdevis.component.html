@@ -1,7 +1,7 @@
 
 <div class="form-style-10">
   <h1> Demande de devis</h1>
-  <form #registerForm="ngForm" (ngSubmit)="send()">
+  <form [formGroup]="form" (submit)="send()"enctype="multipart/form-data">
       <div class="section"><span>1</span>Informations personnelles</div>
       <div class="inner-wrap">
           <label>Nom <input type="text" name="field1" [(ngModel)]="demandeDevis.Nom" /></label>
