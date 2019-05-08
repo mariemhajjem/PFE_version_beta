@@ -27,7 +27,8 @@ export class RegisterComponent implements OnInit {
     let registerUserData = {
     email: email,
     password: password,
-    role : 'User'
+    role : 'User',
+    panier : ['5cbbb748c4745105c003ca55']
   }
     this.auth.registerUser(registerUserData)
     .subscribe(

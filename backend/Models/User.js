@@ -7,7 +7,7 @@ var UserSchema = new mongoose.Schema({
   nom:String,
   prenom: String,
   tel: Number,
-  Panier : {
+  panier : {
     type : mongoose.Schema.Types.ObjectId, ref:'Session'
   }
 });

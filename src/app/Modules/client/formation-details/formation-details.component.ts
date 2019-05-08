@@ -9,6 +9,7 @@ import { CommentaireService } from '../service/commentaire.service';
 import  Commentaire   from '../models/commentaire';
 
 import { map} from 'rxjs/operators';
+import { User } from '../../admin/components/models/user';
 
 @Component({
   selector: 'app-formation-details',
@@ -46,22 +47,22 @@ export class FormationDetailsComponent implements OnInit  {
   }
 
   AjouterAuPanier(id){
-  let items: Array<Object>= []; 
+    let panier :any[];
+    let currentUser;
+    this.auth.getProfile().subscribe((data : User) => {
+       currentUser= data;
+       panier=currentUser.panier;
+      });
+   
+    
+    console.log(panier);
+    
     const item = new BaseCartItem();
       item.setId(id);
       item.setPrice(10);
       item.setQuantity(1);
       const form = JSON.stringify(item);
-     // items.push(form);
-      localStorage.setItem('Cart', JSON.stringify(items));  
-     // console.log(form);
-    //  const data = JSON.stringify(items);
-  // Create item:
-      let local =JSON.parse(localStorage.getItem('Cart'));
-      items = local['Cart'];  
-      items.push(form); 
-      local['Cart'] = items; 
-      localStorage.setItem('Cart', JSON.stringify(local));  
+      panier.push(form);  
   }
 
 }

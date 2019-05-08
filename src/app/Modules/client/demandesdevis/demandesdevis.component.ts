@@ -11,11 +11,37 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./demandesdevis.component.css']
 })
 export class DemandesdevisComponent implements OnInit {
+
+  uploadedFiles: File[] = [];
+  demandeDevis :Demande={
+    id:"",
+    Nom: "",
+    Prenom: "",
+    Tel: "",
+    Email: "",
+    Adresse: "",
+    Entreprise: "",
+    Fonction : "",
+    DomaineActivite: "",
+    Description: "",
+    Message: "", 
+    cahierDeCharge: ""
+ 
+  };
+ 
+
+    onUpload(event) {
+       
+
+        this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
+    }
+  constructor(public nav : NavbarService, private demandeService: DemandeService,private messageService: MessageService) { }
+
   form: FormGroup;
   cahierDeCharge: any;
   isLoading = false;
   demande: Demande;
-  constructor(public nav: NavbarService, private demandeService: DemandeService,private messageService: MessageService) { }
+
 
   ngOnInit() {
     this.nav.hide();
