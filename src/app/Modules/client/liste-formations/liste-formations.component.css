@@ -75,6 +75,7 @@
 	border-radius: 6px;
 	background: #FFFFFF;
 	box-shadow: 0px 1px 10px rgba(29,34,47,0.1);
+	max-height: 550px;
 }
 .course_col:nth-child(odd)
 {
@@ -86,15 +87,21 @@
 }
 .course_image
 {
-	width: 100%;
-	height: 200px;
+	width: 100%; 
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	overflow: hidden;
+	max-height: 200px ;
+}
+.img{
+	height: 200px;
+	width: 200px;
+    max-height: 200px ;
 }
 .course_image img
 {
 	max-width: 100%;
+	max-height: 300px ;
 }
 .course_body
 {
