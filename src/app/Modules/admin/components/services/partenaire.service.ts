@@ -8,9 +8,15 @@ import Partenaire from '../models/partenaire';
 export class PartenaireService {
   private url="http://localhost:3000/partenaire";
   constructor(private http: HttpClient) { }
-  sendDemande(partenaire) {
-    return this.http.post(`${this.url}/Create`, partenaire).subscribe(res => console.log('Done'));
-   }
+   sendDemande(name: string, job: string, imageUrl: File) {
+    const PartenaireDAta = new FormData();
+    PartenaireDAta.append("name", name);
+    PartenaireDAta.append("job", job);
+    PartenaireDAta.append("imageUrl", imageUrl);
+
+    this.http.post(`${this.url}/Create`, PartenaireDAta)
+    .subscribe(res => console.log('Done'));
+  }
    getDemandes() {
      return this.http.get(`${this.url}/List`);
    }

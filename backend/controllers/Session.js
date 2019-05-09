@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 var bodyParser = require('body-parser');
+var VerifyToken = require('./VerifyToken');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -12,6 +13,8 @@ router.use(bodyParser.json());
 // Require formation model in our routes module
 let Formation = require('../Models/formation');
 let Session = require('../Models/Session');
+let User = require('../Models/User');
+let Order = require('../Models/order');
 
 router.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
@@ -78,4 +81,53 @@ router.route('/').get(function (req, res) {
       }
     });
   });
+
+router.route('/addCart/:id').post(VerifyToken, function(req, res){
+  let id = req.params.id;
+  Session.findById(id)
+    .then(session => {
+      User.findById(req.userId, { password: 0 }, function (err, user) {
+        if (err) return res.status(500).send("There was a problem finding the user.");
+        if (user) return  user.addToCart(session);
+      });
+    })
+    .then(result => {
+      console.log(result);
+      res.status(200).json({'cart': 'session added to cart'});
+    });
+});
+router.route('/CartdelPro/:id').post(VerifyToken, function(req, res){
+  let id = req.params.id;
+  User.findById(req.userId, { password: 0 }, function (err, user) {
+    if (err) return res.status(500).send("There was a problem finding the user.");
+    if (user) return  user.removeFromCart(id);
+})
+.then(result => {
+  res.status(200).json({'cart': 'item deleted'});
+});
+});
+router.route('/getCart').get(VerifyToken, function(req, res){
+  req.user.populate('cart.items.sessionId').exec(function (err, user){
+    res.json(user.cart.items)})
+});
+router.route('/postReservation').get(VerifyToken, function(req, res){
+  User.findById(req.userId).populate('cart.items.sessionId').exec(function (err, user){
+    res.json(user.cart.items);
+      const sessions = user.cart.items.map(i => {
+        return {  session: { ...i.sessionId._doc } };
+      });
+      const order = new Order({
+        user: {
+          name: req.user.name,
+          userId: req.user
+        },
+        sessions: sessions
+      });
+      return order.save();}).then(result =>{ req.user.clearCart();})
+      .catch(err => console.log(err));
+});
+router.route('/getReservations').get(VerifyToken, function(req, res){
+
+});
+
 module.exports = router;

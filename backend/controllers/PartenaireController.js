@@ -1,16 +1,41 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
 var bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 var Partenaire = require('../Models/Partenaire');
+const fileStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'src/assets/uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, new Date().toISOString().replace(/:/g, '-')+"-"+ file.originalname);
+  }
+});
+
+const fileFilter = (req, file, cb) => {
+  if (
+    file.mimetype === 'image/png' ||
+    file.mimetype === 'image/jpg' ||
+    file.mimetype === 'image/jpeg'
+  ) {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+const upload =multer({
+  storage: fileStorage, fileFilter: fileFilter
+});
 
 // CREATES A NEW DemandeDevis
-router.post('/Create', function (req, res) {
+router.post('/Create',upload.single('imageUrl'),function (req, res) {
     Partenaire.create({
         name : req.body.name,
-        job: req.body.job
+        job: req.body.job,
+        imageUrl: "assets/uploads/"+req.file.filename
         },
         function (err, partenaire) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");

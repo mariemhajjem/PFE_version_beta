@@ -9,6 +9,9 @@ let partenaire = new Schema({
     job : {
         type: String
       },
+    imageUrl: {
+        type: String
+    },
   },
   {
     collection: 'partenaire'

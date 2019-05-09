@@ -51,7 +51,7 @@ router.route('/add').post(upload.single('imageUrl'),function (req, res) {
     Description: Description,
     Plan: Plan,
     Sujet: Sujet
-    
+
   });
   formation.save()
     .then(formation => {
@@ -77,7 +77,7 @@ router.route('/').get(function (req, res) {
 // Defined edit route
 router.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
-  Formation.findById(id).populate({path:'Cmts' , model: 'Comment', select: { 'Sujet': 1,'User': 1, '_id' : 0}}).exec(function (err, formation){ 
+  Formation.findById(id).populate({path:'Cmts' , model: 'Comment', select: { 'Sujet': 1,'User': 1, '_id' : 0}}).exec(function (err, formation){
       res.json(formation);
   });
 });
@@ -95,7 +95,6 @@ router.route('/update/:id').put(function (req, res) {
         formation.Plan = req.body.Plan;
         formation.Sujet = req.body.Sujet;
         formation.imageUrl = req.body.imageUrl;
-
         formation.save().then(formation => {
           res.json('Update complete');
       })

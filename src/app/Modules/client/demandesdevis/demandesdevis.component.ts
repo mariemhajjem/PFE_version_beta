@@ -11,31 +11,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./demandesdevis.component.css']
 })
 export class DemandesdevisComponent implements OnInit {
-
-  uploadedFile: File;
-  demandeDevis :Demande={
-    id:"",
-    Nom: "",
-    Prenom: "",
-    Tel: "",
-    Email: "",
-    Adresse: "",
-    Entreprise: "",
-    Fonction : "",
-    DomaineActivite: "",
-    Description: "",
-    Message: "", 
-    cahierDeCharge: this.uploadedFile
- 
-  };
- 
-
-    onUpload(event) {
-       
-
-        this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
-    }
-  constructor(public nav : NavbarService, private demandeService: DemandeService,private messageService: MessageService) { }
+  constructor(public nav: NavbarService, private demandeService: DemandeService, private messageService: MessageService) { }
 
   form: FormGroup;
   cahierDeCharge: any;
@@ -70,7 +46,7 @@ export class DemandesdevisComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   send(){
-    this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''}); 
+    this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
     this.demandeService.sendDemande(
       this.form.value.Nom,
       this.form.value.Prenom,
