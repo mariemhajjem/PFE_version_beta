@@ -32,21 +32,8 @@
                   <label for="feDescription">Description</label>
                   <input type="text" class="form-control" id="feDescription" name="feDescription" name="D" formControlName="D" rows="5"> 
                 </div>
-              
-              <div class="ui-g-12 ui-md-4">
-                  <label for="feDescription">Période</label><br>
-                  <p-calendar formControlName="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
-              </div>
-              <div class="form-group col-md-12">
-                  <label for="feDescription">Sessions</label><br>
-                <p-listbox [options]="cities" formControlName="Sessions" multiple="multiple" checkbox="checkbox" filter="filter" optionLabel="name">
-                 <p-header>
-                    <i class="fa fa-car"></i>
-                         Sessions
-                 </p-header>
-                </p-listbox>
              
-              </div>
+              
               </div>
               <button type="submit" class="btn btn-accent">create Formation</button>
             </form>

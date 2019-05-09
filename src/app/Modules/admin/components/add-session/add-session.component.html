@@ -1,0 +1,50 @@
+<br>
+<div class="col-lg-8">
+    <div class="card card-small mb-4">
+      <div class="card-header border-bottom">
+        <h6 class="m-0">Ajouter une session</h6>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item p-3">
+          <div class="row">
+            <div class="col">
+              <form #registerForm="ngForm" (ngSubmit)="send()">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="feFirstName">Nom session</label>
+                    <input type="text" class="form-control" id="feFirstName" [(ngModel)]="session.name" name="name"> </div>
+                  <div class="form-group col-md-6">
+                    <label for="feLastName">Nombre de places</label>
+                    <input type="text" class="form-control" id="feLastName" name="NbPlaces" [(ngModel)]="session.NbPlaces"> </div>
+                </div>
+                <div class="form-group">
+                  <label for="feInputAddress">Nombre d'heures</label>
+                  <input type="text" class="form-control" id="feInputAddress" name="NbHeures" [(ngModel)]="session.NbHeures"> </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="feInputCity">Horaires</label>
+                  <input type="text" class="form-control" id="feInputAddress" name="Horaires" [(ngModel)]="session.Horaires"> </div>
+                
+                
+                <div class="ui-g-12 ui-md-4">
+                    <label for="feDescription">Période</label><br>
+                    <p-calendar [(ngModel)]="session.date" name="date" selectionMode="range" [readonlyInput]="true"></p-calendar>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="feDescription">Formations</label><br>
+                <select [(ngModel)]="selectedLevel" name="delect" (change)="selected()">
+                    <option *ngFor="let formation of Formations" [ngValue]="formation">{{formation.nameFormation}}</option>
+                </select>
+               
+                </div>
+                
+                </div>
+                <button type="submit" class="btn btn-accent">créer session</button>
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

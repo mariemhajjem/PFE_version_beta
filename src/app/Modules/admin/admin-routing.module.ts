@@ -14,6 +14,8 @@ import { AuthGuard } from 'src/app/auth.guard';
 import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
 import { DemandesComponent } from './components/demandes/demandes.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CrudSessionsComponent } from './components/crud-sessions/crud-sessions.component';
+import { AddSessionComponent } from './components/add-session/add-session.component';
 
 
 
@@ -30,10 +32,12 @@ const routes: Routes = [
       path: 'home',
       component: HomeComponent
     },
+    { path: 'addSession', component: AddSessionComponent },
     { path: 'addFormation', component: CrudComponent },
     { path: 'users', component: ListUserComponent },
     { path: 'editUser/:id', component: CrudUsersComponent },
     { path: 'listFormation', component: FormListComponent },
+    { path: 'listSessions', component: CrudSessionsComponent },
     {path: 'editFormation/:id', component: EditFormationComponent},
     { path: 'profileadmin', component: ProfileAdminComponent },
     { path: 'profile', component: ProfileComponent },

@@ -5,10 +5,6 @@ var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-
-
-
-
 // Require formation model in our routes module
 let Formation = require('../Models/formation');
 let Session = require('../Models/Session');
@@ -54,10 +50,10 @@ router.route('/:id').post(async (req, res)=> {
   const formation = await Formation.findOne({_id : id});
   var session = new Session();
   session.name = req.body.name;
-  session.dateDebut = req.body.dateDebut;
+  session.date = req.body.date;
   session.Formations= formation._id;
-  session.dateFin = req.body.dateFin;
-  session.NbPlaces=req.body.NbPlaces;
+  session.NbPlaces = req.body.NbPlaces;
+  session.Horaires=req.body.Horaires;
   session.save();
 
   formation.Sessions.push(session);

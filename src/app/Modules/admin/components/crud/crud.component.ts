@@ -14,29 +14,8 @@ export class CrudComponent implements OnInit {
     imageUrl: any;
     isLoading = false;
     formation: Formation;
-    rangeDates: Date[];
-    es: any;
-
-  invalidDates: Array<Date>
-  cities: any[];
-
-    selectedCity: any;
-
-    selectedCities: any[];
- 
-
-  constructor(private fs: FormationService, private route: ActivatedRoute) {
-    this.cities = [
-      {nameFormation: 'New York', Sujet: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
-  }
-
-
-
+  
+  constructor(private fs: FormationService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -48,37 +27,8 @@ export class CrudComponent implements OnInit {
       D: new FormControl(null, { validators: [Validators.required] }),
       Plan: new FormControl(null, { validators: [Validators.required] }),
       Sujet: new FormControl(null, { validators: [Validators.required] }),
-      Sessions: new FormControl(null, { validators: [Validators.required] }),
-
-      rangeDates:new FormControl(null, { validators: [Validators.required] }),
     });
-    this.es = {
-      firstDayOfWeek: 1,
-      dayNames: [ "domingo","lunes","martes","miércoles","jueves","viernes","sábado" ],
-      dayNamesShort: [ "dom","lun","mar","mié","jue","vie","sáb" ],
-      dayNamesMin: [ "D","L","M","X","J","V","S" ],
-      monthNames: [ "enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre" ],
-      monthNamesShort: [ "ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic" ],
-      today: 'Hoy',
-      clear: 'Borrar'
-  }
 
- let tr = {
-      firstDayOfWeek : 1
-  }
-
-  let today = new Date();
-  let month = today.getMonth();
-  let year = today.getFullYear();
-  let prevMonth = (month === 0) ? 11 : month -1;
-  let prevYear = (prevMonth === 11) ? year - 1 : year;
-  let nextMonth = (month === 11) ? 0 : month + 1;
-  let nextYear = (nextMonth === 0) ? year + 1 : year;
-
-
-  let invalidDate = new Date();
-  invalidDate.setDate(today.getDate() - 1);
-  this.invalidDates = [today,invalidDate];
   }
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
@@ -91,7 +41,6 @@ export class CrudComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   submit() {
-    console.log(this.form.value.Sessions);
       this.fs.addFormation(
         this.form.value.nameFormation,
         this.form.value.type,

@@ -6,13 +6,9 @@ let Session = new Schema({
     name : {
       type: String
     },
-    dateDebut: {
-      type: Date
+    date: {
+      type: String 
     },
-    dateFin: {
-      type: Date
-    },
-
     Formations:{
       type: mongoose.Schema.Types.ObjectId, ref:'Formation'
     },
@@ -23,7 +19,7 @@ let Session = new Schema({
       type : Number
     },
     Horaires : {
-      type : Date
+      type : String
     },
     NbHeures : {
       type : Number
