@@ -111,8 +111,7 @@ router.route('/getCart').get(VerifyToken, function(req, res){
     res.json(user.cart.items)})
 });
 router.route('/postReservation').get(VerifyToken, function(req, res){
-  User.findById(req.userId).populate('cart.items.sessionId').exec(function (err, user){
-    res.json(user.cart.items);
+req.user.populate('cart.items.sessionId').execPopulate().then(user => {
       const sessions = user.cart.items.map(i => {
         return {  session: { ...i.sessionId._doc } };
       });
