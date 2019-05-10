@@ -39,4 +39,7 @@ app.use('/partenaire',partenaire);
 var cmt = require('./controllers/Comment');
 app.use('/cmt',cmt);
 
+var message = require('./controllers/messageController');
+app.use('/message',message);
+
 module.exports = app;
