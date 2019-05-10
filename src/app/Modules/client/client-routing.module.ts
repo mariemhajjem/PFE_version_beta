@@ -8,6 +8,7 @@ import { FormulaireformationComponent } from './formulaireformation/formulairefo
 import { HomeComponent } from './home/home.component';
 import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
 import { FormationDetailsComponent } from './formation-details/formation-details.component';
+import { PanierComponent } from './panier/panier.component';
 
 
 
@@ -32,7 +33,12 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent
+      },
+      {
+        path: 'panier',
+        component: PanierComponent
       }
+      
     ]
   },
   { path: 'demandes',

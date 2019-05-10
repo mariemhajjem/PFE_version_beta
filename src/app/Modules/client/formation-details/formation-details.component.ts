@@ -10,6 +10,7 @@ import  Commentaire   from '../models/commentaire';
 
 import { map} from 'rxjs/operators';
 import { User } from '../../admin/components/models/user';
+import { SessionsService } from '../../admin/components/services/sessions.service';
 
 @Component({
   selector: 'app-formation-details',
@@ -24,7 +25,7 @@ export class FormationDetailsComponent implements OnInit  {
   cmt :Commentaire ={
     Sujet :''
   };
-  constructor(private cartService: CartService<BaseCartItem>,private route: ActivatedRoute, private auth: AuthService,private formationService :FormationService,public nav: NavbarService,private cmtService :CommentaireService) { }
+  constructor(private sessionService:SessionsService,private route: ActivatedRoute, private auth: AuthService,private formationService :FormationService,public nav: NavbarService,private cmtService :CommentaireService) { }
 
 
   ngOnInit() {
@@ -47,22 +48,7 @@ export class FormationDetailsComponent implements OnInit  {
   }
 
   AjouterAuPanier(id){
-    let panier :any[];
-    let currentUser;
-    this.auth.getProfile().subscribe((data : User) => {
-       currentUser= data;
-       panier=currentUser.panier;
-      });
-   
-    
-    console.log(panier);
-    
-    const item = new BaseCartItem();
-      item.setId(id);
-      item.setPrice(10);
-      item.setQuantity(1);
-      const form = JSON.stringify(item);
-      panier.push(form);  
+    this.sessionService.AddToCart(id);
   }
 
 }

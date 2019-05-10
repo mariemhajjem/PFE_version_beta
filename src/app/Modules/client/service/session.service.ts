@@ -11,4 +11,5 @@ export class SessionService {
   getAll(){
     return this.http.get(`${this.url}/`);
   }
+
 }

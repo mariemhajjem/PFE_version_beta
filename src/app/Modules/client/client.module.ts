@@ -29,8 +29,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {PaginatorModule} from 'primeng/paginator';
 import {FileUploadModule} from 'primeng/fileupload';
 import { MessageService } from 'primeng/api';
+import { PanierComponent } from './panier/panier.component';
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent],
   imports: [
     CommonModule,
     BrowserModule,
