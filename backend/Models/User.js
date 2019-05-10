@@ -47,9 +47,9 @@ UserSchema.methods.addToCart = function(Session) {
   this.cart = updatedCart;
   return this.save();
 };
-UserSchema.methods.removeFromCart = function(sessionId) {
+UserSchema.methods.removeFromCart = function(session) {
   const updatedCartItems = this.cart.items.filter(item => {
-    return item.sessionId.toString() !== sessionId.toString();
+    return item._id.toString() !== session.toString();
   });
   this.cart.items = updatedCartItems;
   return this.save();
