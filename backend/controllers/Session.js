@@ -106,23 +106,25 @@ router.route('/getCart').get(VerifyToken, function(req, res){
   req.user.populate('cart.items.sessionId').exec(function (err, user){
     res.json(user.cart.items)})
 });
-router.route('/postReservation').get(VerifyToken, function(req, res){
-req.user.populate('cart.items.sessionId').execPopulate().then(user => {
+router.route('/postReservation').put(VerifyToken, function(req, res){
+req.user.populate('cart.items.sessionId').exec(function (err, user){
       const sessions = user.cart.items.map(i => {
         return {  session: { ...i.sessionId._doc } };
       });
       const order = new Order({
         user: {
-          name: req.user.name,
-          userId: req.user
+          name: user.email,
+          userId: req.userId
         },
         sessions: sessions
       });
-      return order.save();}).then(result =>{ req.user.clearCart();})
-      .catch(err => console.log(err));
+      return order.save().then(result =>{ user.clearCart();});})
 });
 router.route('/getReservations').get(VerifyToken, function(req, res){
-
+  Order.find({ 'user.userId': req.userId },function(err, order){
+    if (err) return res.status(500).send("hmmm.");
+            res.status(200).send(order);
+  })
 });
 
 module.exports = router;
