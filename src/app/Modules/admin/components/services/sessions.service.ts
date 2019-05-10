@@ -18,6 +18,12 @@ export class SessionsService {
   AddToCart(id){
     return this.http.post(`${this.url}/addCart/${id}`,id).subscribe(res => console.log('Done'));
   }
+  GetCart(){
+    return this.http.get(`${this.url}/getCart`);
+  }
+  Remove(id){
+    return this.http.post(`${this.url}/CartdelPro/${id}`,id).subscribe(res => console.log('supprimé'));
+  }
     
    delete(id) {
      return this.http.delete(`${this.url}/delete/${id}`).subscribe(res => console.log('Done'));
