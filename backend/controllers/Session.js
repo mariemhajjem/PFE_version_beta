@@ -103,7 +103,11 @@ router.route('/CartdelPro/:id').post(VerifyToken, function(req, res){
 });
 });
 router.route('/getCart').get(VerifyToken, function(req, res){
-  req.user.populate({ path:'cart.items.sessionId' , model: 'Session', select: { 'name': 1} }).exec(function (err, user){
+  req.user.populate({ path:'cart.items.sessionId' , model: 'Session', select: { 'name': 1, 'Formations' : 1},
+  populate: {
+    path: 'Formations',
+    model: 'Formation'
+  }  }).exec(function (err, user){
     res.json(user.cart.items)})
 });
 router.route('/postReservation').put(VerifyToken, function(req, res){

@@ -11,17 +11,16 @@
       <article class="product" *ngFor="let item of items">
           <header>
               <a class="remove" (click)="Remove(item._id)">
-                  <img src="http://www.astudio.si/preview/blockedwp/wp-content/uploads/2012/08/1.jpg" alt="">
+                  <img src="{{item.sessionId.Formations.imageUrl}}" alt="">
 
-                  <h3>Remove product</h3>
+                  <h3>Supprimer</h3>
               </a>
           </header>
 
           <div class="content">
 
-              <h1>{{item._id}}</h1>
-              {{item.name}}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea ad omnis provident laborum dolore in atque.
+              <h1>  {{item.sessionId.name}}</h1>
+              {{item.sessionId.Formations.Description}}
 
           </div>
 

@@ -13,6 +13,7 @@ export class PanierComponent implements OnInit {
   ngOnInit() {
     this.Ss.GetCart().subscribe(data =>{
       this.items = data;
+      console.log(data);
     })  }
     Remove(id){
       this.Ss.Remove(id);
