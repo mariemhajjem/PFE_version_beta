@@ -43,4 +43,14 @@ export class DemandeService {
       this.refreshNeed.next();
     }));;
   }
+  sendMessageConfirmation(id) {
+    console.log(id);
+    this.http.post(`${this.url}/sendConfirmation/${id}`, id)
+        .subscribe(res => console.log('Done'));
+  }
+  sendMessageRefusé(id) {
+    console.log(id);
+    this.http.post(`${this.url}/sendRefuse/${id}`, id)
+        .subscribe(res => console.log('Done'));
+  }
 }

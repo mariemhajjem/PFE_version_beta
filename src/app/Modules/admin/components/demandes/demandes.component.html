@@ -1,9 +1,9 @@
-<input class="navbar-search form-control" type="text" autocomplete="off" placeholder="Search for something..." aria-label="Search" name="search" [(ngModel)]="searchText"> 
+<input class="navbar-search form-control" type="text" autocomplete="off" placeholder="Search for something..." aria-label="Search" name="search" [(ngModel)]="searchText">
  <div class="main-content-container container-fluid px-4">
     <!-- Page Header -->
     <div class="page-header row no-gutters py-4">
       <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-         
+
         <h3 class="page-title">Demandes de devis</h3>
       </div>
     </div>
@@ -26,12 +26,12 @@
                 </tr>
               </thead>
               <tbody>
-                
+
                 <tr *ngFor="let demande of demandes; let i=index">
-                  <td>{{i}}</td> 
+                  <td>{{i}}</td>
                   <td>{{demande.Email}}</td>
                   <td>{{demande.Entreprise}}</td>
-                  <td> <button type="text" (click)="confirm1()" pButton icon="pi pi-check" label="Confirm"></button></td> 
+                  <td> <button type="text" (click)="confirm1(demande)" pButton icon="pi pi-check" label="Confirm"></button></td>
                   <td><button type="button" (click)="confirm2(demande)" pButton icon="pi pi-times" label="Delete"></button></td>
                 </tr>
               </tbody>
@@ -42,4 +42,4 @@
     </div>
     <!-- End Default Dark Table -->
   </div>
-  
+

@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 const multer = require('multer');
+const creds = require('../config/contactConfig');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
@@ -16,6 +18,77 @@ const fileStorage = multer.diskStorage({
 });
 const upload =multer({
   storage: fileStorage
+});
+var transport = {
+  service: 'gmail',
+  secure: false,
+  port: 25,
+  auth: {
+    user: creds.USER,
+    pass: creds.PASS
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
+}
+
+
+var transporter = nodemailer.createTransport(transport)
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Server is ready to take messages');
+  }
+});
+router.post('/sendConfirmation/:id', async(req, res, next) => {
+  let id =req.params.id;
+  const demande = await DemandeDevis.findOne({_id : id});
+  var name = demande.Nom
+  var email = demande.Email
+  var mail = {
+    from: name,
+    to: email,  //Change to email address that you want to receive messages on
+    subject: 'Nouveau message digitalis',
+    html: '<h1>Demande accepter</h1>/</br>'
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+    }
+  })
+});
+router.post('/sendRefuse/:id', async(req, res, next) => {
+  let id =req.params.id;
+  const demande = await DemandeDevis.findOne({_id : id});
+  var name = demande.Nom
+  var email = demande.Email
+  var mail = {
+    from: name,
+    to: email,  //Change to email address that you want to receive messages on
+    subject: 'Nouveau message de digitalis',
+    html: '<h1>Demande refusé</h1>/</br>'
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+    }
+  })
 });
 
 // CREATES A NEW DemandeDevis
