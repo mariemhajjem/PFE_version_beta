@@ -26,9 +26,10 @@ router.route('/update/:id').put(function (req, res) {
       return next(new Error('Could not load Document'));
     else {
       session.name = req.body.name;
-      session.dateDebut = req.body.dateDebut;
-      session.Formations= formation._id;
-      session.dateFin = req.body.dateFin;
+      session.date = req.body.date;
+      session.Formations= session.Formations;
+      session.NbPlaces = req.body.NbPlaces;
+      session.Horaires=req.body.Horaires;
 
        session.save().then(formation => {
           res.json('Update complete');

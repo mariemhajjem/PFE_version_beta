@@ -24,9 +24,9 @@ export class FormationService {
     formationData.append("type", type);
     formationData.append("imageUrl", imageUrl);
     formationData.append("Description", D);
-   
+
     formationData.append("Sujet", Sujet);
-  
+
 
     this.http.post(`${this.uri}/add`, formationData)
     .subscribe(res => console.log('Done'));
@@ -44,16 +44,18 @@ export class FormationService {
             .get(`${this.uri}/edit/${id}`);
     }
 
-  updateBusiness(nameFormation, type, nb, id) {
+  updateBusiness(nameFormation: string, type: string, imageUrl: File,D: string,Sujet: string, id) {
 
-    const obj = {
-      nameFormation: nameFormation,
-      type: type,
-      nb: nb
-    };
+    const formationData = new FormData();
+    formationData.append("nameFormation", nameFormation);
+    formationData.append("type", type);
+    formationData.append("imageUrl", imageUrl);
+    formationData.append("Description", D);
+
+    formationData.append("Sujet", Sujet);
     this
       .http
-      .put(`${this.uri}/update/${id}`, obj).pipe(tap(()=>{
+      .put(`${this.uri}/update/${id}`, formationData).pipe(tap(()=>{
         this.refreshNeed.next();
       }))
       .subscribe(res => console.log('Done'));

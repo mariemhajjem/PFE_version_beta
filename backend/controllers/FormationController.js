@@ -83,7 +83,7 @@ router.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-router.route('/update/:id').put(function (req, res) {
+router.route('/update/:id').put(upload.single('imageUrl'),function (req, res) {
   Formation.findById(req.params.id, function(err, formation) {
     if (!formation)
       return next(new Error('Could not load Document'));
@@ -94,7 +94,7 @@ router.route('/update/:id').put(function (req, res) {
         formation.Description = req.body.Description;
         formation.Plan = req.body.Plan;
         formation.Sujet = req.body.Sujet;
-        formation.imageUrl = req.body.imageUrl;
+        formation.imageUrl = "assets/uploads/"+req.file.filename;
         formation.save().then(formation => {
           res.json('Update complete');
       })

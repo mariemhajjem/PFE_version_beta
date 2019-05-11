@@ -14,7 +14,6 @@ export class CrudComponent implements OnInit {
     imageUrl: any;
     isLoading = false;
     formation: Formation;
-  
   constructor(private fs: FormationService, private route: ActivatedRoute) {}
 
   ngOnInit() {
