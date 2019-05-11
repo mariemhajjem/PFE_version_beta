@@ -15,7 +15,15 @@ export class PanierComponent implements OnInit {
       this.items = data;
       console.log(data);
     })  }
-    Remove(id){
-      this.Ss.Remove(id);
+    Remove(id) {
+      if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
+        this.Ss.Remove(id).subscribe(
+        data => {
+         this.items.splice(this.items.indexOf(id), 1 );
+           },
+          error => {
+              console.log(error);
+             }
+     ); }
     }
 }

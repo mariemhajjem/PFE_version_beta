@@ -42,7 +42,7 @@ router.route('/update/:id').put(function (req, res) {
 
 // Defined delete | remove | destroy route
 router.route('/delete/:id').get(function (req, res) {
-    Session.findByIdAndRemove({_id: req.params.id}, function(err, formation){
+    Session.findByIdAndRemove({_id: req.params.id}, function(err, session){
         if(err) res.json(err);
         else res.json('Successfully removed');
     });
