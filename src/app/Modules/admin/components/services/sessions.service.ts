@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SessionsService {
- 
+
   private url="http://localhost:3000/session";
   constructor(private http: HttpClient) { }
   sendsession(Session,id) {
@@ -14,7 +14,7 @@ export class SessionsService {
    getSessions() {
      return this.http.get(`${this.url}/`);
    }
-   
+
   AddToCart(id){
     return this.http.post(`${this.url}/addCart/${id}`,id).subscribe(res => console.log('Done'));
   }
@@ -22,10 +22,10 @@ export class SessionsService {
     return this.http.get(`${this.url}/getCart`);
   }
   Remove(id){
-    return this.http.post(`${this.url}/CartdelPro/${id}`,id).subscribe(res => console.log('supprimé'));
+    return this.http.post(`${this.url}/CartdelPro/${id}`,id);
   }
-    
+
    delete(id) {
-     return this.http.delete(`${this.url}/delete/${id}`).subscribe(res => console.log('Done'));
+     return this.http.get(`${this.url}/delete/${id}`);
    }
 }

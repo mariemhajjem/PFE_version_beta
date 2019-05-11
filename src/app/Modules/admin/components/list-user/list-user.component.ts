@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 import { first } from 'rxjs/operators';
- 
+
 import { Router } from '@angular/router';
- 
+
 
 @Component({
   selector: 'app-list-user',
@@ -21,7 +21,7 @@ export class ListUserComponent implements OnInit {
     this.userService.refreshNeed.subscribe(() => {
       this.fetchUsers();
     });
-       this.fetchUsers(); 
+       this.fetchUsers();
    }
    // Fetches all Users documents.
  fetchUsers() {
@@ -31,15 +31,15 @@ export class ListUserComponent implements OnInit {
       this.users = data;
     });
   }
- 
-  
+
+
 
 // Deletes the selected issue and refreshes the document view.
 deleteUser(user) {
   if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
-  this.userService.deleteUser(user._id).subscribe( 
-    data => { 
-    //  this.users.splice(this.users.indexOf(user), 1 );
+  this.userService.deleteUser(user._id).subscribe(
+    data => {
+     this.users.splice(this.users.indexOf(user), 1 );
      console.log(data);
      this.router.navigate([this.router.url]);
         },
@@ -47,9 +47,7 @@ deleteUser(user) {
            console.log(error);
           }
   );
-   
-  } 
-  
+  }
 }
 
 }

@@ -16,7 +16,17 @@ export class CrudSessionsComponent implements OnInit {
       this.Sessions = data as any;
     })
   }
-  deleteSession(session){
-    this.SessionService.delete(session._id);
-  }
+
+  deleteSession (session){
+    if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
+    this.SessionService.delete(session._id).subscribe(
+    data => {
+     this.Sessions.splice(this.Sessions.indexOf(session), 1 );
+       },
+      error => {
+          console.log(error);
+         }
+
+ ); }
+}
 }
