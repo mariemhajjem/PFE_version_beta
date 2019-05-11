@@ -16,7 +16,7 @@ export class CrudSessionsComponent implements OnInit {
       this.Sessions = data as any;
     })
   }
-  deleteSession(session){
-    this.SessionService.delete(session._id);
+  deleteSession(id){
+    this.SessionService.delete(id);
   }
 }

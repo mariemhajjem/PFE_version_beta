@@ -28,4 +28,22 @@
       </table>
     </div>
   </section>
- 
+
+  <h3>Liste des utilisateurs</h3>
+  <p-table [value]="users">
+      <ng-template pTemplate="header">
+          <tr>
+            <th *ngFor="let column of columns">{{column}}</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+          <tr>
+            <td>{{i}}</td>
+            <td>{{user.prenom}}</td>
+            <td>{{user.nom}}</td>
+            <td>{{user.email}}</td>
+            <td><a (click)="deleteUser(user)" class="btn btn-danger">Supprimer</a></td>
+          </tr>
+      </ng-template>
+  </p-table>
+  

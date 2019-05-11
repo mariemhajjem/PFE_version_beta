@@ -26,6 +26,6 @@ export class SessionsService {
   }
     
    delete(id) {
-     return this.http.delete(`${this.url}/delete/${id}`).subscribe(res => console.log('Done'));
+     return this.http.get(`${this.url}/delete/${id}`).subscribe(res => console.log('Done'));
    }
 }

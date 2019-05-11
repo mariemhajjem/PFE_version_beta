@@ -39,9 +39,7 @@ deleteUser(user) {
   if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
   this.userService.deleteUser(user._id).subscribe( 
     data => { 
-    //  this.users.splice(this.users.indexOf(user), 1 );
-     console.log(data);
-     this.router.navigate([this.router.url]);
+    this.users.splice(this.users.indexOf(user), 1 );
         },
        error => {
            console.log(error);

@@ -16,6 +16,7 @@ import { DemandesComponent } from './components/demandes/demandes.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CrudSessionsComponent } from './components/crud-sessions/crud-sessions.component';
 import { AddSessionComponent } from './components/add-session/add-session.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 
 
@@ -42,7 +43,8 @@ const routes: Routes = [
     { path: 'profileadmin', component: ProfileAdminComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'demandes', component: DemandesComponent },
-    { path: 'partenaire', component: PartenaireComponent}
+    { path: 'partenaire', component: PartenaireComponent},
+    { path : 'messages',component: MessagesComponent}
   ]
   }
 ];

@@ -13,7 +13,7 @@
             
             <td>{{ session.name }}</td>
             <td><a [routerLink]="['/admin/editFormation', session._id]" class="btn btn-primary">Modifier</a></td>
-            <td><a (click) = "deleteSession(session)" class="btn btn-danger">Supprimer</a></td>
+            <td><a (click) = "deleteSession(session._id)" class="btn btn-danger">Supprimer</a></td>
         </tr>
     </ng-template>
 </p-table>

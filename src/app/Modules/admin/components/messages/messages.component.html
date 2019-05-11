@@ -4,7 +4,7 @@
     <div class="page-header row no-gutters py-4">
       <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
          
-        <h3 class="page-title">Demandes de devis</h3>
+        <h3 class="page-title">Messages</h3>
       </div>
     </div>
     <!-- End Page Header -->
@@ -16,7 +16,7 @@
       <div class="col">
         <div class="card card-small overflow-hidden mb-4">
           <div class="card-header bg-dark">
-            <h6 class="m-0 text-white">Demandes</h6>
+            <h6 class="m-0 text-white">Messages</h6>
           </div>
           <div class="card-body p-0 pb-3 bg-dark text-center">
             <table class="table table-dark mb-0">
@@ -27,11 +27,11 @@
               </thead>
               <tbody>
                 
-                <tr *ngFor="let demande of demandes; let i=index">
+                <tr *ngFor="let demande of messages; let i=index">
                   <td>{{i}}</td> 
-                  <td>{{demande.Email}}</td>
-                  <td>{{demande.Entreprise}}</td>
-                  <td> <button type="text" (click)="confirm1()" pButton icon="pi pi-check" label="Confirm"></button></td> 
+                  <td>{{demande.email}}</td>
+                  <td>{{demande.message}}</td>
+               
                   <td><button type="button" (click)="confirm2(demande)" pButton icon="pi pi-times" label="Delete"></button></td>
                 </tr>
               </tbody>
@@ -42,4 +42,3 @@
     </div>
     <!-- End Default Dark Table -->
   </div>
-  
