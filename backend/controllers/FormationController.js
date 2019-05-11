@@ -74,6 +74,17 @@ router.route('/').get(function (req, res) {
   });;
 });
 
+router.route('/limit').get(function (req, res) {
+  Formation.find().limit(3).populate({ path:'Sessions' , model: 'Session', select: { 'name': 1,'dateDebut': 1,'dateFin': 1,'Formateur': 1,'NbPlaces': 1,'NbHeures': 1, '_id' : 0} }).exec(function (err, formations){
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.json(formations);
+    }
+  });;
+});
+
 // Defined edit route
 router.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
@@ -94,7 +105,7 @@ router.route('/update/:id').put(upload.single('imageUrl'),function (req, res) {
         formation.Description = req.body.Description;
         formation.Plan = req.body.Plan;
         formation.Sujet = req.body.Sujet;
-        formation.imageUrl = "assets/uploads/"+req.file.filename;
+    //    formation.imageUrl = "assets/uploads/"+req.file.filename;
         formation.save().then(formation => {
           res.json('Update complete');
       })

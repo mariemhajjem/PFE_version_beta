@@ -16,7 +16,7 @@ export class FormationsComponent implements OnInit {
     this.getAll();
   }
   getAll(){
-    return this.formationService.getBusinesses().subscribe(data =>
+    return this.formationService.getThree().subscribe(data =>
       {
         this.sessions = data; 
       },

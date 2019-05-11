@@ -21,17 +21,16 @@ export class EditFormationComponent implements OnInit {
         this.formations = res;
       });
     });
+    
     this.form = new FormGroup({
-      nameFormation: new FormControl('', {
-        validators: [Validators.required]
-      }),
-      type: new FormControl('', { validators: [Validators.required] }),
-      imageUrl: new FormControl('', {validators: [Validators.required] }),
-      D: new FormControl('', { validators: [Validators.required] }),
-      Plan: new FormControl('', { validators: [Validators.required] }),
-      Sujet: new FormControl('', { validators: [Validators.required] }),
+      nameFormation: new FormControl("", { validators: [Validators.required]}),
+      type: new FormControl("", { validators: [Validators.required] }),
+      imageUrl: new FormControl("", {validators: [Validators.required] }),
+      D: new FormControl("", { validators: [Validators.required] }),
+      Plan: new FormControl("", { validators: [Validators.required] }),
+      Sujet: new FormControl("", { validators: [Validators.required] }),
     });
-  }
+       }
   onImagePicked(event: Event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.form.patchValue({ imageUrl: file });

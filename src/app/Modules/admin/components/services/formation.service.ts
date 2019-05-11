@@ -37,7 +37,11 @@ export class FormationService {
            .http
            .get(`${this.uri}`);
   }
-
+  getThree() {
+    return this
+           .http
+           .get(`${this.uri}/limit`);
+  }
   editBusiness(id) {
     return this
             .http
