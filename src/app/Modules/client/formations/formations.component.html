@@ -98,6 +98,57 @@
             </div>
 		</div>
 	</div>
+	<!-- Popular Courses -->
+
+	<div class="courses">
+		<div class="section_background parallax-window" data-parallax="scroll" data-image-src="images/courses_background.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<h2 class="section_title">Formations</h2>
+						<div class="section_subtitle"><p>Choisissez parmi nos différentes formations et commencez à relever votre défi dès aujourd'hui . De nouveaux cours sont ajoutés tous les mois.</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="row courses_row">
+				
+				<!-- Course -->
+				<div class="col-lg-4 course_col" *ngFor='let session of sessions'>
+					<div class="course">
+						<div class="course_image"><img src="{{session.imageUrl}}" alt=""></div>
+						<div class="course_body">
+							<h3 class="course_title"><a [routerLink]="['/list', session._id]">{{session.nameFormation}}</a></h3>
+							<div class="course_teacher">Sujet: </div>
+							<div class="course_text">
+								<p>{{session.Sujet}}</p>
+							</div>
+						</div>
+						<div class="course_footer">
+							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+								<div class="course_info">
+									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+									<span>20 Student</span>
+								</div>
+								<div class="course_info">
+									<i class="fa fa-star" aria-hidden="true"></i>
+									<span>5 Ratings</span>
+								</div>
+								<div class="course_price ml-auto">$130</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="courses_button trans_200"><a routerLink="/list">afficher plus</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
  
 
 

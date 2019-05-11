@@ -32,7 +32,8 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label for="feDescription">Formations</label><br>
-                <select [(ngModel)]="selectedLevel" name="delect" (change)="selected()">
+                <select class="browser-default custom-select" [(ngModel)]="selectedLevel" name="delect" (change)="selected()">
+                  <option [ngValue]="formation">--Sélectionnez une formation--</option>
                     <option *ngFor="let formation of Formations" [ngValue]="formation">{{formation.nameFormation}}</option>
                 </select>
                

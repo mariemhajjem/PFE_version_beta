@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Demande } from '../models/DemandeDevis';
-import { DemandeService } from 'src/app/Modules/client/service/demande.service';
-import { ConfirmationService, Message } from 'primeng/api';
+import { Message, ConfirmationService } from 'primeng/api';
+import { MessageService } from 'src/app/Modules/client/service/message.service';
 
 @Component({
-  selector: 'app-demandes',
-  templateUrl: './demandes.component.html',
-  styleUrls: ['./demandes.component.css']
+  selector: 'app-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css']
 })
-export class DemandesComponent implements OnInit {
-  columns =  ['Email','Entreprise','Afficher','Supprimer'];
-  demandes : Demande[];
-  demande : Demande;
+export class MessagesComponent implements OnInit {
+
+  columns =  ['#','Email','Message','Supprimer'];
+  messages : any[];
+  message : any;
   public searchText;
   msgs: Message[] = [];
-  constructor(private demandeService : DemandeService,private confirmationService: ConfirmationService) { }
+  constructor(private demandeService : MessageService,private confirmationService: ConfirmationService) { }
   confirm1() {
     this.confirmationService.confirm({
         message: 'Voulez-vous confirmer cette demande?',
@@ -36,7 +36,7 @@ confirm2(demande) {
         icon: 'pi pi-info-circle',
         accept: () => {
           this.demandeService.delete(demande._id).subscribe( data => { 
-            this.demandes.splice(this.demandes.indexOf(demande), 1 );
+            this.messages.splice(this.messages.indexOf(demande), 1 );
               },
              error => {
                  console.log(error);
@@ -64,8 +64,8 @@ confirm2(demande) {
     });
 }
   fetchDemandes() {
-     this.demandeService.getDemandes().subscribe((data: Demande[]) =>{
-       this.demandes = data;
+     this.demandeService.getMessages().subscribe((data: any[]) =>{
+       this.messages = data;
      } )
   }
   
@@ -73,11 +73,12 @@ confirm2(demande) {
   deleteDemande(demande) {
    
       this.demandeService.delete(demande._id).subscribe( data => { 
-        this.demandes.splice(this.demandes.indexOf(demande), 1 );
+        this.messages.splice(this.messages.indexOf(demande), 1 );
           },
          error => {
              console.log(error);
             });
        
   }
+
 }
