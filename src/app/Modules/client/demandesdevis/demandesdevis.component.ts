@@ -17,6 +17,7 @@ export class DemandesdevisComponent implements OnInit {
   cahierDeCharge: any;
   isLoading = false;
   demande: Demande;
+  submitted = false;
 
 
   ngOnInit() {
@@ -25,7 +26,7 @@ export class DemandesdevisComponent implements OnInit {
       Nom: new FormControl(null, {validators: [Validators.required]}),
       Prenom: new FormControl(null, { validators: [Validators.required] }),
       Tel: new FormControl(null, {validators: [Validators.required] }),
-      Email: new FormControl(null, { validators: [Validators.required] }),
+      Email: new FormControl(null, { validators:[Validators.required, Validators.email]}),
       Adresse: new FormControl(null, { validators: [Validators.required] }),
       Entreprise: new FormControl(null, { validators: [Validators.required] }),
       Fonction: new FormControl(null, { validators: [Validators.required] }),
@@ -46,6 +47,12 @@ export class DemandesdevisComponent implements OnInit {
     reader.readAsDataURL(file);
   }
   send(){
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.form.invalid) {
+        return;
+    }
     this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
     this.demandeService.sendDemande(
       this.form.value.Nom,

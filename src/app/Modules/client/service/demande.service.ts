@@ -39,9 +39,7 @@ export class DemandeService {
     return this.http.get(`${this.url}/GetOne/${id}`);
   }
   delete(id){
-    return this.http.delete(`${this.url}/DeleteOne/${id}`).pipe(tap(()=>{
-      this.refreshNeed.next();
-    }));;
+    return this.http.delete(`${this.url}/DeleteOne/${id}`);
   }
   sendMessageConfirmation(id) {
     console.log(id);

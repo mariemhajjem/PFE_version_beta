@@ -131,5 +131,12 @@ router.route('/getReservations').get(VerifyToken, function(req, res){
             res.status(200).send(order);
   })
 });
+router.route('/getAllReservations').get(VerifyToken, function(req, res){
+  Order.find({},function(err, order){
+    if (err) return res.status(500).send("hmmm.");
+            res.status(200).send(order);
+  })
+});
+
 
 module.exports = router;

@@ -49,4 +49,7 @@ export class SessionsService {
    delete(id) {
      return this.http.get(`${this.url}/delete/${id}`);
    }
+   AddReservation(order){
+     return this.http.put(`${this.url}/postReservation`, order);
+   }
 }

@@ -37,8 +37,13 @@ confirm2(demande) {
         icon: 'pi pi-info-circle',
         accept: () => {
           this.demandeService.sendMessageRefusé(demande._id);
+          this.demandeService.delete(demande._id).subscribe( data => {
+            this.demandes.splice(this.demandes.indexOf(demande), 1 );
+              },
+             error => {
+                 console.log(error);
+                });
             this.msgs = [{severity:'info', summary:'Confirmé', detail:'Demande supprimée'}];
-            this.demandeService.sendMessageRefusé(demande._id);
       },
         reject: () => {
             this.msgs = [{severity:'info', summary:'Rejeté', detail:'Vous avez rejeté'}];
@@ -56,6 +61,7 @@ confirm2(demande) {
     this.confirmationService.confirm({
         message: 'Are you sure that you want to perform this action?',
         accept: () => {
+            //Actual logic to perform a confirmation
         }
     });
 }

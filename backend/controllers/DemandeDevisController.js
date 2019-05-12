@@ -129,10 +129,10 @@ router.get('/GetOne/:id', function (req, res) {
 
 // DELETES A DemandeDevis FROM THE DATABASE
 router.delete('/DeleteOne/:id', function (req, res) {
-    DemandeDevis.findByIdAndDelete(req.params.id, function (err, demande) {
-        if (err) return res.status(500).send("There was a problem deleting the demande.");
-        res.status(200).send("demande:   was deleted.");
-    });
+    DemandeDevis.findByIdAndRemove({_id: req.params.id}, function(err, demande){
+      if(err) res.json(err);
+      else res.json('Successfully removed');
+  });
 });
 
 module.exports = router;
