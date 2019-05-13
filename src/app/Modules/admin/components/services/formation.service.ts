@@ -64,6 +64,14 @@ export class FormationService {
       }))
       .subscribe(res => console.log('Done'));
   }
+  updateFormation(id,Formation){
+    return this
+      .http
+      .put(`${this.uri}/update/${id}`, Formation).pipe(tap(()=>{
+        this.refreshNeed.next();
+      }))
+      .subscribe(res => console.log('Done'));
+  }
 
  deleteBusiness(id) {
     return this

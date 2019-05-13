@@ -36,9 +36,12 @@ confirm2(demande) {
         header: 'Delete Confirmation',
         icon: 'pi pi-info-circle',
         accept: () => {
-          this.demandeService.sendMessageRefusé(demande._id);
             this.msgs = [{severity:'info', summary:'Confirmé', detail:'Demande supprimée'}];
             this.demandeService.sendMessageRefusé(demande._id);
+            this.deleteDemande(demande);
+            this.demandeService.refreshNeed.subscribe(() => {
+              this.fetchDemandes();
+            });
       },
         reject: () => {
             this.msgs = [{severity:'info', summary:'Rejeté', detail:'Vous avez rejeté'}];
