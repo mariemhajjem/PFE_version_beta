@@ -50,6 +50,6 @@ export class SessionsService {
      return this.http.get(`${this.url}/delete/${id}`);
    }
    AddReservation(order){
-     return this.http.put(`${this.url}/postReservation`, order);
+     return this.http.put(`${this.url}/postReservation`, order).subscribe(res => console.log('Done'));
    }
 }
