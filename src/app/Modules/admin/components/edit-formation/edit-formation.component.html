@@ -8,35 +8,34 @@
       <li class="list-group-item p-3">
         <div class="row">
           <div class="col">
-            <form [formGroup]="form" (submit)="submit()" enctype="multipart/form-data">
+            <form [formGroup]="form" enctype="multipart/form-data">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="feFirstName">Formation name</label>
-                  <input type="text" class="form-control" id="feFirstName" formControlName="nameFormation" name="nameFormation" value="{{formations.nameFormation}}"> </div>
+                  <input type="text" class="form-control" id="feFirstName" formControlName="nameFormation" #nameFormation [value]="formations.nameFormation"> </div>
                 <div class="form-group col-md-6">
                   <label for="feLastName">Formation type</label>
-                  <input type="text" class="form-control" id="feLastName" name="type" formControlName="type" value="{{formations.type}}"> </div>
+                  <input type="text" class="form-control" id="feLastName" #type formControlName="type" [value]="formations.type"> </div>
               </div>
               <div class="form-group">
                 <label for="feInputAddress">Sujet</label>
-                <input type="text" class="form-control" id="feInputAddress" name="Sujet" formControlName="Sujet" value="{{formations.Sujet}}"> </div>
+                <input type="text" class="form-control" id="feInputAddress" #Sujet formControlName="Sujet" [value]="formations.Sujet"> </div>
               <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="feInputCity">image</label>
-                    <input type="file" name="imageUrl" (change)="onImagePicked($event)"> </div>
+                  
+                   
                 <div class="form-group col-md-2">
                   <label for="inputZip">Plan</label>
-                  <input type="text" class="form-control" id="inputZip" name="Plan" formControlName="Plan" value="{{formations.Plan}}"> </div>
+                  <input type="text" class="form-control" id="inputZip" #Plan formControlName="Plan" [value]="formations.Plan"> </div>
               </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="feDescription">Description</label>
-                  <input type="text" class="form-control" id="feDescription" name="feDescription" name="D" formControlName="D" rows="5" value="{{formations.Description}}">
+                  <input type="text" class="form-control" id="feDescription" #Description name="D" formControlName="Description" rows="5" [value]="formations.Description">
                 </div>
 
 
               </div>
-              <button type="submit" class="btn btn-accent">modifier formation</button>
+              <button type="button" class="btn btn-accent" (click)="submit(nameFormation.value,type.value,Sujet.value,Plan.value,Description.value)">modifier formation</button>
             </form>
           </div>
         </div>

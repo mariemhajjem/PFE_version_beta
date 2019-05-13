@@ -105,7 +105,7 @@ router.route('/update/:id').put(upload.single('imageUrl'),function (req, res) {
         formation.Description = req.body.Description;
         formation.Plan = req.body.Plan;
         formation.Sujet = req.body.Sujet;
-    //    formation.imageUrl = "assets/uploads/"+req.file.filename;
+      //formation.imageUrl = "assets/uploads/"+req.file.filename;
         formation.save().then(formation => {
           res.json('Update complete');
       })

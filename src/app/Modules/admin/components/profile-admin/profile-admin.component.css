@@ -18,7 +18,7 @@
 	width: 98%;
 }
 .container:before{
-	background: url('http://tfgms.com/sandbox/dailyui/bg-1.jpg') center no-repeat;
+  background-color: rgb(155, 155, 155);
 	background-size: cover;
 	content: '';
 	-webkit-filter: blur(10px);

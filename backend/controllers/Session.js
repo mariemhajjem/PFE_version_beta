@@ -30,7 +30,7 @@ router.route('/update/:id').put(function (req, res) {
       session.Formations= session.Formations;
       session.NbPlaces = req.body.NbPlaces;
       session.Horaires=req.body.Horaires;
-
+      session.NbHeures=req.body.NbHeures;
        session.save().then(formation => {
           res.json('Update complete');
       })

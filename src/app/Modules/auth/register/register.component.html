@@ -23,7 +23,7 @@
 		</div>
 	  </div><br>
 		<p>Vous avez déjà un compte ? <a routerLink="/auth/login"> Se connecter</a></p> 
-		<button class="form-btn sx log-in" type="button" routerLink="/">Retour</button>
+		<button class="form-btn sx log-in" type="button"><a href="/">Retour</a></button>
 		<button class="form-btn dx" (click)="submit(email.value, password.value)"
 		[disabled]="angForm.invalid">S'inscrire</button>
 	</form>
