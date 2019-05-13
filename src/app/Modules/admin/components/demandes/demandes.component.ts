@@ -9,12 +9,14 @@ import { ConfirmationService, Message } from 'primeng/api';
   styleUrls: ['./demandes.component.css']
 })
 export class DemandesComponent implements OnInit {
+ 
   columns =  ['Email','Entreprise','Afficher','Supprimer'];
   demandes : Demande[];
   demande : Demande;
   public searchText;
   msgs: Message[] = [];
   constructor(private demandeService : DemandeService,private confirmationService: ConfirmationService) { }
+ 
   confirm1(demande) {
     this.confirmationService.confirm({
         message: 'Voulez-vous confirmer cette demande?',
@@ -42,34 +44,13 @@ confirm2(demande) {
             this.demandeService.refreshNeed.subscribe(() => {
               this.fetchDemandes();
             });
-      },
+        },
         reject: () => {
             this.msgs = [{severity:'info', summary:'Rejeté', detail:'Vous avez rejeté'}];
         }
     });
-}
-  ngOnInit() {
-    this.demandeService.refreshNeed.subscribe(() => {
-      this.fetchDemandes();
-    });
-    this.fetchDemandes();
-
-  }
-  confirm() {
-    this.confirmationService.confirm({
-        message: 'Are you sure that you want to perform this action?',
-        accept: () => {
-        }
-    });
-}
-  fetchDemandes() {
-     this.demandeService.getDemandes().subscribe((data: Demande[]) =>{
-       this.demandes = data;
-     } )
-  }
-
-
-  deleteDemande(demande) {
+} 
+deleteDemande(demande) {
 
       this.demandeService.delete(demande._id).subscribe( data => {
         this.demandes.splice(this.demandes.indexOf(demande), 1 );
@@ -79,4 +60,20 @@ confirm2(demande) {
             });
 
   }
+  ngOnInit() {
+    this.demandeService.refreshNeed.subscribe(() => {
+      this.fetchDemandes();
+    });
+    this.fetchDemandes();
+
+  }
+
+  fetchDemandes() {
+     this.demandeService.getDemandes().subscribe((data: Demande[]) =>{
+       this.demandes = data;
+     } )
+  }
+
+
+ 
 }
