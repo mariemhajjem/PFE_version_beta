@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let Comment = new Schema({ 
+let Comment = new Schema(
+{ 
    Sujet : {
      type : String
    },
@@ -10,7 +11,8 @@ let Comment = new Schema({
     type: mongoose.Schema.Types.ObjectId, 
     ref:'Formation'
    }
-},{
+},
+{
   collection: 'cmts'
 });
 
