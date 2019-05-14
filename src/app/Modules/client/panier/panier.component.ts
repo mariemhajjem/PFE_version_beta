@@ -8,6 +8,7 @@ import { SessionsService } from '../../admin/components/services/sessions.servic
 })
 export class PanierComponent implements OnInit {
    items;
+   order;
   constructor(private Ss:SessionsService) { }
 
   ngOnInit() {
@@ -15,6 +16,9 @@ export class PanierComponent implements OnInit {
       this.items = data;
       console.log(data);
     })  }
+    reserver(){
+      this.Ss.AddReservation(this.order);
+    }
     Remove(id) {
       if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {
         this.Ss.Remove(id).subscribe(

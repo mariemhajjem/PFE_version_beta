@@ -41,5 +41,7 @@ app.use('/cmt',cmt);
 
 var message = require('./controllers/messageController');
 app.use('/message',message);
+var event = require('./controllers/eventController');
+app.use('/event',event);
 
 module.exports = app;

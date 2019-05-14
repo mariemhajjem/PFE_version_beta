@@ -16,15 +16,7 @@ export class EditSessionComponent implements OnInit {
   Formations: Formation[];
   selectedLevel;
   formation: Formation;
-  session : Session ={
-    name :  "",
-    date: "" ,
-     Formations: this.formation,
-    Formateur : "",
-    NbPlaces :  0,
-    Horaires : "",
-    NbHeures : 0,
-   };
+  session : Session ;
    id: any;
   constructor(private SS: SessionsService,private FormService: FormationService, private route: ActivatedRoute, private router: Router) { }
 

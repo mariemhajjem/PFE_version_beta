@@ -1,14 +1,12 @@
 import Formation from './formation';
 
 export class Session {
-    
+
         name :  string;
         date:  string;
-         Formations: Formation;
+        Formations: Formation;
         Formateur : string;
         NbPlaces :  Number;
         Horaires : string;
         NbHeures : Number;
-       
-      
 }
