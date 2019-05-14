@@ -1,19 +1,46 @@
 const express = require('express');
 const router = express.Router();
 var bodyParser = require('body-parser');
-
+const multer = require('multer');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 // Require formation model in our routes module
 let Event = require('../Models/event');
 
-router.post('/create', function (req, res) {
+
+const fileStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'src/assets/uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, new Date().toISOString().replace(/:/g, '-')+"-"+ file.originalname);
+  }
+});
+
+const fileFilter = (req, file, cb) => {
+  if (
+    file.mimetype === 'image/png' ||
+    file.mimetype === 'image/jpg' ||
+    file.mimetype === 'image/jpeg'
+  ) {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+const upload =multer({
+  storage: fileStorage, fileFilter: fileFilter
+});
+router.post('/create',upload.single('imageUrl'), function (req, res) {
+  const imageUrl = "assets/uploads/"+req.file.filename ;
   Event.create({
 
           name : req.body.name,
           date: req.body.date,
-          description: req.body.description
+          Description: req.body.Description,
+          imageUrl : imageUrl,
+          temps : req.body.temps,
       },
       function (err, Event) {
           if (err) return res.status(500).send("There was a problem adding the information to the database.");

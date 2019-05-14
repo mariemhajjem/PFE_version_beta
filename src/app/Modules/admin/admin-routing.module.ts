@@ -18,6 +18,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CrudSessionsComponent } from './components/crud-sessions/crud-sessions.component';
 import { AddSessionComponent } from './components/add-session/add-session.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { EventsComponent } from './components/events/events.component';
 
 
 
@@ -36,6 +38,8 @@ const routes: Routes = [
     },
     { path: 'addSession', component: AddSessionComponent },
     { path: 'addFormation', component: CrudComponent },
+    { path: 'addEvent', component: AddEventComponent },
+    { path: 'events', component: EventsComponent },
     { path: 'users', component: ListUserComponent },
     { path: 'editUser/:id', component: CrudUsersComponent },
     { path: 'listFormation', component: FormListComponent },

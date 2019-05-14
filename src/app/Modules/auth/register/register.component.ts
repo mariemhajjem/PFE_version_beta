@@ -9,7 +9,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
+  submitted = false;
   angForm: FormGroup;
   constructor(private auth: AuthService,private router : Router, private fb: FormBuilder) { }
 
@@ -19,11 +19,19 @@ export class RegisterComponent implements OnInit {
   
   createForm() {
     this.angForm = this.fb.group({
-      email: ['', Validators.required ],
-      password: ['', Validators.required ] 
+      email: ['', [Validators.required , Validators.email]],
+      password:  ['',[Validators.required, Validators.minLength(4)]]
     });
   }
+  get f() { return this.angForm.controls; }
+
+   
+      
   submit(email,password) {
+    this.submitted = true;
+    if (this.angForm.invalid) {
+      return;
+  }
     let registerUserData = {
     email: email,
     password: password,

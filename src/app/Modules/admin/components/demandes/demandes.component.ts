@@ -10,7 +10,7 @@ import { ConfirmationService, Message } from 'primeng/api';
 })
 export class DemandesComponent implements OnInit {
  
-  columns =  ['Email','Entreprise','Afficher','Supprimer'];
+  columns =  ['#','Email','Tel','Services','Entreprise','CDC','Afficher','Supprimer'];
   demandes : Demande[];
   demande : Demande;
   public searchText;

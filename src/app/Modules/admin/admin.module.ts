@@ -3,12 +3,11 @@ import { CrudComponent } from './components/crud/crud.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AdminRoutingModule } from './admin-routing.module';
-
+import { AdminRoutingModule } from './admin-routing.module'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {AccordionModule} from 'primeng/accordion';
-
+import {InputTextareaModule} from 'primeng/inputtextarea';
 import { CrudUsersComponent } from './components/crud-users/crud-users.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
 import { UserService } from './components/services/user.service';
@@ -41,6 +40,9 @@ import { AddSessionComponent } from './components/add-session/add-session.compon
 import { EditSessionComponent } from './components/edit-session/edit-session.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { EventsComponent } from './components/events/events.component';
+import { EventService } from './components/services/event.service';
+import { AddEventComponent } from './components/add-event/add-event.component';
+import { CrudPartenairesComponent } from './components/crud-partenaires/crud-partenaires.component';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -54,7 +56,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
-     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent, CrudSessionsComponent, AddSessionComponent, EditSessionComponent, MessagesComponent, EventsComponent],
+     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent, CrudSessionsComponent, AddSessionComponent, EditSessionComponent, MessagesComponent, EventsComponent, AddEventComponent, CrudPartenairesComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -62,6 +64,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     HttpClientModule,
     AdminRoutingModule,
     ReactiveFormsModule,
+    InputTextareaModule,
     FormsModule,
     AccordionModule,
     CardModule,
@@ -80,6 +83,7 @@ const JWT_Module_Options: JwtModuleOptions = {
   providers: [
      FormationService,
      UserService,
+     EventService,
      ConfirmationService,
      AuthGuard
     ],

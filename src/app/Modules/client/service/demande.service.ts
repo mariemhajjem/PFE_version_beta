@@ -16,7 +16,7 @@ export class DemandeService {
   get refreshNeed() {
     return this.refreshNeeds;
   }
-  sendDemande(Nom: string, Prenom: string, Tel: string, Email: string, Adresse: string, Entreprise: string, Fonction : string, DomaineActivite: string, Description: string, Message: string, cahierDeCharge: File ) {
+  sendDemande(Nom: string, Prenom: string, Tel: string, Email: string, Adresse: string, Entreprise: string, Fonction : string, DomaineActivite: string, Description: string, Message: string, cahierDeCharge: File ,Services: string) {
     const demande = new FormData();
     demande.append("Nom", Nom);
     demande.append("Prenom", Prenom);
@@ -28,6 +28,7 @@ export class DemandeService {
     demande.append("DomaineActivite", DomaineActivite);
     demande.append("Description", Description);
     demande.append("Message", Message);
+    demande.append("Services", Services);
     demande.append("cahierDeCharge", cahierDeCharge);
     this.http.post(`${this.url}/Create`, demande)
     .subscribe(res => console.log('Done'));

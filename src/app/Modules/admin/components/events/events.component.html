@@ -1,3 +1,29 @@
-<p>
-  events works!
-</p>
+<br>
+<h3>Liste des évènements</h3>
+<p-table [value]="events">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 4em"></th>
+            <th>Nom event</th>
+            <th>Date event</th>
+            <th>Temps event</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-event>
+        <tr >
+            <td>
+                <button type="button" pButton (click)="selectEvent($event,event,op3)" icon="pi pi-image"></button>
+              <p-overlayPanel #op3>
+               <img src="{{selectedForm.imageUrl}}" *ngIf="selectedForm"/>
+              </p-overlayPanel></td>
+            <td>{{ event.name }}</td>
+            <td>{{ event.date | date :'dd-MMM-yy h:mm' }}</td>
+            <td>{{ event.temps | date :'h:mm' }}</td>
+            <td><a [routerLink]="['/admin/editFormation', event._id]" class="btn btn-primary">Modifier</a></td>
+            <td><a (click) = "deleteEvent(event)" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+    </ng-template>
+</p-table>
+

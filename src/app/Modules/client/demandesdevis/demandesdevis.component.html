@@ -25,7 +25,7 @@
           <label>Prénom <input id="feFPre" type="text" name="field2" formControlName="Prenom" /></label>
           <label>Adresse <textarea id="feFirst" name="field3" formControlName="Adresse"></textarea></label>
           <label>Email <input type="email" id="fe" name="field4" formControlName="Email"/></label>
-          <label>Tél <input type="text" id="feFi" name="field5" formControlName="Tel"/></label>
+          <label>Tél <br><p-inputMask formControlName="Tel" mask="(999) 99-999?-999"></p-inputMask> </label>
       </div>
 
       <div class="section"><span>2</span>Entreprise</div>
@@ -35,11 +35,11 @@
           <label>Domaine d'activité<input type="text" name="field8" formControlName="DomaineActivite" /></label>
       </div>
 
-      <div class="section"><span>3</span>Services</div>
+      <div class="section"><span>3</span>Services demandés</div>
           <div class="inner-wrap">
-            <label>Services <input type="text" name="field9" /></label>
-            <label>Plus de services<input type="text" name="field10" /></label>
-
+            <label>Services* <p-chips name="field11" formControlName="Services"></p-chips></label>
+             <p>*Tapez entrer après chaque service pour ajouter plus</p>
+      <br>
             <label>Description<input type="text" name="field11" formControlName="Description"/></label>
             <label>Cahier de charge</label><input type="file" name="field12" (change)="onFilePicked($event)"/><br><br>
             <label>Message <textarea name="field13" formControlName="Message"></textarea></label>

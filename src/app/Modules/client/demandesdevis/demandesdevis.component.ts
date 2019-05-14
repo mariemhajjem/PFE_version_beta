@@ -18,8 +18,7 @@ export class DemandesdevisComponent implements OnInit {
   isLoading = false;
   demande: Demande;
   submitted = false;
-
-
+   Services : string[];
   ngOnInit() {
     this.nav.hide();
     this.form = new FormGroup({
@@ -33,6 +32,7 @@ export class DemandesdevisComponent implements OnInit {
       DomaineActivite: new FormControl(null, { validators: [Validators.required] }),
       Description: new FormControl(null, { validators: [Validators.required] }),
       Message: new FormControl(null),
+      Services: new FormControl(null, { validators: [Validators.required] }),
       cahierDeCharge: new FormControl(null, { validators: [Validators.required] }),
     });
   }
@@ -65,7 +65,8 @@ export class DemandesdevisComponent implements OnInit {
       this.form.value.DomaineActivite,
       this.form.value.Description,
       this.form.value.Message,
-      this.form.value.cahierDeCharge
+      this.form.value.cahierDeCharge,
+      this.form.value.Services
     );
   }
 

@@ -33,6 +33,10 @@ import { PanierComponent } from './panier/panier.component';
 import { MessageComponent } from './message/message.component';
 import { ButtonDemandeComponent } from './button-demande/button-demande.component';
 import { EventsComponent } from './events/events.component';
+import {ChipsModule} from 'primeng/chips';
+import { EventService } from '../admin/components/services/event.service';
+import {InputMaskModule} from 'primeng/inputmask';
+ 
 @NgModule({
   declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent],
   imports: [
@@ -49,11 +53,14 @@ import { EventsComponent } from './events/events.component';
     TabViewModule,
     NgbModule,
     PaginatorModule,
-    FileUploadModule
+    FileUploadModule,
+    ChipsModule,
+    InputMaskModule
   ] ,
   providers :[
     NavbarService,
-    MessageService
+    MessageService,
+    EventService
   ]
 })
 export class ClientModule { }

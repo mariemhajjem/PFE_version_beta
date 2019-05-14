@@ -105,7 +105,8 @@ router.post('/Create',upload.single('cahierDeCharge'), function (req, res) {
         DomaineActivite: req.body.DomaineActivite,
          Description: req.body.Description,
         Message:  req.body.Message,
-        cahierDeCharge : req.file.path
+        cahierDeCharge : req.file.path,
+        Services : req.body.Services
         },
         function (err, demandeDevis) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");

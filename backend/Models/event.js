@@ -5,12 +5,18 @@ let Event = new Schema({
       type: String
     },
     date: {
-      type: String
+      type: Date
     },
     Description : {
       type : String
-    }
+    } ,
+  imageUrl: {
+    type: String
   },
+  temps : {
+    type : Date
+  } ,
+} ,
   {
     collection: 'events'
   }, {timestamps: true});

@@ -8,11 +8,8 @@ export  class Demande {
     Fonction : string;
     DomaineActivite: string;
     Description: string;
-
+    Services : string[];
     Message: string;
-
-
-
     cahierDeCharge: File;
     id :string;
   }

@@ -1,7 +1,8 @@
+<br>
 <div class="col-lg-8">
   <div class="card card-small mb-4">
     <div class="card-header border-bottom">
-      <h6 class="m-0">Formation details</h6>
+      <h6 class="m-0">Ajouter évènement</h6>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item p-3">
@@ -10,36 +11,38 @@
             <form [formGroup]="form" (submit)="submit()" enctype="multipart/form-data">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="feFirstName">Formation name</label>
-                  <input type="text" class="form-control" id="feFirstName" formControlName="nameFormation" name="nameFormation"> </div>
+                  <label for="feFirstName">Nom de l'evènement</label>
+                  <input type="text" class="form-control" id="feFirstName" formControlName="name" name="name"> </div>
                 <div class="form-group col-md-6">
-                  <label for="feLastName">Formation type</label>
-                  <input type="text" class="form-control" id="feLastName" name="type" formControlName="type"> </div>
+                  <label for="feLastName">Date de l'évènement</label>
+                  <br>
+                  <p-calendar formControlName="date" name="date" [showTime]="true" [monthNavigator]="true" [yearNavigator]="true" yearRange="2019:2050"></p-calendar>
+                 </div>
               </div>
-              <div class="form-group">
-                <label for="feInputAddress">Sujet</label>
-                <input type="text" class="form-control" id="feInputAddress" name="Sujet" formControlName="Sujet"> </div>
+                 <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="feInputCity">Temps de l'évènement</label>
+                   <br>
+                   <p-calendar type="date" formControlName="temps" name="temps"  [timeOnly]="true"></p-calendar>
+                   </div>
+            </div>
               <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="feInputCity">image</label>
                     <input type="file" name="imageUrl" (change)="onImagePicked($event)"> </div>
-                <div class="form-group col-md-2">
-                  <label for="inputZip">Plan</label>
-                  <br>
-                  <textarea [rows]="5" [cols]="30" name="Plan" formControlName="Plan" pInputTextarea autoResize="autoResize"></textarea>
-                  
-                 </div>
               </div>
+           
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="feDescription">Description</label>
-                <br>
+                  <br>
                   <textarea [rows]="5" [cols]="30" name="feDescription" name="D" formControlName="D" pInputTextarea autoResize="autoResize"></textarea>
+                 
                 </div>
              
               
               </div>
-              <button type="submit" class="btn btn-accent">create Formation</button>
+              <button type="submit" class="btn btn-accent">Créer évènement</button>
             </form>
           </div>
         </div>
@@ -47,3 +50,4 @@
     </ul>
   </div>
 </div>
+
