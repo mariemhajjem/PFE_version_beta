@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 const multer = require('multer');
 const creds = require('../config/contactConfig');
+const fs = require('fs');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
@@ -104,7 +105,7 @@ router.post('/Create',upload.single('cahierDeCharge'), function (req, res) {
         DomaineActivite: req.body.DomaineActivite,
          Description: req.body.Description,
         Message:  req.body.Message,
-        cahierDeCharge : "assets/uploads/"+req.file.filename
+        cahierDeCharge : req.file.path
         },
         function (err, demandeDevis) {
             if (err) return res.status(500).send("There was a problem adding the information to the database.");
@@ -134,5 +135,17 @@ router.delete('/DeleteOne/:id', function (req, res) {
       else res.json('Successfully removed');
   });
 });
-
+router.get('/OpenFile/:id', function (req, res) {
+  DemandeDevis.findById(req.params.id, function (err, demande) {
+      if (err) return res.status(500).send("There was a problem finding the DemandeDevis.");
+      if (!demande) return res.status(404).send("No demande found.");
+      fs.open(demande.cahierDeCharge, "r", (err , fd)=>{
+        if(err){
+          console.log(err);
+        }else{
+          console.log('file (${fd}) suuu')
+        }
+      });
+  });
+});
 module.exports = router;

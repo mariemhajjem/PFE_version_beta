@@ -56,7 +56,7 @@
 
               <!-- Course Tabs -->
               <p-tabView>
-                
+
 
                   <!-- Description -->
                   <p-tabPanel header="Description" leftIcon="pi pi-bars">
@@ -202,7 +202,7 @@
 
                   <!-- Reviews -->
                   <p-tabPanel header="Commentaires" leftIcon="pi pi-comments">
-                  
+
                        <!-- Comments -->
                     <div class="comments_container">
                       <ul class="comments_list">
@@ -293,7 +293,7 @@
                   <div class="latest d-flex flex-row align-items-start justify-content-start">
                     <div class="latest_image"><div><img src="../../../../assets/client/images/latest_1.jpg" alt=""></div></div>
                     <div class="latest_content">
-                      <div class="latest_title"> How to Design a Logo a Beginners Course </div>
+                      <div class="latest_title"> {{session.name}}</div>
                       <button (click)="AjouterAuPanier(formation.Sessions[i])">Ajouter au panier</button>
                     </div>
                   </div>

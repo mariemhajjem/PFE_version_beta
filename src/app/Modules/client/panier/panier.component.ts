@@ -17,7 +17,7 @@ export class PanierComponent implements OnInit {
       console.log(data);
     })  }
     reserver(){
-      this.Ss.AddToCart(this.order);
+      this.Ss.AddReservation(this.order);
     }
     Remove(id) {
       if (confirm('êtes-vous sûr de supprimer cet enregistrement ?')) {

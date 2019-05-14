@@ -88,7 +88,11 @@ router.route('/limit').get(function (req, res) {
 // Defined edit route
 router.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
-  Formation.findById(id).populate({path:'Cmts' , model: 'Comment', select: { 'Sujet': 1,'User': 1, '_id' : 0}}).exec(function (err, formation){
+  Formation.findById(id).populate({path:'Cmts' , model: 'Comment', select: { 'Sujet': 1,'User': 1, '_id' : 0},populate: {
+    path: 'Sessions',
+    model: 'Session',
+    select: { 'name': 1}
+  }}).exec(function (err, formation){
       res.json(formation);
   });
 });
