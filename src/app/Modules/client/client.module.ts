@@ -10,7 +10,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AuthModule } from '../auth/auth.module';
 import { SliderComponent } from './slider/slider.component';
 import { FormationsComponent } from './formations/formations.component';
-import { EquipeComponent } from './equipe/equipe.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormulaireformationComponent } from './formulaireformation/formulaireformation.component';
 import { NavbarService } from './service/navbar.service';
@@ -38,7 +37,7 @@ import { EventService } from '../admin/components/services/event.service';
 import {InputMaskModule} from 'primeng/inputmask';
  
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent],
   imports: [
     CommonModule,
     BrowserModule,
