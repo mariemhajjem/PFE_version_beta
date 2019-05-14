@@ -28,15 +28,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     AppComponent,
     Notfound404Component
   ],
-  imports: [
-    ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
-      itemType: CartItem, // <-- Configuration is optional
-      serviceType: 'localStorage',
-      serviceOptions: {
-        storageKey: 'ShoppingCart',
-        clearOnError: true
-      }
-    }),
+  imports: [ 
     BrowserModule,
     HttpClientModule,
     AdminModule,

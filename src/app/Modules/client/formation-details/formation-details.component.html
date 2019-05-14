@@ -22,7 +22,7 @@
 
     <div class="course">
       <div class="container">
-        <div class="row">
+        <div class="row" *ngIf="formation">
 
           <!-- Course -->
           <div class="col-lg-8">
@@ -52,7 +52,7 @@
               </div>
 
               <!-- Course Image -->
-              <div class="course_image"><img src="../../../../assets/client/images/course_image.jpg" alt=""></div>
+              <div class="course_image"><img src="{{formation.imageUrl}}" alt="image de la formation"></div>
 
               <!-- Course Tabs -->
               <p-tabView>
@@ -293,7 +293,7 @@
                   <div class="latest d-flex flex-row align-items-start justify-content-start">
                     <div class="latest_image"><div><img src="../../../../assets/client/images/latest_1.jpg" alt=""></div></div>
                     <div class="latest_content">
-                      <div class="latest_title"> How to Design a Logo a Beginners Course </div>
+                      <div class="latest_title"> {{session.name}}</div>
                       <button (click)="AjouterAuPanier(formation.Sessions[i])">Ajouter au panier</button>
                     </div>
                   </div>

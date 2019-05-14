@@ -9,10 +9,8 @@ var DemandeSchema = new mongoose.Schema({
     Entreprise: String,
     Fonction : String,
     DomaineActivite: String,
-     Description: String,
+    Description: String,
     Message: String,
-
-
     cahierDeCharge: String,
 
 });

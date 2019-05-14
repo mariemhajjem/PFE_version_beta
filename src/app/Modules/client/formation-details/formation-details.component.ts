@@ -4,12 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import Formation from '../../admin/components/models/formation';
 import { NavbarService } from '../service/navbar.service';
 import { AuthService } from '../../auth/auth.service';
-import { CartService, BaseCartItem } from 'ng-shopping-cart';
 import { CommentaireService } from '../service/commentaire.service';
 import  Commentaire   from '../models/commentaire';
-
-import { map} from 'rxjs/operators';
-import { User } from '../../admin/components/models/user';
 import { SessionsService } from '../../admin/components/services/sessions.service';
 
 @Component({
@@ -18,21 +14,19 @@ import { SessionsService } from '../../admin/components/services/sessions.servic
   styleUrls: ['./formation-details.component.css']
 })
 export class FormationDetailsComponent implements OnInit  {
-
-
-   formation: Formation;
+  formation: Formation;
   idformation:any;
   cmt :Commentaire ={
     Sujet :''
   };
   constructor(private sessionService:SessionsService,private route: ActivatedRoute, private auth: AuthService,private formationService :FormationService,public nav: NavbarService,private cmtService :CommentaireService) { }
 
-
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.idformation = params.id;
       this.formationService.editBusiness(params.id).subscribe(res => {
         this.formation = res as Formation;
+        console.log(res);
       });
     });
     if(this.auth.isLoggedIn()){
@@ -43,7 +37,7 @@ export class FormationDetailsComponent implements OnInit  {
     //  console.log(names);
   }
   AjouterCmt(){
-    console.log(this.idformation);
+       console.log(this.idformation);
     this.cmtService.sendCmt(this.idformation,this.cmt);
   }
 
