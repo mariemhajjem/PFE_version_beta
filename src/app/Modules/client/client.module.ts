@@ -32,8 +32,9 @@ import { MessageService } from 'primeng/api';
 import { PanierComponent } from './panier/panier.component';
 import { MessageComponent } from './message/message.component';
 import { ButtonDemandeComponent } from './button-demande/button-demande.component';
+import { EventsComponent } from './events/events.component';
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, EquipeComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent],
   imports: [
     CommonModule,
     BrowserModule,

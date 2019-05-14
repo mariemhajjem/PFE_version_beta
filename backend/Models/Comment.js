@@ -6,6 +6,7 @@ let Comment = new Schema(
    Sujet : {
      type : String
    },
+   date :Date,
    User : {type: mongoose.Schema.Types.ObjectId, ref:'User'},
    formation : {
     type: mongoose.Schema.Types.ObjectId, 

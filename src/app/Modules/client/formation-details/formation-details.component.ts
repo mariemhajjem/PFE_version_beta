@@ -26,18 +26,13 @@ export class FormationDetailsComponent implements OnInit  {
       this.idformation = params.id;
       this.formationService.editBusiness(params.id).subscribe(res => {
         this.formation = res as Formation;
-        console.log(res);
       });
     });
     if(this.auth.isLoggedIn()){
       this.nav.LoggedIn = true; 
      }  
-    //const array = [{ id: 123, value: "value1", name:"Name1" }, { id: 124, value: "value2", name: "Name1" }, { id: 125, value: "value3", name: "Name2" }, { id: 126, value: "value4", name: "Name2" }],
-    // names = [...new Set(array.map(a => a.name))];
-    //  console.log(names);
   }
   AjouterCmt(){
-       console.log(this.idformation);
     this.cmtService.sendCmt(this.idformation,this.cmt);
   }
 

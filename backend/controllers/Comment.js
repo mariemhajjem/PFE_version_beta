@@ -31,6 +31,7 @@ router.post('/:formation', VerifyToken,async (req, res)=> {
   cmt.Sujet = req.body.Sujet; 
   cmt.User= user._id;
   cmt.formation= formation._id;
+  cmt.date = Date.now();
   
   cmt.save() ;
  

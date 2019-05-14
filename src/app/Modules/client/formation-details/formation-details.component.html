@@ -208,11 +208,11 @@
                       <ul class="comments_list">
                         <li *ngFor="let cmt of formation.Cmts  ; let i=index">
                           <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-                            <div class="comment_image"><div><img src="../../../../assets/client/images/comment_1.jpg" alt=""></div></div>
+                            <div class="comment_image"><div><img src="./assets/client/images/Utilisateur.png" alt="User"></div></div>
                             <div class="comment_content">
                               <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
                                 <div class="comment_author">{{cmt.User.email}}</div>
-                                <div class="comment_time ml-auto">1 day ago</div>
+                                <div class="comment_time ml-auto">{{cmt.date | date :'dd-MMM-yy h:mm'}}</div>
                               </div>
                               <div class="comment_text">
                                 <p>{{cmt.Sujet}}</p>
@@ -256,26 +256,26 @@
                 <div class="sidebar_section_title">session</div>
                 <div class="sidebar_feature">
                   <br>
-                  <div class="course_price">$180</div>
+                  <div class="course_price">prix : $180</div>
 
                   <!-- Features -->
                   <div class="feature_list">
 
                     <!-- Feature -->
                     <div class="feature d-flex flex-row align-items-center justify-content-start">
-                      <div class="feature_title"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Duration:</span></div>
+                      <div class="feature_title"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Date:</span></div>
                       <div class="feature_text ml-auto">2 weeks</div>
                     </div>
 
                     <!-- Feature -->
                     <div class="feature d-flex flex-row align-items-center justify-content-start">
-                      <div class="feature_title"><i class="fa fa-list-alt" aria-hidden="true"></i><span>Lectures:</span></div>
-                      <div class="feature_text ml-auto">Yes</div>
+                      <div class="feature_title"><i class="fa fa-list-alt" aria-hidden="true"></i><span>Nombres de places:</span></div>
+                      <div class="feature_text ml-auto">20</div>
                     </div>
 
                     <!-- Feature -->
                     <div class="feature d-flex flex-row align-items-center justify-content-start">
-                      <div class="feature_title"><i class="fa fa-users" aria-hidden="true"></i><span>Lectures:</span></div>
+                      <div class="feature_title"><i class="fa fa-users" aria-hidden="true"></i><span>Nombres d'heures:</span></div>
                       <div class="feature_text ml-auto">35</div>
                     </div>
 
