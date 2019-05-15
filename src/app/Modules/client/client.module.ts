@@ -35,7 +35,8 @@ import { EventsComponent } from './events/events.component';
 import {ChipsModule} from 'primeng/chips';
 import { EventService } from '../admin/components/services/event.service';
 import {InputMaskModule} from 'primeng/inputmask';
- 
+import { ToastModule } from 'primeng/toast';
+
 @NgModule({
   declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent],
   imports: [
@@ -54,7 +55,8 @@ import {InputMaskModule} from 'primeng/inputmask';
     PaginatorModule,
     FileUploadModule,
     ChipsModule,
-    InputMaskModule
+    InputMaskModule,
+    ToastModule
   ] ,
   providers :[
     NavbarService,

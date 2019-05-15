@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { MessageService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class DemandeService {
 
   private url="http://localhost:3000/demande";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private messageService: MessageService) { }
   private refreshNeeds = new Subject<void>();
 
   get refreshNeed() {
@@ -31,7 +32,7 @@ export class DemandeService {
     demande.append("Services", Services);
     demande.append("cahierDeCharge", cahierDeCharge);
     this.http.post(`${this.url}/Create`, demande)
-    .subscribe(res => console.log('Done'));
+    .subscribe(res => {console.log('Done');this.messageService.add({severity: 'info', summary: 'Succès', detail: 'Demande de devis envoyée'});});
   }
   getDemandes(){
     return this.http.get(`${this.url}/List`)

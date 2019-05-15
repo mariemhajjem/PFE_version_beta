@@ -14,14 +14,20 @@
                   <input type="text" class="form-control" id="feFirstName" formControlName="nameFormation" name="nameFormation"> </div>
                 <div class="form-group col-md-6">
                   <label for="feLastName">Formation type</label>
-                  <input type="text" class="form-control" id="feLastName" name="type" formControlName="type"> </div>
+                 
+                  <div class="ui-g" style="width:250px;margin-bottom:10px">
+                    <div class="ui-g-12"><p-radioButton name="group2" value="théorique" label="théorique" formControlName="type" inputId="preopt1"></p-radioButton></div>
+                    <div class="ui-g-12"><p-radioButton name="group2" value="pratique" label="pratique" formControlName="type" inputId="preopt2"></p-radioButton></div>
+                   
+                </div> 
+                </div>
               </div>
               <div class="form-group">
                 <label for="feInputAddress">Sujet</label>
                 <input type="text" class="form-control" id="feInputAddress" name="Sujet" formControlName="Sujet"> </div>
               <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="feInputCity">image</label>
+                    <label for="feInputCity">image</label><br>
                     <input type="file" name="imageUrl" (change)="onImagePicked($event)"> </div>
                 <div class="form-group col-md-2">
                   <label for="inputZip">Plan</label>
