@@ -43,6 +43,7 @@ import { EventsComponent } from './components/events/events.component';
 import { EventService } from './components/services/event.service';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { CrudPartenairesComponent } from './components/crud-partenaires/crud-partenaires.component';
+import { GestionComponent } from './components/gestion/gestion.component';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -56,7 +57,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
-     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent, CrudSessionsComponent, AddSessionComponent, EditSessionComponent, MessagesComponent, EventsComponent, AddEventComponent, CrudPartenairesComponent],
+     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent, CrudSessionsComponent, AddSessionComponent, EditSessionComponent, MessagesComponent, EventsComponent, AddEventComponent, CrudPartenairesComponent, GestionComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

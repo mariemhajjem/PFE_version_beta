@@ -50,4 +50,20 @@ export class SessionsService {
    AddReservation(order){
      return this.http.put(`${this.url}/postReservation`, order).subscribe(res => console.log('Done'));
    }
+   getReservation(){
+    return this.http.get(`${this.url}/getAllReservations`);
+   }
+   sendMessageConfirmation(id) {
+    console.log(id);
+    this.http.post(`${this.url}/sendConfirmation/${id}`, id)
+        .subscribe(res => console.log('Done'));
+  }
+  sendMessageRefusé(id) {
+    console.log(id);
+    this.http.post(`${this.url}/sendRefuse/${id}`, id)
+        .subscribe(res => console.log('Done'));
+  }
+  deleteOrder(id) {
+    return this.http.get(`${this.url}/deleteOrder/${id}`);
+  }
 }

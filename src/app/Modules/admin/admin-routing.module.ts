@@ -1,3 +1,4 @@
+import { GestionComponent } from './components/gestion/gestion.component';
 import { EditSessionComponent } from './components/edit-session/edit-session.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { EditFormationComponent } from './components/edit-formation/edit-formation.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
     { path: 'profile', component: ProfileComponent },
     { path: 'demandes', component: DemandesComponent },
     { path: 'partenaire', component: PartenaireComponent},
+    { path: 'reser', component: GestionComponent},
     { path : 'messages',component: MessagesComponent}
   ]
   }
