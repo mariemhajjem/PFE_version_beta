@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { User } from '../../admin/components/models/user';
 
 @Component({
   selector: 'app-register',
@@ -27,16 +28,22 @@ export class RegisterComponent implements OnInit {
 
    
       
-  submit(email,password) {
+  submit(email :string,password:string) {
     this.submitted = true;
     if (this.angForm.invalid) {
       return;
   }
-    let registerUserData = {
+    let registerUserData :User = {
     email: email,
     password: password,
     role : 'User',
-    panier : ['5cbbb748c4745105c003ca55']
+    nom: '',
+    prenom: '', 
+    tel: 0,
+    age: 0,
+    Niveau : '',
+    etude: '',
+    competences: [], 
   }
     this.auth.registerUser(registerUserData)
     .subscribe(

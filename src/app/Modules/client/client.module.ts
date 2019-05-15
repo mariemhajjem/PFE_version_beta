@@ -36,9 +36,12 @@ import {ChipsModule} from 'primeng/chips';
 import { EventService } from '../admin/components/services/event.service';
 import {InputMaskModule} from 'primeng/inputmask';
 import { ToastModule } from 'primeng/toast';
+import { ProfilComponent } from './profil/profil.component';
+import { UserService } from '../admin/components/services/user.service';
+import { AuthService } from '../auth/auth.service';
 
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent, ProfilComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -61,6 +64,8 @@ import { ToastModule } from 'primeng/toast';
   providers :[
     NavbarService,
     MessageService,
+    UserService,
+    AuthService,
     EventService
   ]
 })
