@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 var bodyParser = require('body-parser');
 var VerifyToken = require('./VerifyToken');
+const nodemailer = require('nodemailer');
+const creds = require('../config/contactConfig');
 
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
@@ -11,6 +13,78 @@ let Formation = require('../Models/formation');
 let Session = require('../Models/Session');
 let User = require('../Models/User');
 let Order = require('../Models/order');
+
+
+var transport = {
+  service: 'gmail',
+  secure: false,
+  port: 25,
+  auth: {
+    user: creds.USER,
+    pass: creds.PASS
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
+}
+
+
+var transporter = nodemailer.createTransport(transport)
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Server is ready to take messages');
+  }
+});
+router.post('/sendConfirmation/:id', async(req, res, next) => {
+  let id =req.params.id;
+  const order = await Order.findOne({_id : id});
+  var name ="digitalis"
+  var email = order.user.name
+  var mail = {
+    from: name,
+    to: email,  //Change to email address that you want to receive messages on
+    subject: 'Nouveau message digitalis',
+    html: '<h1>reservation accepter</h1>/</br>'
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+    }
+  })
+});
+router.post('/sendRefuse/:id', async(req, res, next) => {
+  let id =req.params.id;
+  const order = await Order.findOne({_id : id});
+  var name = "digitalis"
+  var email = order.user.name
+  var mail = {
+    from: name,
+    to: email,  //Change to email address that you want to receive messages on
+    subject: 'Nouveau message de digitalis',
+    html: '<h1>reservation refusé</h1>/</br>'
+  }
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+    }
+  })
+});
 
 router.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
@@ -136,6 +210,12 @@ router.route('/getAllReservations').get(VerifyToken, function(req, res){
     if (err) return res.status(500).send("hmmm.");
             res.status(200).send(order);
   })
+});
+router.route('/deleteOrder/:id').get(function (req, res) {
+  Order.findByIdAndRemove({_id: req.params.id}, function(err, Order){
+      if(err) res.json(err);
+      else res.json('Successfully removed');
+  });
 });
 
 
