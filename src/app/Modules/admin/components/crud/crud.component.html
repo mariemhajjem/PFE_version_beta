@@ -10,10 +10,18 @@
             <form [formGroup]="form" (submit)="submit()" enctype="multipart/form-data">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="feFirstName">Formation name</label>
-                  <input type="text" class="form-control" id="feFirstName" formControlName="nameFormation" name="nameFormation"> </div>
+                  <label for="feFirstName">Nom formation </label>
+                  <input type="text" class="form-control" id="feFirstName" formControlName="nameFormation" name="nameFormation">
+                 </div>
+                 <div class="form-group col-md-6">
+                 <label for="feInputAddress">Sujet</label>
+                 <input type="text" class="form-control"  name="Sujet" formControlName="Sujet"> 
+              </div>
+              </div>
+              <div class="form-group">
+              
                 <div class="form-group col-md-6">
-                  <label for="feLastName">Formation type</label>
+                  <label for="feLastName">type formation </label>
                  
                   <div class="ui-g" style="width:250px;margin-bottom:10px">
                     <div class="ui-g-12"><p-radioButton name="group2" value="théorique" label="théorique" formControlName="type" inputId="preopt1"></p-radioButton></div>
@@ -22,9 +30,6 @@
                 </div> 
                 </div>
               </div>
-              <div class="form-group">
-                <label for="feInputAddress">Sujet</label>
-                <input type="text" class="form-control" id="feInputAddress" name="Sujet" formControlName="Sujet"> </div>
               <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="feInputCity">image</label><br>
