@@ -15,7 +15,7 @@
 	</form>
 
 </div>
- </div>-->
+ </div>-->   <p-toast [style]="{marginTop: '50px',marginLeft : '150px'}"></p-toast>
  <div class="image">
 	<div class="container">
 		<form class="signUp" [formGroup]="angForm" novalidate>
@@ -25,18 +25,20 @@
 			<br>
 			<br>
 			<input class="w100"  name="email" type="email" placeholder="email" formControlName="email" #email  required autocomplete='off' />
-			<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
-				<div *ngIf="angForm.controls['email'].errors.required">
-				  Veuillez renseigner ce champ.
+			<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
+				<div *ngIf="angForm.controls['email'].errors.required"> 
+					<p-message severity="error" text="Veuillez renseigner ce champ."></p-message>
 				</div>
-			  </div>
+				</div>
+				
 			<br>
 			<br>
 			
 			<input type="password" class="form-control" name="password" placeholder="mot de passe" formControlName="password" #password required />
-			<div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+		
+			<div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)"  >
 				<div *ngIf="angForm.controls['password'].errors.required">
-				  Veuillez renseigner ce champ.
+				  	<p-message severity="error" text="Veuillez renseigner ce champ."></p-message>
 				</div>
 			  </div>
 			<p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>

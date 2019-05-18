@@ -8,7 +8,10 @@ import { AuthService } from './auth.service';
 import{ HttpClientModule} from '@angular/common/http';
 import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
- 
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
  
 
 const JWT_Module_Options: JwtModuleOptions = {
@@ -27,9 +30,13 @@ const JWT_Module_Options: JwtModuleOptions = {
     ReactiveFormsModule,
     HttpClientModule,
     AuthRoutingModule,
-    JwtModule.forRoot(JWT_Module_Options)
+    JwtModule.forRoot(JWT_Module_Options),
+    ToastModule,
+    MessagesModule,
+    MessageModule
   ],
   providers:[
+    MessageService,
     AuthService
   ]
 })

@@ -51,7 +51,7 @@ export class ProfilComponent implements OnInit {
  
  
   ngOnInit() {
-       this.authService.getProfile().subscribe((data : User) => {
+       this.authService.getProfile().subscribe((data : any) => {
        this.currentUser= data ; 
        console.log(this.currentUser._id)
        this.updateForm.get('email').setValue(this.currentUser.email);
