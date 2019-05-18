@@ -47,7 +47,7 @@ router.post('/sendConfirmation/:id', async(req, res, next) => {
     from: name,
     to: email,  //Change to email address that you want to receive messages on
     subject: 'Nouveau message digitalis',
-    html: '<h1>reservation accepter</h1>/</br>'
+    html: "<h2>Réservation acceptée</h2></br><p>Votre demande de réservation a été confirmée.<br>Merci pour votre confiance,<br>  Equipe Digitalis Plus</p>"
   }
 
   transporter.sendMail(mail, (err, data) => {
@@ -71,7 +71,7 @@ router.post('/sendRefuse/:id', async(req, res, next) => {
     from: name,
     to: email,  //Change to email address that you want to receive messages on
     subject: 'Nouveau message de digitalis',
-    html: '<h1>reservation refusé</h1>/</br>'
+    html: "<h2>Réservation refusée</h2></br><p>Nous sommes vraiement désolé, votre demande de réservation a été refusée.<br> Equipe Digitalis Plus</p>"
   }
   transporter.sendMail(mail, (err, data) => {
     if (err) {

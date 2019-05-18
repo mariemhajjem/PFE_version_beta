@@ -23,10 +23,8 @@ export class UserService {
         return this.http.get<User>(`${this.url}/${id}`);
     }
     updateUser(id,user) {
-
-      return this.http.put<User>(`${this.url}/${id}`, user).pipe(tap(()=>{
-        this.refreshNeed.next();
-      }));;
+      console.log(id);
+      return this.http.put<User>(`${this.url}/${id}`, user);
     }
 
     deleteUser(id) {

@@ -18,13 +18,13 @@ export class FormationService {
     return this.refreshNeeds;
   }
 
-  addFormation(nameFormation: string, type: string, imageUrl: File,D: string,Sujet: string ) {
+  addFormation(nameFormation: string, type: string, imageUrl: File,D: string,Sujet: string,Plan:string) {
     const formationData = new FormData();
     formationData.append("nameFormation", nameFormation);
     formationData.append("type", type);
     formationData.append("imageUrl", imageUrl);
     formationData.append("Description", D);
-
+    formationData.append("Plan", Plan);
     formationData.append("Sujet", Sujet);
 
 

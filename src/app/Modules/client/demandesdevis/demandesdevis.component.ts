@@ -53,7 +53,7 @@ export class DemandesdevisComponent implements OnInit {
     if (this.form.invalid) {
         return;
     }
-    this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
+         
     this.demandeService.sendDemande(
       this.form.value.Nom,
       this.form.value.Prenom,
@@ -68,6 +68,7 @@ export class DemandesdevisComponent implements OnInit {
       this.form.value.cahierDeCharge,
       this.form.value.Services
     );
+    
   }
 
 }

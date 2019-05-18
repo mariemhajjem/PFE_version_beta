@@ -7,6 +7,7 @@ import { AuthService } from '../../auth/auth.service';
 import { CommentaireService } from '../service/commentaire.service';
 import  Commentaire   from '../models/commentaire';
 import { SessionsService } from '../../admin/components/services/sessions.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-formation-details',
@@ -19,7 +20,7 @@ export class FormationDetailsComponent implements OnInit  {
   cmt :Commentaire ={
     Sujet :''
   };
-  constructor(private sessionService:SessionsService,private route: ActivatedRoute, private auth: AuthService,private formationService :FormationService,public nav: NavbarService,private cmtService :CommentaireService) { }
+  constructor(private messageService: MessageService,private sessionService:SessionsService,private route: ActivatedRoute, private auth: AuthService,private formationService :FormationService,public nav: NavbarService,private cmtService :CommentaireService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -38,6 +39,7 @@ export class FormationDetailsComponent implements OnInit  {
 
   AjouterAuPanier(id){
     this.sessionService.AddToCart(id);
+    this.messageService.add({severity: 'info', summary: 'Succès', detail: 'Session ajoutée au panier'});
   }
 
 }

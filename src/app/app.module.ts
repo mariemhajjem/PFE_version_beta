@@ -12,8 +12,7 @@ import { AuthService } from './Modules/auth/auth.service';
 import { JwtModuleOptions, JwtModule } from '@auth0/angular-jwt';
 import { Notfound404Component } from './Modules/notfound404/notfound404.component';
 import { TokenInterceptorService } from './token-interceptor.service';
-import {ShoppingCartModule} from 'ng-shopping-cart';
-import { CartItem } from 'ng-shopping-cart';
+ import {ToastModule} from 'primeng/toast';
 
 const JWT_Module_Options: JwtModuleOptions = {
   config: {
@@ -36,6 +35,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     AuthModule,
     AppRoutingModule,
     AdminRoutingModule,
+    ToastModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
   

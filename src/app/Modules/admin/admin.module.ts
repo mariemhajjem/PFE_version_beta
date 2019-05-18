@@ -2,7 +2,7 @@ import { FormListComponent } from './components/form-list/form-list.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {RadioButtonModule} from 'primeng/radiobutton';
 import { AdminRoutingModule } from './admin-routing.module'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -79,6 +79,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     CalendarModule,
     ListboxModule,
      Ng2SearchPipeModule,
+     RadioButtonModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [

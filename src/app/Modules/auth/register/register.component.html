@@ -3,8 +3,8 @@
 
 	<form class="signUp" [formGroup]="angForm" novalidate>
       <h3>Créer votre compte</h3>
-     
-      
+			<p-toast [style]="{marginTop: '50px'}"></p-toast>
+			 
 		<p> C'est super facile!  
       </p>
 		<input class="w100" name="email" type="email" placeholder="email" formControlName="email" #email  required autocomplete='off' />
@@ -17,15 +17,18 @@
     <input class="w200" type="password" name="password" placeholder="mot de passe" formControlName="password" #password required />
 		<span class="icon"></span>
      </div>
-	  <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
-		<div *ngIf="angForm.controls['password'].errors.required">
-		  Veuillez renseigner ce champ.
-		</div>
-	  </div><br>
+		 <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+				<div *ngIf="angForm.controls['password'].errors.required">
+					Veuillez renseigner ce champ.
+				</div>
+				</div>
+ 
+	
+		<br>
 		<p>Vous avez déjà un compte ? <a routerLink="/auth/login"> Se connecter</a></p> 
 		<button class="form-btn sx log-in" type="button"><a href="/">Retour</a></button>
 		<button class="form-btn dx" (click)="submit(email.value, password.value)"
-		[disabled]="angForm.invalid">S'inscrire</button>
+		 >S'inscrire</button>
 	</form>
  
 </div>

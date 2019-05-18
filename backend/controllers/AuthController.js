@@ -17,7 +17,13 @@ router.post('/register', function(req, res) {
       email : req.body.email,
       role : req.body.role,
       password : hashedPassword,
-      panier : req.body.panier
+      nom: req.body.nom,
+      prenom: req.body.prenom,
+      tel: req.body.tel,
+      age: req.body.age,
+      Niveau : req.body.Nivea,
+      etude: req.body.etude,
+      competences: req.body.competences,
     },
     function (err, user) {
       if (err) return res.status(500).send("There was a problem registering the user.")

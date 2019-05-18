@@ -27,7 +27,7 @@
               </thead>
               <tbody>
                 
-                <tr *ngFor="let demande of messages; let i=index">
+                <tr *ngFor="let demande of messages | filter:searchText; let i=index">
                   <td>{{i}}</td> 
                   <td>{{demande.email}}</td>
                   <td>{{demande.message}}</td>

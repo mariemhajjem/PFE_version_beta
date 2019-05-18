@@ -45,7 +45,8 @@ export class CrudComponent implements OnInit {
         this.form.value.type,
         this.form.value.imageUrl,
         this.form.value.D,
-        this.form.value.Sujet
+        this.form.value.Sujet,
+        this.form.value.Plan
       );
     }
   }

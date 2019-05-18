@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
 import { FormationDetailsComponent } from './formation-details/formation-details.component';
 import { PanierComponent } from './panier/panier.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 
@@ -26,6 +27,9 @@ const routes: Routes = [
       ,
       { path: 'list',
            component: ListeFormationsComponent
+      } ,
+      { path: 'espacePersonnel',
+           component: ProfilComponent
       } ,
       { path: 'list/:id',
            component: FormationDetailsComponent
