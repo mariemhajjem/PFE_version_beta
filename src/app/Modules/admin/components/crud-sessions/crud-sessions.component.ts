@@ -14,6 +14,7 @@ export class CrudSessionsComponent implements OnInit {
     this.SessionService.getSessions().subscribe( data =>
     {
       this.Sessions = data as any;
+      console.log(data);
     })
   }
 
