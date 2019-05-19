@@ -6,6 +6,8 @@ var UserSchema = new mongoose.Schema({
   role: String,
   nom:String,
   prenom: String,
+  resetToken: String,
+  resetTokenExpiration: Date,
   tel: Number,
   cart: {
     items: [

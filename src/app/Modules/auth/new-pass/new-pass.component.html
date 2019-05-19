@@ -1,0 +1,26 @@
+  <p-toast [style]="{marginTop: '50px',marginLeft : '150px'}"></p-toast>
+ <div class="image">
+	<div class="container">
+		<form class="signUp" [formGroup]="angForm" novalidate>
+			<br>
+				<h4>Heureux de vous revoir !</h4>
+
+			<br>
+			<br>
+
+			<input type="password" class="form-control" name="password" placeholder="mot de passe" formControlName="password" #password required />
+
+			<div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)"  >
+				<div *ngIf="angForm.controls['password'].errors.required">
+				  	<p-message severity="error" text="Veuillez renseigner ce champ."></p-message>
+				</div>
+			  </div>
+      <p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>
+			<button class="form-btn sx log-in" type="button"><a href="/">Retour</a></button>
+			<button class="form-btn dx" (click)="submit(password.value)"
+			[disabled]="angForm.invalid">changer mot de passe</button>
+		</form>
+
+	</div>
+	 </div>
+

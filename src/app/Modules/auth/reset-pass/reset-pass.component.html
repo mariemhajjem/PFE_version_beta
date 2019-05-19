@@ -1,0 +1,26 @@
+<div class="image">
+	<div class="container">
+		<form class="signUp" [formGroup]="angForm" novalidate>
+			<br>
+				<h4>Heureux de vous revoir !</h4>
+
+			<br>
+			<br>
+			<input class="w100"  name="email" type="email" placeholder="email" formControlName="email" #email  required autocomplete='off' />
+			<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
+				<div *ngIf="angForm.controls['email'].errors.required">
+					<p-message severity="error" text="Veuillez renseigner ce champ."></p-message>
+				</div>
+				</div>
+
+			<br>
+
+
+			<p>Vous n'avez pas de compte ?</p><a routerLink="/auth/login">S'inscrire?</a>
+			<button class="form-btn sx log-in" type="button"><a href="/">Retour</a></button>
+			<button class="form-btn dx" (click)="submit(email.value)"
+			[disabled]="angForm.invalid">resetPass</button>
+		</form>
+
+	</div>
+	 </div>

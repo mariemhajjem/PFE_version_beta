@@ -25,5 +25,11 @@ let Formation = new Schema({
 },{
   collection: 'formations'
 });
-
+Formation.methods.removeFromSessions = function(session) {
+  const updatedSessions = this.Sessions.filter(item => {
+    return item._id.toString() !== session.toString();
+  });
+  this.Sessions = updatedSessions;
+  return this.save();
+};
 module.exports = mongoose.model('Formation', Formation);

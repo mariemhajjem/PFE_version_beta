@@ -12,6 +12,8 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import { ResetPassComponent } from './reset-pass/reset-pass.component';
+import { NewPassComponent } from './new-pass/new-pass.component';
  
 
 const JWT_Module_Options: JwtModuleOptions = {
@@ -23,7 +25,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 };
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForbiddenComponent ],
+  declarations: [LoginComponent, RegisterComponent, ForbiddenComponent, ResetPassComponent, NewPassComponent ],
   imports: [
     CommonModule,
     FormsModule,
