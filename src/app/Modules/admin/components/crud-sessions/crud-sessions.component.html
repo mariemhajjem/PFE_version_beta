@@ -4,6 +4,7 @@
         <tr>
 
             <th>Nom session</th>
+            <th>Date session</th>
             <th>Modifier</th>
             <th>Supprimer</th>
         </tr>
@@ -12,6 +13,7 @@
         <tr >
 
             <td>{{ session.name }}</td>
+            <td>{{ session.dateDebut | date :"dd/MM" }}</td>
             <td><a [routerLink]="['/admin/editSessions', session._id]" class="btn btn-primary">Modifier</a></td>
             <td><a (click) = "deleteSession(session)" class="btn btn-danger">Supprimer</a></td>
         </tr>
