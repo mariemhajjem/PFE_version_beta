@@ -11,5 +11,6 @@ export  class Demande {
     Services : string[];
     Message: string;
     cahierDeCharge: File;
+    confirm:boolean;
     id :string;
   }

@@ -10,11 +10,13 @@ import { ConfirmationService, Message } from 'primeng/api';
 })
 export class DemandesComponent implements OnInit {
 
-  columns =  ['#','Email','Tel','Services','Entreprise','CDC','Afficher','Supprimer'];
+  columns =  ['#','Email','Tel','Services','Entreprise','CDC','Confirmer','Supprimer'];
   demandes : Demande[];
   demande : Demande;
   public searchText;
   msgs: Message[] = [];
+  checked2: boolean = true;
+  confirm : boolean =false;
   constructor(private demandeService : DemandeService,private confirmationService: ConfirmationService) { }
 
   confirm1(demande) {
@@ -25,6 +27,9 @@ export class DemandesComponent implements OnInit {
         accept: () => {
             this.msgs = [{severity:'info', summary:'Confirmed', detail:'Vous avez accepté'}];
             this.demandeService.sendMessageConfirmation(demande._id);
+            this.confirm= true;
+            this.demandeService.update(demande._id,this.confirm).subscribe(res => {});;
+            this.fetchDemandes();
         },
         reject: () => {
             this.msgs = [{severity:'info', summary:'Rejected', detail:'Vous avez rejeté'}];

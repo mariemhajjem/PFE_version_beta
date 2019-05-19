@@ -16,7 +16,10 @@ const orderSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'User'
     }
-  }
+  },
+  confirm:
+  { type: Boolean, default: false }
+
 });
 
 module.exports = mongoose.model('Order', orderSchema);

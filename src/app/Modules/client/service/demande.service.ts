@@ -60,4 +60,7 @@ export class DemandeService {
   download(id) {
     return this.http.get(`${this.url}/OpenFile/${id}`,{ responseType: 'blob' });
   }
+  update(id,confirm: boolean){
+    return this.http.put(`${this.url}/update/${id}`,confirm)
+  }
 }

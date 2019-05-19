@@ -128,6 +128,23 @@ router.get('/GetOne/:id', function (req, res) {
         res.status(200).send(demande);
     });
 });
+//  Defined update route
+router.route('/update/:id').put(function (req, res) {
+  DemandeDevis.findById(req.params.id, function(err, demande) {
+    if (!demande)
+      return next(new Error('Could not load Document'));
+    else {
+        demande.confirm = true;
+        console.log(req.body.confirm);
+        demande.save().then(demande => {
+         console.log(demande);
+      })
+      .catch(err => {
+            res.status(400).send("unable to update the database");
+      });
+    }
+  });
+});
 
 // DELETES A DemandeDevis FROM THE DATABASE
 router.delete('/DeleteOne/:id', function (req, res) {

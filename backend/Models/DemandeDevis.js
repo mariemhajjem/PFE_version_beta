@@ -13,6 +13,8 @@ var DemandeSchema = new mongoose.Schema({
     Message: String,
     cahierDeCharge: String,
     Services : Array,
+    confirm:
+    { type: Boolean, default: false }
 });
 mongoose.model('Demande', DemandeSchema);
 

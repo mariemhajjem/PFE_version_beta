@@ -44,6 +44,7 @@ import { EventService } from './components/services/event.service';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { CrudPartenairesComponent } from './components/crud-partenaires/crud-partenaires.component';
 import { GestionComponent } from './components/gestion/gestion.component';
+import {ToggleButtonModule} from 'primeng/togglebutton';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -80,6 +81,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     ListboxModule,
      Ng2SearchPipeModule,
      RadioButtonModule,
+     ToggleButtonModule,
     JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [
