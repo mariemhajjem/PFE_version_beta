@@ -140,11 +140,12 @@ router.get('/OpenFile/:id', function (req, res) {
   DemandeDevis.findById(req.params.id, function (err, demande) {
       if (err) return res.status(500).send("There was a problem finding the DemandeDevis.");
       if (!demande) return res.status(404).send("No demande found.");
-      fs.open(demande.cahierDeCharge, "r", (err , fd)=>{
+      fs.readFile(demande.cahierDeCharge, (err , data)=>{
         if(err){
           console.log(err);
         }else{
-          console.log('file (${fd}) suuu')
+          console.log(data);
+          res.send(data);
         }
       });
   });

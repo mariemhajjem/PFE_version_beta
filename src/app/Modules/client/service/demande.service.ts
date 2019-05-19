@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient  } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { MessageService } from 'primeng/api';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -52,5 +51,9 @@ export class DemandeService {
     console.log(id);
     this.http.post(`${this.url}/sendRefuse/${id}`, id)
         .subscribe(res => console.log('Done'));
+  }
+
+  download(id) {
+    return this.http.get(`${this.url}/OpenFile/${id}`,{ responseType: 'blob' });
   }
 }

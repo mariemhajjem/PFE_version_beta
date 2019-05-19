@@ -9,14 +9,14 @@ import { ConfirmationService, Message } from 'primeng/api';
   styleUrls: ['./demandes.component.css']
 })
 export class DemandesComponent implements OnInit {
- 
+
   columns =  ['#','Email','Tel','Services','Entreprise','CDC','Afficher','Supprimer'];
   demandes : Demande[];
   demande : Demande;
   public searchText;
   msgs: Message[] = [];
   constructor(private demandeService : DemandeService,private confirmationService: ConfirmationService) { }
- 
+
   confirm1(demande) {
     this.confirmationService.confirm({
         message: 'Voulez-vous confirmer cette demande?',
@@ -49,7 +49,7 @@ confirm2(demande) {
             this.msgs = [{severity:'info', summary:'Rejeté', detail:'Vous avez rejeté'}];
         }
     });
-} 
+}
 deleteDemande(demande) {
 
       this.demandeService.delete(demande._id).subscribe( data => {
@@ -73,7 +73,17 @@ deleteDemande(demande) {
        this.demandes = data;
      } )
   }
+  download(demande){
+    this.demandeService.download(demande._id).subscribe((data) => {
+     var blob = new Blob([data], {type: 'application/pdf'});
+
+  var downloadURL = window.URL.createObjectURL(data);
+  var link = document.createElement('a');
+  link.href = downloadURL;
+  link.download = "cahierDeCharge.pdf";
+  link.click();
+  })
+  }
 
 
- 
 }

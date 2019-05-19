@@ -141,7 +141,7 @@ router.post('/reset/:token', function(req , res){
       resetUser.resetToken = undefined;
       resetUser.resetTokenExpiration = undefined;
       resetUser.save();
-      return res.status(200).send({'password': 'password updated successfully'});;
+      return res.status(200).send({'password': 'password updated successfully'});
     })
     .catch(err => {
       console.log(err);
