@@ -2,8 +2,8 @@
 <div class="container">
 	<form class="signUp" #registerForm="ngForm" (ngSubmit)="submit()">
             <h3>Re-bienvenue!</h3>
-		 
-        
+
+
         <br>
 		<input class="w100" name="email" type="email" placeholder="email" [(ngModel)]="registerUserData.email" required autocomplete='off' />
 		<br>
@@ -21,33 +21,33 @@
 		<form class="signUp" [formGroup]="angForm" novalidate>
 			<br>
 				<h4>Heureux de vous revoir !</h4>
-			 
+
 			<br>
 			<br>
 			<input class="w100"  name="email" type="email" placeholder="email" formControlName="email" #email  required autocomplete='off' />
 			<div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)">
-				<div *ngIf="angForm.controls['email'].errors.required"> 
+				<div *ngIf="angForm.controls['email'].errors.required">
 					<p-message severity="error" text="Veuillez renseigner ce champ."></p-message>
 				</div>
 				</div>
-				
+
 			<br>
 			<br>
-			
+
 			<input type="password" class="form-control" name="password" placeholder="mot de passe" formControlName="password" #password required />
-		
+
 			<div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)"  >
 				<div *ngIf="angForm.controls['password'].errors.required">
 				  	<p-message severity="error" text="Veuillez renseigner ce champ."></p-message>
 				</div>
 			  </div>
-			<p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>
+      <p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>
+      <p>mot de passe oublier ?</p><a routerLink="/auth/resetPass">Changer mot depasse</a>
 			<button class="form-btn sx log-in" type="button"><a href="/">Retour</a></button>
 			<button class="form-btn dx" (click)="submit(email.value, password.value)"
 			[disabled]="angForm.invalid">Se connecter</button>
 		</form>
-	
+
 	</div>
 	 </div>
- 
- 
+
