@@ -24,7 +24,7 @@ export class DemandesdevisComponent implements OnInit {
     this.form = new FormGroup({
       Nom: new FormControl(null, {validators: [Validators.required]}),
       Prenom: new FormControl(null, { validators: [Validators.required] }),
-      Tel: new FormControl(null, {validators: [Validators.required] }),
+      Tel: new FormControl(null, {validators: [Validators.required, Validators.minLength(8)] }),
       Email: new FormControl(null, { validators:[Validators.required, Validators.email]}),
       Adresse: new FormControl(null, { validators: [Validators.required] }),
       Entreprise: new FormControl(null, { validators: [Validators.required] }),
@@ -48,9 +48,16 @@ export class DemandesdevisComponent implements OnInit {
   }
   send(){
     this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.form.invalid) {
+    if (this.form.controls['Email'].invalid) { 
+      this.messageService.add({severity: 'error', summary: 'Erreur', detail: "L'email entré est invalide"});
+     return;
+    } 
+    else if (this.form.controls['Tel'].invalid) {
+      this.messageService.add({severity: 'error', summary: 'Erreur', detail: "Le Tel est invalide"});
+        return;
+    }
+    else if (this.form.invalid) {
+      this.messageService.add({severity: 'error', summary: 'Erreur', detail: "Le formulaire est invalide"});
         return;
     }
          
@@ -68,7 +75,6 @@ export class DemandesdevisComponent implements OnInit {
       this.form.value.cahierDeCharge,
       this.form.value.Services
     );
-    
   }
 
 }

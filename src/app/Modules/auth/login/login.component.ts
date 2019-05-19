@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {this.router.navigate(['/']),
       localStorage.setItem('token', res.token)} ,
-      err => { this.messageService.add({severity: 'error', summary: 'Succès', detail: 'Ce compte n\'existe pas'}); this.router.navigate(['/auth/login']);})
+      err => { this.messageService.add({severity: 'error', summary: 'Erreur', detail: 'Ce compte n\'existe pas'}); this.router.navigate(['/auth/login']);})
   }
 
 

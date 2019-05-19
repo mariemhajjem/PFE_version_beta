@@ -31,7 +31,11 @@ export class DemandeService {
     demande.append("Services", Services);
     demande.append("cahierDeCharge", cahierDeCharge);
     this.http.post(`${this.url}/Create`, demande)
-    .subscribe(res => {console.log('Done');this.messageService.add({severity: 'info', summary: 'Succès', detail: 'Demande de devis envoyée'});});
+    .subscribe(res => {
+      console.log('Done');
+      this.messageService.add({severity: 'info', summary: 'Succès', detail: 'Demande de devis envoyée'});
+    },
+    err =>{ this.messageService.add({severity: 'error', summary: 'Erreur', detail: 'Erreur d\'envoi de la demande de devis'});});
   }
   getDemandes(){
     return this.http.get(`${this.url}/List`)
