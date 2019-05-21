@@ -20,7 +20,16 @@ export class FormationDetailsComponent implements OnInit  {
   cmt :Commentaire ={
     Sujet :''
   };
-  constructor(private messageService: MessageService,private sessionService:SessionsService,private route: ActivatedRoute, private auth: AuthService,private formationService :FormationService,public nav: NavbarService,private cmtService :CommentaireService) { }
+  constructor(private messageService: MessageService,private sessionService:SessionsService,private route: ActivatedRoute, private auth: AuthService,private formationService :FormationService,public nav: NavbarService,private cmtService :CommentaireService) {
+    setInterval(() => {
+      this.route.params.subscribe(params => {
+        this.idformation = params.id;
+        this.formationService.editBusiness(params.id).subscribe(res => {
+          this.formation = res as Formation;
+        });
+    }) }, 1000);
+  
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
