@@ -18,14 +18,14 @@ export class AddSessionComponent implements OnInit {
     Formations: Formation[];
     number :Number;
     selectedLevel;
-     session : Session ={
-      name :  "",
-      date: "" ,
-       Formations: this.formation,
-      Formateur : "",
-      NbPlaces :  this.number,
-      Horaires : "",
-      NbHeures : this.number,
+    session : Session ={
+    name :  "",
+    date: "" ,
+    Formations: this.formation,
+    Formateur : "",
+    NbPlaces :  this.number,
+    Horaires : "",
+    NbHeures : this.number,
      };
   id: any;
   constructor(private ss: SessionsService, private FormService: FormationService, private router: Router) { }

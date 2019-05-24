@@ -27,7 +27,7 @@ export class SessionsService {
     .http
     .get(`${this.url}/edit/${id}`);
   }
-  updateSession(Session, id) {
+  updateSession(id, Session) {
     this.http.put(`${this.url}/update/${id}`, Session).pipe(tap(()=>{
         this.refreshNeed.next();
       }))

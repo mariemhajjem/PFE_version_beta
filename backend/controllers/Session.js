@@ -94,14 +94,14 @@ router.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-router.route('/update/:id').put(function (req, res) {
-  Session.findById(req.params.id, function(err, session) {
+router.route('/update/:id').put(function (req, res, next) {
+  let id = req.params.id;
+  Session.findById(id, function(err, session) {
     if (!session)
       return next(new Error('Could not load Document'));
     else {
       session.name = req.body.name;
       session.date = req.body.date;
-      session.Formations= session.Formations;
       session.NbPlaces = req.body.NbPlaces;
       session.Horaires=req.body.Horaires;
       session.NbHeures=req.body.NbHeures;
