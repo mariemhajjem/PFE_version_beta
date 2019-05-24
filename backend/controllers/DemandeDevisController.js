@@ -52,7 +52,7 @@ router.post('/sendConfirmation/:id', async(req, res, next) => {
     from: name,
     to: email,  //Change to email address that you want to receive messages on
     subject: 'Nouveau message digitalis',
-    html: '<h1>Demande accepter</h1>/</br>'
+    html: '<h1>Demande acceptée</h1>/</br>'
   }
 
   transporter.sendMail(mail, (err, data) => {

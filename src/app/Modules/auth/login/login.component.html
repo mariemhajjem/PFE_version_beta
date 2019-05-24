@@ -40,8 +40,9 @@
 				  	<p-message severity="error" text="Veuillez renseigner ce champ."></p-message>
 				</div>
 			  </div>
-      <p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>
-      <p>mot de passe oublier ?</p><a routerLink="/auth/resetPass">Changer mot depasse</a>
+			<p>Vous n'avez pas de compte ?</p><a routerLink="/auth/register">S'inscrire?</a>
+			<br>
+      <a routerLink="/auth/resetPass">mot de passe oublié ?</a>
 			<button class="form-btn sx log-in" type="button"><a href="/">Retour</a></button>
 			<button class="form-btn dx" (click)="submit(email.value, password.value)"
 			[disabled]="angForm.invalid">Se connecter</button>
