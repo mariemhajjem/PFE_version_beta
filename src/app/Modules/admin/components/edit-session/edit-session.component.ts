@@ -1,9 +1,10 @@
+import { Session } from './../models/Session';
 import { SessionsService } from './../services/sessions.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Session } from '../models/Session';
 import Formation from '../models/formation';
 import { FormationService } from '../services/formation.service';
+import { FormGroup,  FormBuilder, FormControl,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-session',
@@ -11,14 +12,25 @@ import { FormationService } from '../services/formation.service';
   styleUrls: ['./edit-session.component.css']
 })
 export class EditSessionComponent implements OnInit {
-  sessions: any = {};
-  rangeDates: Date[];
-  Formations: Formation[];
-  selectedLevel;
-  formation: Formation;
-  session : Session ;
-   id: any;
-  constructor(private SS: SessionsService,private FormService: FormationService, private route: ActivatedRoute, private router: Router) { }
+   form: FormGroup;
+   sessions : any = {
+    name :  "",
+    date:  "",
+    NbPlaces :  0,
+    Horaires : "",
+    NbHeures : 0
+  };
+  // tslint:disable-next-line:max-line-length
+  constructor(private fb: FormBuilder , private SS: SessionsService,private FormService: FormationService, private route: ActivatedRoute, private router: Router) {}
+    createForm() {
+      this.form = this.fb.group({
+        name: [null, Validators.required] ,
+        date:    [null, Validators.required],
+        NbPlaces :    [null, Validators.required],
+        Horaires :    [null, Validators.required],
+        NbHeures :    [null, Validators.required],
+      });
+   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -26,19 +38,23 @@ export class EditSessionComponent implements OnInit {
         this.sessions = res;
       });
   });
-   this.FormService.getBusinesses().subscribe(data =>{
-      this.Formations = data as Formation[];
-    })
+    this.createForm();
+    this.form.get('name').setValue(this.sessions.name);
+    this.form.get('date').setValue(this.sessions.date);
+    this.form.get('NbPlaces').setValue(this.sessions.NbPlaces);
+    this.form.get('Horaires').setValue(this.sessions.Horaires);
+    this.form.get('NbHeures').setValue(this.sessions.NbHeures);
 }
 
-selected(){
-  this.id = this.selectedLevel._id;
-    console.log(this.selectedLevel._id)
-  }
-send() {
+submit(name, date, Horaires, NbHeures, NbPlaces) {
   this.route.params.subscribe(params => {
-     this.SS.updateSession(Session, params.id);
-     this.router.navigate(['/admin/listSessions']);
-  });
+  this.sessions.name = name;
+  this.sessions.date = date;
+  this.sessions.NbPlaces = NbPlaces;
+  this.sessions.Horaires = Horaires;
+  this.sessions.NbHeures = NbHeures;
+  this.SS.updateSession(params.id, this.sessions);
+  this.router.navigate(['/admin/listSessions']);
+});
 }
 }

@@ -33,9 +33,9 @@
                   <td>{{demande.Tel}}</td>
                   <td>{{demande.Services}}</td>
                   <td>{{demande.Entreprise}}</td>
-                  
+
                   <td><p-toggleButton  (click)="download(demande)" [(ngModel)]="checked2" onLabel="Télécharger" offLabel="Télécharger" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton> </td>
-                 
+
                   <td><div *ngIf="!demande.confirm"><button type="button"  (click)="confirm1(demande)" pButton icon="pi pi-check" label="Confirm"></button></div> </td>
                   <td><button type="button" (click)="confirm2(demande)" pButton icon="pi pi-times" label="Delete"></button></td>
                 </tr>

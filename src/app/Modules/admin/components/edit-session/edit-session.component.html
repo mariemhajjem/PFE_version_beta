@@ -1,42 +1,45 @@
 <br>
 <div class="col-lg-8">
-    <div class="card card-small mb-4">
-      <div class="card-header border-bottom">
-        <h6 class="m-0">Ajouter une session</h6>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item p-3">
-          <div class="row">
-            <div class="col">
-              <form #registerForm="ngForm" (ngSubmit)="send()">
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="feFirstName">Nom session</label>
-                    <input type="text" class="form-control" id="feFirstName" [(ngModel)]="session.name" name="name" value="{{sessions.name}}"> </div>
-                  <div class="form-group col-md-6">
-                    <label for="feLastName">Nombre de places</label>
-                    <input type="text" class="form-control" id="feLastName" name="NbPlaces" [(ngModel)]="session.NbPlaces" value="{{sessions.NbPlaces}}"> </div>
-                </div>
-                <div class="form-group">
-                  <label for="feInputAddress">Nombre d'heures</label>
-                  <input type="text" class="form-control" id="feInputAddress" name="NbHeures" [(ngModel)]="session.NbHeures" value="{{sessions.NbHeures}}"> </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="feInputCity">Horaires</label>
-                  <input type="text" class="form-control" id="feInputAddress" name="Horaires" [(ngModel)]="session.Horaires" value="{{sessions.Horaires}}"> </div>
-                   </div>
-                   <div class="form-row">
-                <div class="ui-g-12 ui-md-4"> 
-                    <label for="feDescription">Période</label> <br>
-                    <p-calendar [(ngModel)]="session.date" name="date" selectionMode="range" [readonlyInput]="true"></p-calendar>
-                </div>
-              </div>
-                <button type="submit" class="btn btn-accent">modifier la session</button>
-              </form>
-            </div>
-          </div>
-        </li>
-      </ul>
+  <div class="card card-small mb-4">
+    <div class="card-header border-bottom">
+      <h6 class="m-0">Formation details</h6>
     </div>
-  </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item p-3">
+        <div class="row">
+          <div class="col">
+            <form [formGroup]="form">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="feFirstName">Formation name</label>
+                  <input type="text" class="form-control" id="feFirstName" formControlName="name" #name [value]="sessions.name" name="name"> </div>
+                <div class="form-group col-md-6">
+                  <label for="feLastName">Formation type</label>
+                  <input type="text" class="form-control" id="feLastName" #date formControlName="date" [value]="sessions.date" > </div>
+              </div>
+              <div class="form-group">
+                <label for="feInputAddress">NbPlaces</label>
+                <input type="text" class="form-control" id="feInputAddress" #NbPlaces formControlName="NbPlaces" [value]="sessions.NbPlaces" name="NbPlaces"> </div>
+              <div class="form-row">
 
+
+                <div class="form-group col-md-2">
+                  <label for="inputZip">Horaires</label>
+                  <input type="text" class="form-control" id="inputZip" #Horaires formControlName="Horaires" [value]="sessions.Horaires" name="Horaires"> </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="feNbHeures">NbHeures</label>
+                  <input type="text" class="form-control" id="feNbHeures" #NbHeures name="D" formControlName="NbHeures" rows="5" [value]="sessions.NbHeures" name="NbHeures">
+                </div>
+
+
+              </div>
+              <button type="button" class="btn btn-accent" (click)="submit(name.value,date.value,Horaires.value,NbHeures.value,NbPlaces.value)">modifier formation</button>
+            </form>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
