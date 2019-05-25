@@ -160,6 +160,7 @@ router.route('/addCart/:id').post(VerifyToken, function(req, res){
       User.findById(req.userId, { password: 0 }, function (err, user) {
         if (err) return res.status(500).send("There was a problem finding the user.");
         if (user) return  user.addToCart(session);
+        session.userId.push(user);
       });
     })
     .then(result => {

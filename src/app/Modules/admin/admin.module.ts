@@ -45,6 +45,7 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { CrudPartenairesComponent } from './components/crud-partenaires/crud-partenaires.component';
 import { GestionComponent } from './components/gestion/gestion.component';
 import {ToggleButtonModule} from 'primeng/togglebutton';
+import { EditComponent } from './components/edit/edit.component';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -58,7 +59,7 @@ const JWT_Module_Options: JwtModuleOptions = {
 
 @NgModule({
   declarations: [NavbarComponent, HomeComponent, CrudComponent, FormListComponent,
-     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent, CrudSessionsComponent, AddSessionComponent, EditSessionComponent, MessagesComponent, EventsComponent, AddEventComponent, CrudPartenairesComponent, GestionComponent],
+     CrudUsersComponent, ListUserComponent, EditFormationComponent, ProfileAdminComponent,DemandesComponent, ProfileComponent, PartenaireComponent, CrudSessionsComponent, AddSessionComponent, EditSessionComponent, MessagesComponent, EventsComponent, AddEventComponent, CrudPartenairesComponent, GestionComponent, EditComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

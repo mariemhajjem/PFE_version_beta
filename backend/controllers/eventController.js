@@ -56,7 +56,7 @@ router.get('/', function (req, res) {
 });
 
 // GETS A SINGLE Event FROM THE DATABASE
-router.get('/:id', function (req, res) {
+router.get('/edit/:id', function (req, res) {
   Event.findById(req.params.id, function (err, event) {
       if (err) return res.status(500).send("There was a problem finding the Event.");
       if (!event) return res.status(404).send("No Event found.");
@@ -73,10 +73,23 @@ router.delete('delete/:id', function (req, res) {
 });
 
 // UPDATES A SINGLE Event IN THE DATABASE
-router.put('update/:id', function (req, res) {
-  Event.findOneAndUpdate(req.params.id, req.body, {new: true}, function (err, event) {
-      if (err) return res.status(500).send("There was a problem updating the Event.");
-      res.status(200).send(event);
+router.put('/update/:id', function (req, res) {
+  let id = req.params.id;
+  Event.findById(id, function(err, event) {
+    if (!event)
+      return next(new Error('Could not load Document'));
+    else {
+      event.name = req.body.name;
+      event.date = req.body.date;
+      event.Description = req.body.Description;
+      event.temps= req.body.temps;
+       event.save().then(event => {
+          res.json('Update complete');
+      })
+      .catch(err => {
+            res.status(400).send("unable to update the database");
+      });
+    }
   });
 });
 

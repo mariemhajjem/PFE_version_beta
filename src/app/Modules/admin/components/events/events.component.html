@@ -21,7 +21,7 @@
             <td>{{ event.name }}</td>
             <td>{{ event.date | date :'dd-MMM-yy h:mm' }}</td>
             <td>{{ event.temps | date :'h:mm' }}</td>
-            <td><a [routerLink]="['/admin/editFormation', event._id]" class="btn btn-primary">Modifier</a></td>
+            <td><a [routerLink]="['/admin/editEvent', event._id]" class="btn btn-primary">Modifier</a></td>
             <td><a (click) = "deleteEvent(event)" class="btn btn-danger">Supprimer</a></td>
         </tr>
     </ng-template>

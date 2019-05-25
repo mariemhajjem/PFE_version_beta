@@ -1,3 +1,4 @@
+import { EditComponent } from './components/edit/edit.component';
 import { GestionComponent } from './components/gestion/gestion.component';
 import { EditSessionComponent } from './components/edit-session/edit-session.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
     { path: 'listSessions', component: CrudSessionsComponent },
     {path: 'editFormation/:id', component: EditFormationComponent},
     {path: 'editSessions/:id', component: EditSessionComponent},
+    {path: 'editEvent/:id', component: EditComponent},
     { path: 'profileadmin', component: ProfileAdminComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'demandes', component: DemandesComponent },
