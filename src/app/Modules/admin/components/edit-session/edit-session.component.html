@@ -2,7 +2,7 @@
 <div class="col-lg-8">
   <div class="card card-small mb-4">
     <div class="card-header border-bottom">
-      <h6 class="m-0">Formation details</h6>
+      <h6 class="m-0">Session details</h6>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item p-3">
@@ -11,14 +11,14 @@
             <form [formGroup]="form">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="feFirstName">Formation name</label>
+                  <label for="feFirstName">Nom session</label>
                   <input type="text" class="form-control" id="feFirstName" formControlName="name" #name [value]="sessions.name" name="name"> </div>
                 <div class="form-group col-md-6">
-                  <label for="feLastName">Formation type</label>
+                  <label for="feLastName"> Date</label>
                   <input type="text" class="form-control" id="feLastName" #date formControlName="date" [value]="sessions.date" > </div>
               </div>
               <div class="form-group">
-                <label for="feInputAddress">NbPlaces</label>
+                <label for="feInputAddress">Nombres de places</label>
                 <input type="text" class="form-control" id="feInputAddress" #NbPlaces formControlName="NbPlaces" [value]="sessions.NbPlaces" name="NbPlaces"> </div>
               <div class="form-row">
 
@@ -29,7 +29,7 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
-                  <label for="feNbHeures">NbHeures</label>
+                  <label for="feNbHeures">Nombres d'heures</label>
                   <input type="text" class="form-control" id="feNbHeures" #NbHeures name="D" formControlName="NbHeures" rows="5" [value]="sessions.NbHeures" name="NbHeures">
                 </div>
 
