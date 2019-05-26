@@ -66,4 +66,7 @@ export class SessionsService {
   deleteOrder(id) {
     return this.http.get(`${this.url}/deleteOrder/${id}`);
   }
+  getSessionsname() {
+    return this.http.get(`${this.url}/statSession`);
+  }
 }

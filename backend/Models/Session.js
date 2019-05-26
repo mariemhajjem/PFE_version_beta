@@ -7,7 +7,7 @@ let Session = new Schema({
       type: String
     },
     date: {
-      type: String 
+      type: String
     },
     Formations:{
       type: mongoose.Schema.Types.ObjectId, ref:'Formation'
@@ -27,7 +27,10 @@ let Session = new Schema({
     userId: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-    }]
+    }],
+    quanti :{
+      type : Number
+    }
 
   },
   {

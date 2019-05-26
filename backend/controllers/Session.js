@@ -161,6 +161,7 @@ router.route('/addCart/:id').post(VerifyToken, function(req, res){
         if (err) return res.status(500).send("There was a problem finding the user.");
         if (user){ user.addToCart(session);
           session.userId.push(user);
+          session.quanti = session.userId.length;
           return  session.save();}
       });
     })
@@ -220,12 +221,12 @@ router.route('/deleteOrder/:id').get(function (req, res) {
   });
 });
 
-/*router.route('/statSession').get(function (req, res){
-  Session.find({}, function(err, UserId){
+router.route('/statSession').get(function (req, res){
+  Session.find({},{name: 1,quanti: 1,_id: 0}, function(err, session){
     if (err) res.json(err);
-    else res.json('Successfully ');
+    else res.json(session);
   })
-})*/
+})
 
 
 module.exports = router;
