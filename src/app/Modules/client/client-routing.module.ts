@@ -10,6 +10,7 @@ import { ListeFormationsComponent } from './liste-formations/liste-formations.co
 import { FormationDetailsComponent } from './formation-details/formation-details.component';
 import { PanierComponent } from './panier/panier.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 
@@ -50,7 +51,10 @@ const routes: Routes = [
       },
       { path: 'formulaires',
           component: FormulaireformationComponent
-      }
+      },
+      { path: 'chat',
+          component: ChatComponent
+      },
 ];
 
 @NgModule({
