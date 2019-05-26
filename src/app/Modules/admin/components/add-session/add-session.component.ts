@@ -26,6 +26,7 @@ export class AddSessionComponent implements OnInit {
     NbPlaces :  this.number,
     Horaires : "",
     NbHeures : this.number,
+    quanti: this.number
      };
   id: any;
   constructor(private ss: SessionsService, private FormService: FormationService, private router: Router) { }

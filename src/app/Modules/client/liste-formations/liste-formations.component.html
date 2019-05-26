@@ -132,30 +132,18 @@
       <div class="col-lg-4">
         <div class="sidebar">
 
-          <!-- Categories -->
-          <div class="sidebar_section">
-            <div class="sidebar_section_title">Categories</div>
-            <div class="sidebar_categories">
-              <ul>
-                <li><a click="rechercheParCategorie(categorie)" routerLink="/list"> Web </a></li>
-                <li><a routerLink="/list">Mobile</a></li>
-                <li><a routerLink="/list">Design</a></li>
-                <li><a routerLink="/list">Marketing Digital</a></li>
-              </ul>
-            </div>
-          </div>
 
           <!-- Latest Course -->
           <div class="sidebar_section" *ngIf="bestFormations">
-            <div class="sidebar_section_title">les meilleures formations</div>
+            <div class="sidebar_section_title">les meilleures sessions</div>
             <div class="sidebar_latest">
 
               <!-- Latest Course -->
               <div class="latest d-flex flex-row align-items-start justify-content-start" *ngFor='let formation of bestFormations'>
                 <div class="latest_image"><div><img src="../../../../assets/client/images/latest_1.jpg" alt=""></div></div>
                 <div class="latest_content">
-                  <div class="latest_title"><a [routerLink]="['/list', formation._id]">{{formation.nameFormation}}</a></div>
-                  <div class="latest_price">{{formation.nb}}</div>
+                  <div class="latest_title"><a [routerLink]="['/list', formation._id]">{{formation.name}}</a></div>
+                  <div class="latest_price">Nombres d'inscrits: {{formation.quanti}}</div>
                 </div>
               </div>
             </div>

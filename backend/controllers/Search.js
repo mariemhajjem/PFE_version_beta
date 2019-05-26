@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../Models/User');
 var formation = require('../Models/formation');
-var Session = require('../Models/Session');
+var session = require('../Models/Session');
 
 router.get('/form', function(req,res,next) {
 
@@ -69,13 +69,13 @@ router.get('/bestformation', function(req,res,next) {
     var noMatch = null;
 
         // Get all formations from DB
-        formation.find({}, function(err, allformations){
+        session.find({}, function(err, sessions){
             if(err){
                 console.log(err);
             } else {
-               res.json(allformations);
+               res.json(sessions);
             }
-         }).sort({nb: -1}).limit(3);
+         }).sort({quanti: -1}).limit(3);
     });
 
 router.get('/user', function(req,res,next) {

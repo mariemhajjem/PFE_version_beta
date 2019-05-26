@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SearchingService } from '../service/searching.service';
 import { FormationService } from '../../admin/components/services/formation.service';
+import { SessionService } from '../service/session.service';
 
 @Component({
   selector: 'app-liste-formations',
@@ -18,7 +19,7 @@ export class ListeFormationsComponent implements OnInit {
   categorie: any;
   selectedLevel: any;
   Categories =  ['Web','Mobile','Design','Marketing Digital'];
-  constructor(private searchService: SearchingService,private formationService:FormationService) {
+  constructor(private searchService: SearchingService,private formationService:FormationService,private sessionService:SessionService) {
     this.searchService.search(this.searchTerm$)
       .subscribe(results => {
         this.results = results ;
@@ -31,6 +32,7 @@ export class ListeFormationsComponent implements OnInit {
   search() {
   return this.searchService.searchBestFormation().subscribe(data =>{
     this.bestFormations = data;
+    console.log(data);
   },
   error => {
     console.log(error);

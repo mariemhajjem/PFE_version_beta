@@ -17,7 +17,7 @@ export class PartenaireService {
     this.http.post(`${this.url}/Create`, PartenaireDAta)
     .subscribe(res => console.log('Done'));
   }
-   getDemandes() {
+   getPartenaires() {
      return this.http.get(`${this.url}/List`);
    }
    getUneDemande(id) {
