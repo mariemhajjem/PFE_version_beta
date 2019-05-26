@@ -22,8 +22,8 @@ Session: any[];
 
   ngOnInit() {  this.ss
     .getSessionsname()
-    .subscribe((data: any[]) => {
-      this.Session = data;
+    .subscribe((res: any[]) => {
+      this.Session = res;
       console.log(this.Session);
       this.Session.forEach(element => {
         this.chartData.push(...Object.values([element.name]));
