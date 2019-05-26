@@ -21,7 +21,7 @@
         <h1> </h1>
     </div>
   </header>
-         <!-- Comments -->
+        
          <div class="comments_container">
             <ul class="comments_list">
               <li *ngFor="let message of conversation  ; let i=index">
@@ -52,13 +52,13 @@
           </div>
 
 
-
+ <!-- Comments  -->
 
           <div class="container">
               <h3 class=" text-center">Messaging</h3>
               <div class="messaging">
                       <div class="mesgs">
-                        <div class="msg_history" *ngFor="let message of conversation  ; let i=index">
+                        <div *ngFor="let message of conversation  ; let i=index">
                           
                      
                           <div class="outgoing_msg">
@@ -89,3 +89,4 @@
                     
                  
                   </div>
+                
