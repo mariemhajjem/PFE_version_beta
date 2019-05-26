@@ -18,7 +18,7 @@ export class FormationService {
     return this.refreshNeeds;
   }
 
-  addFormation(nameFormation: string, type: string, imageUrl: File,D: string,Sujet: string,Plan:string) {
+  addFormation(nameFormation: string, type: string, imageUrl: File,D: string,Sujet: string,Plan:string,Categorie:string) {
     const formationData = new FormData();
     formationData.append("nameFormation", nameFormation);
     formationData.append("type", type);
@@ -26,6 +26,7 @@ export class FormationService {
     formationData.append("Description", D);
     formationData.append("Plan", Plan);
     formationData.append("Sujet", Sujet);
+    formationData.append("Categorie", Categorie);
 
 
     this.http.post(`${this.uri}/add`, formationData)

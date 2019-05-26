@@ -15,6 +15,9 @@ export class ListeFormationsComponent implements OnInit {
   searchTerm$ = new Subject<string>();
   sessions: any;
   bestFormations: any;
+  categorie: any;
+  selectedLevel: any;
+  Categories =  ['Web','Mobile','Design','Marketing Digital'];
   constructor(private searchService: SearchingService,private formationService:FormationService) {
     this.searchService.search(this.searchTerm$)
       .subscribe(results => {
@@ -33,10 +36,21 @@ export class ListeFormationsComponent implements OnInit {
     console.log(error);
   })
   }
-  
+   selected(){
+    this.categorie = this.selectedLevel;
+      console.log(this.categorie)
+      
+    }
   searchRecherche(){
-
+    this.searchService.searchByCategorie(this.categorie).subscribe(data =>{
+      this.sessions = data;
+    })
   }
+  rechercheParCategorie(categorie){
+    console.log("Web");
+     
+  }
+ 
  
   getAll(){
     return this.formationService.getBusinesses().subscribe(data =>

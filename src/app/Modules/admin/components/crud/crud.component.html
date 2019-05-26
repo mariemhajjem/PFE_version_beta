@@ -42,16 +42,23 @@
                   
                  </div>
               </div>
+              <div class="form-group col-md-6">
+                <label for="feDescription">Categories</label><br>
+            <select class="browser-default custom-select" formControlName="selectedLevel" name="delect" (change)="selected()">
+              <option [ngValue]="categorie">--Sélectionnez une categorie--</option>
+                <option *ngFor="let categorie of Categories" [ngValue]="categorie">{{categorie}}</option>
+            </select>
+           
+            </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <label for="feDescription">Description</label>
                 <br>
                   <textarea [rows]="5" [cols]="30" name="feDescription" name="D" formControlName="D" pInputTextarea autoResize="autoResize"></textarea>
                 </div>
-             
-              
-              </div>
-              <button type="submit" class="btn btn-accent">create Formation</button>
+               </div>
+               
+              <button type="submit" class="btn btn-accent">Créer Formation</button>
             </form>
           </div>
         </div>

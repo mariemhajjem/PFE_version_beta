@@ -31,4 +31,7 @@ export class SearchingService {
   searchBestFormation(){
     return this.http.get(this.baseUrl+'/bestformation');
   }
+  searchByCategorie(categorie){
+    return this.http.get(this.baseUrl+'/ParCategorie' + this.queryUrl + categorie) ;
+  }
 }

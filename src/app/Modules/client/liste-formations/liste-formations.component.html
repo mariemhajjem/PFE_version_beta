@@ -29,12 +29,9 @@
         <div class="courses_search_container">
           <form id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start" #registerForm="ngForm" (ngSubmit)="searchRecherche()">
             <input type="search" class="courses_search_input" placeholder="Search Courses" required="required" (keyup)="searchTerm$.next($event.target.value)">
-            <select id="courses_search_select" class="courses_search_select courses_search_input">
-              <option>Categories</option>
-              <option>Web</option>
-              <option>Mobile</option>
-              <option>Design</option>
-              <option>Marketing Digital</option>
+            <select id="courses_search_select" class="courses_search_select courses_search_input" [(ngModel)]="selectedLevel" name="delect" (change)="selected()">
+              <option [ngValue]="categorie">Categories</option>
+              <option *ngFor="let categorie of Categories" [ngValue]="categorie">{{categorie}}</option>
             </select>
             <button type="submit" class="courses_search_button ml-auto">chercher</button>
           </form>
@@ -140,10 +137,10 @@
             <div class="sidebar_section_title">Categories</div>
             <div class="sidebar_categories">
               <ul>
-                <li><a href="#">Web</a></li>
-                <li><a href="#">Mobile</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Marketing Digital</a></li>
+                <li><a click="rechercheParCategorie(categorie)" routerLink="/list"> Web </a></li>
+                <li><a routerLink="/list">Mobile</a></li>
+                <li><a routerLink="/list">Design</a></li>
+                <li><a routerLink="/list">Marketing Digital</a></li>
               </ul>
             </div>
           </div>
