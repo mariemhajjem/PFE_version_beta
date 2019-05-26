@@ -39,9 +39,12 @@ import { ToastModule } from 'primeng/toast';
 import { ProfilComponent } from './profil/profil.component';
 import { UserService } from '../admin/components/services/user.service';
 import { AuthService } from '../auth/auth.service';
+import { ChatService } from './service/chat.service';
+import { ChatComponent } from './chat/chat.component';
+import { MatListModule,MatInputModule,MatIconModule}from '@angular/material';
 
 @NgModule({
-  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent, ProfilComponent],
+  declarations: [ DemandesdevisComponent, NavbarComponent, SliderComponent, FormationsComponent, ContactComponent, FormulaireformationComponent, HomeComponent, FooterComponent, PartenairesComponent, ListeFormationsComponent, FormationDetailsComponent, AboutComponent, PanierComponent, MessageComponent, ButtonDemandeComponent, EventsComponent, ProfilComponent, ChatComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -59,9 +62,19 @@ import { AuthService } from '../auth/auth.service';
     FileUploadModule,
     ChipsModule,
     InputMaskModule,
-    ToastModule
+    ToastModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule 
   ] ,
+  exports : [
+    ChatComponent,
+    MatIconModule,
+    MatInputModule,
+    MatListModule
+  ],
   providers :[
+    ChatService,
     NavbarService,
     MessageService,
     UserService,
