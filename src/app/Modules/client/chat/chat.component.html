@@ -29,21 +29,21 @@
                   <div class="comment_image"><div><img src="./assets/client/images/Utilisateur.png" alt="User"></div></div>
                   <div class="comment_content">
                     <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                       
+
                       <div class="comment_time ml-auto">{{message.from}}</div>
                     </div>
                     <div class="comment_text">
                       <p>{{message.content}}</p>
-                    </div> 
+                    </div>
                   </div>
                 </div>
 
               </li>
 
             </ul>
-             
+
             <div class="add_comment_container" >
-               
+
               <form id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start" >
                 <input type="text" name="cmt" class="courses_search_input" placeholder=" Ajouter msg" #message (keyup.enter)="addMessageFromUser(message)" required="required">
                 <button type="button" class="courses_search_button ml-auto" (click)="addMessageFromUser(message)">envoyer</button>
@@ -52,15 +52,15 @@
           </div>
 
 
-
+<!--
 
           <div class="container">
               <h3 class=" text-center">Messaging</h3>
               <div class="messaging">
                       <div class="mesgs">
                         <div class="msg_history" *ngFor="let message of conversation  ; let i=index">
-                          
-                     
+
+
                           <div class="outgoing_msg">
                             <div class="sent_msg">
                               <p>{{message.content}}</p>
@@ -85,7 +85,7 @@
                         </div>
                       </div>
                     </div>
-                    
-                    
-                 
-                  </div>
+
+
+
+                  </div>-->

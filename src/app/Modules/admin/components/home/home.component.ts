@@ -38,7 +38,6 @@ Session: any[];
                   data: this.chart
               }
           ]
-      // tslint:disable-next-line:semicolon
       }
       });
       console.log(this.chartData)
