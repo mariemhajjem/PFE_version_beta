@@ -5,13 +5,13 @@ var formation = require('../Models/formation');
 var Session = require('../Models/Session');
 
 router.get('/form', function(req,res,next) {
-                          
+
     var noMatch = null;
     if(req.query.q) {
       //  const regex = new RegExp(escapeRegex(req.query.q));
         // Get all  from DB
-        formation.find({nameFormation: {$regex : new RegExp(req.query.q)}}, 
-            { 
+        formation.find({nameFormation: {$regex : new RegExp(req.query.q)}},
+            {
                 __v : 0
             }, function(err, allformations){
            if(err){
@@ -35,9 +35,9 @@ router.get('/form', function(req,res,next) {
     }
 });
 router.get('/bestformation', function(req,res,next) {
-                          
+
     var noMatch = null;
- 
+
         // Get all formations from DB
         formation.find({}, function(err, allformations){
             if(err){
@@ -63,6 +63,6 @@ router.get('/user', function(req,res,next) {
     }, function(err,data){
         res.json(data);
     }).limit(10);
-    
+
 });
 module.exports = router;
