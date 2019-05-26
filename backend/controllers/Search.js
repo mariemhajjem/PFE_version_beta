@@ -8,9 +8,10 @@ router.get('/form', function(req,res,next) {
 
     var noMatch = null;
     if(req.query.q) {
-      //  const regex = new RegExp(escapeRegex(req.query.q));
+        const regex = new RegExp(req.query.q);
         // Get all  from DB
-        formation.find({nameFormation: {$regex : new RegExp(req.query.q)}},
+        
+        formation.find({nameFormation: {$regex : regex, $options: "ig"}},
             {
                 __v : 0
             }, function(err, allformations){
