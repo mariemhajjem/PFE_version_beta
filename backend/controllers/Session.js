@@ -159,8 +159,9 @@ router.route('/addCart/:id').post(VerifyToken, function(req, res){
     .then(session => {
       User.findById(req.userId, { password: 0 }, function (err, user) {
         if (err) return res.status(500).send("There was a problem finding the user.");
-        if (user) return  user.addToCart(session);
-        session.userId.push(user);
+        if (user){ user.addToCart(session);
+          session.userId.push(user);
+          return  session.save();}
       });
     })
     .then(result => {
@@ -218,6 +219,13 @@ router.route('/deleteOrder/:id').get(function (req, res) {
       else res.json('Successfully removed');
   });
 });
+
+/*router.route('/statSession').get(function (req, res){
+  Session.find({}, function(err, UserId){
+    if (err) res.json(err);
+    else res.json('Successfully ');
+  })
+})*/
 
 
 module.exports = router;

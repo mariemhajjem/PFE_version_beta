@@ -3,7 +3,7 @@ import { CrudComponent } from './components/crud/crud.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RadioButtonModule} from 'primeng/radiobutton';
-import { AdminRoutingModule } from './admin-routing.module'; 
+import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {AccordionModule} from 'primeng/accordion';
@@ -46,6 +46,7 @@ import { CrudPartenairesComponent } from './components/crud-partenaires/crud-par
 import { GestionComponent } from './components/gestion/gestion.component';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import { EditComponent } from './components/edit/edit.component';
+import {ChartModule} from 'primeng/chart';
 export function getToken() {
   return localStorage.getItem('token');
  }
@@ -81,6 +82,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     CalendarModule,
     ListboxModule,
      Ng2SearchPipeModule,
+     ChartModule,
      RadioButtonModule,
      ToggleButtonModule,
     JwtModule.forRoot(JWT_Module_Options)
