@@ -131,7 +131,22 @@
       <!-- Courses Sidebar -->
       <div class="col-lg-4">
         <div class="sidebar">
+  <!-- Latest Course -->
+  <div class="sidebar_section" *ngIf="nav.LoggedIn">
+    <div class="sidebar_section_title">Salon de discussion</div>
+    <div class="sidebar_latest">
 
+      <!-- Latest Course -->
+      <div class="latest d-flex flex-row align-items-start justify-content-start">
+        <div class="latest_image"><div><img src="../../../../assets/client/images/chatbot.jpg" alt="chatbot"></div></div>
+        <div class="latest_content">
+          <div class="latest_title"><a routerLink="/chat">Chatbot</a></div>
+          <p>posez moi une question</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
 
           <!-- Latest Course -->
           <div class="sidebar_section" *ngIf="bestFormations">
@@ -142,7 +157,7 @@
               <div class="latest d-flex flex-row align-items-start justify-content-start" *ngFor='let formation of bestFormations'>
                 <div class="latest_image"><div><img src="../../../../assets/client/images/latest_1.jpg" alt=""></div></div>
                 <div class="latest_content">
-                  <div class="latest_title"><a [routerLink]="['/list', formation._id]">{{formation.name}}</a></div>
+                  <div class="latest_title">{{formation.name}}</div>
                   <div class="latest_price">Nombres d'inscrits: {{formation.quanti}}</div>
                 </div>
               </div>

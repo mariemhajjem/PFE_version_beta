@@ -1,78 +1,27 @@
-<!--
-<mat-List>
-<mat-List-item *ngFor="let message of conversation">
-  <mat-icon>{{message.avatar}}</mat-icon>
-  <h3 matLine>{{message.from}}</h3>
-  <p matLine>
-    <span>{{message.content}}</span>
-  </p>
-</mat-List-item>
-</mat-List>
-<mat-divider></mat-divider>
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput #message (keyup.enter)="addMessageFromUser(message)">
-    <mat-icon matSuffix (click)="addMessageFromUser(message)">envoyer</mat-icon>
-  </mat-form-field>
-</form>
- -->
+
  <header id="site-header">
     <div class="container">
-        <h1> </h1>
+        <h1> Chatbot</h1>
     </div>
   </header>
-        
-         <div class="comments_container">
-            <ul class="comments_list">
-              <li *ngFor="let message of conversation  ; let i=index">
-                <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-                  <div class="comment_image"><div><img src="./assets/client/images/Utilisateur.png" alt="User"></div></div>
-                  <div class="comment_content">
-                    <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-                       
-                      <div class="comment_time ml-auto">{{message.from}}</div>
-                    </div>
-                    <div class="comment_text">
-                      <p>{{message.content}}</p>
-                    </div> 
-                  </div>
-                </div>
-
-              </li>
-
-            </ul>
-             
-            <div class="add_comment_container" >
+         <div class="container">
                
-              <form id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start" >
-                <input type="text" name="cmt" class="courses_search_input" placeholder=" Ajouter msg" #message (keyup.enter)="addMessageFromUser(message)" required="required">
-                <button type="button" class="courses_search_button ml-auto" (click)="addMessageFromUser(message)">envoyer</button>
-              </form>
-            </div>
-          </div>
-
-
- <!-- Comments  -->
-
-          <div class="container">
-              <h3 class=" text-center">Messaging</h3>
               <div class="messaging">
                       <div class="mesgs">
                         <div *ngFor="let message of conversation  ; let i=index">
                           
                      
-                          <div class="outgoing_msg">
+                          <div class="outgoing_msg" *ngIf="message.from === 'Me'">
                             <div class="sent_msg">
                               <p>{{message.content}}</p>
                               <span class="time_date"> 11:01 AM    |    Today</span> </div>
                           </div>
-                          <div class="incoming_msg">
+
+                          <div class="incoming_msg" *ngIf="message.from === 'Bot'">
                             <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                             <div class="received_msg">
                               <div class="received_withd_msg">
-                                <p>We work directly with our designers and suppliers,
-                                  and sell direct to you, which means quality, exclusive
-                                  products, at a price anyone can afford.</p>
+                                <p>{{message.content}}</p>
                                 <span class="time_date"> 11:01 AM    |    Today</span></div>
                             </div>
                           </div>
