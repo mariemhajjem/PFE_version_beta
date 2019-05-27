@@ -3,6 +3,7 @@
         <h1>Profil </h1>
     </div>
   </header>
+  <p-toast [style]="{marginTop: '80px'}"></p-toast>
 <div class="main-content-container container-fluid px-4">
   <!-- Page Header -->
   <div class="page-header row no-gutters py-4">
@@ -21,18 +22,18 @@
             <img class="rounded-circle" src="./assets/client/images/team_1.jpg" alt="User Avatar" width="110"> </div>
           <h4 class="mb-0" *ngIf="currentUser">{{currentUser.prenom}}</h4>
           <span class="text-muted d-block mb-2">Project Manager</span>
-          
+
         </div>
         <ul class="list-group list-group-flush">
-        
+
           <li class="list-group-item p-4">
             <strong class="text-muted d-block mb-2">Réservations</strong>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. </span>
+            <span *ngFor="let res of items">{{res.sessionId.name}}</span>
           </li>
         </ul>
       </div>
     </div>
-    <p-toast [style]="{marginTop: '80px'}"></p-toast> 
+
     <div class="col-lg-4">
       <div class="card card-small mb-4">
         <div class="card-header border-bottom">
@@ -59,9 +60,9 @@
                       <label for="feEmailAddress">Email</label>
                       <input type="email" class="form-control" id="feEmailAddress" placeholder="Email" name="email" formControlName="email"
                       #email> </div>
-                  
+
                   </div>
-                  
+
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="feDescription">Téléphone</label>

@@ -16,9 +16,7 @@ Session: any[];
   chart = [];
   chartLen = [];
 
-  constructor(private ss: SessionsService) {
-
-  }
+  constructor(private ss: SessionsService) {}
 
   ngOnInit() {  this.ss
     .getSessionsname()

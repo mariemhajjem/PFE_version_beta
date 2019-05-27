@@ -69,4 +69,7 @@ export class SessionsService {
   getSessionsname() {
     return this.http.get(`${this.url}/statSession`);
   }
+  getffReservation() {
+    return this.http.get(`${this.url}/getReservations`);
+  }
 }
