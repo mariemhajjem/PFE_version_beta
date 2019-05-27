@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
+var uniqueValidator = require('mongoose-unique-validator');
 var UserSchema = new mongoose.Schema({
    id: String,
-  email: String,
+  email: {type:String ,unique: true},
   password: String,
   role: String,
   nom:String,
@@ -21,7 +22,7 @@ var UserSchema = new mongoose.Schema({
     ]
   }
 });
-
+UserSchema.plugin(uniqueValidator);
 
 UserSchema.methods.toAuthJSON = function(){
   return {

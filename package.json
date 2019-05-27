@@ -46,6 +46,7 @@
     "jwt-decode": "^2.2.0",
     "mailgun-js": "^0.22.0",
     "mongoose": "^5.4.19",
+    "mongoose-unique-validator": "^2.0.3",
     "multer": "^1.4.1",
     "ng-shopping-cart": "^1.0.0",
     "ng2-search-filter": "^0.4.7",

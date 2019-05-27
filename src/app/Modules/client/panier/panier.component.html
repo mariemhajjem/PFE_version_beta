@@ -3,11 +3,11 @@
   <div class="container">
       <h1>Panier </h1>
   </div>
-</header>
-
+</header> 
 <div class="container">
-
+        <p> <a routerLink="/list">Continuer vos achats</a></p>
   <section id="cart"> 
+      
       <article class="product" *ngFor="let item of items">
           <header>
               <a class="remove" (click)="Remove(item._id)">
@@ -23,12 +23,7 @@
               {{item.sessionId.Formations.Description}}
 
           </div>
-
-          <footer class="content">
-              <h2 class="price">
-                  14.99€
-              </h2>
-          </footer>
+ 
       </article>
 
   </section>
@@ -37,10 +32,9 @@
 
 <footer id="site-footer">
   <div class="container clearfix">
-
-      <div class="right">
-          <h1 class="total">Total: <span>177.16</span>€</h1>
-          <a class="btn" (click)="reserver()">Checkout</a>
+        
+      <div class="right"> 
+          <a class="btn" (click)="reserver()">Réserver</a>
       </div>
 
   </div>

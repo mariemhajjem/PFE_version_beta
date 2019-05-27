@@ -8,13 +8,13 @@ import { SessionsService } from '../../admin/components/services/sessions.servic
 })
 export class PanierComponent implements OnInit {
    items;
-   order;
+   order; 
   constructor(private Ss:SessionsService) { }
 
   ngOnInit() {
     this.Ss.GetCart().subscribe(data =>{
       this.items = data;
-      console.log(data);
+       console.log(data); 
     })  }
     reserver(){
       this.Ss.AddReservation(this.order);
