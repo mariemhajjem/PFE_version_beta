@@ -1,92 +1,39 @@
+<header id="site-header">
+  <div class="container">
+      <h1> Chatbot</h1>
+  </div>
+</header>
+       <div class="container">
 
- <header id="site-header">
-    <div class="container">
-        <h1> Chatbot</h1>
-    </div>
-  </header>
-<<<<<<< HEAD
-         <!-- Comments -->
-         <div class="comments_container">
-            <ul class="comments_list">
-              <li *ngFor="let message of conversation  ; let i=index">
-                <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-                  <div class="comment_image"><div><img src="./assets/client/images/Utilisateur.png" alt="User"></div></div>
-                  <div class="comment_content">
-                    <div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-
-                      <div class="comment_time ml-auto">{{message.from}}</div>
-                    </div>
-                    <div class="comment_text">
-                      <p>{{message.content}}</p>
-                    </div>
-                  </div>
-                </div>
-
-              </li>
-
-            </ul>
-
-            <div class="add_comment_container" >
-
-              <form id="courses_search_form" class="courses_search_form d-flex flex-row align-items-center justify-content-start" >
-                <input type="text" name="cmt" class="courses_search_input" placeholder=" Ajouter msg" #message (keyup.enter)="addMessageFromUser(message)" required="required">
-                <button type="button" class="courses_search_button ml-auto" (click)="addMessageFromUser(message)">envoyer</button>
-              </form>
-            </div>
-          </div>
+            <div class="messaging">
+                    <div class="mesgs">
+                      <div *ngFor="let message of conversation  ; let i=index">
 
 
-<!--
-
-          <div class="container">
-              <h3 class=" text-center">Messaging</h3>
-              <div class="messaging">
-                      <div class="mesgs">
-                        <div class="msg_history" *ngFor="let message of conversation  ; let i=index">
-
-
-                          <div class="outgoing_msg">
-=======
-         <div class="container">
-               
-              <div class="messaging">
-                      <div class="mesgs">
-                        <div *ngFor="let message of conversation  ; let i=index">
-                          
-                     
-                          <div class="outgoing_msg" *ngIf="message.from === 'Me'">
->>>>>>> b7cf791328ed16b01bb50ed552db1159e0ada9ae
-                            <div class="sent_msg">
-                              <p>{{message.content}}</p>
-                              <span class="time_date"> 11:01 AM    |    Today</span> </div>
-                          </div>
-
-                          <div class="incoming_msg" *ngIf="message.from === 'Bot'">
-                            <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                            <div class="received_msg">
-                              <div class="received_withd_msg">
-                                <p>{{message.content}}</p>
-                                <span class="time_date"> 11:01 AM    |    Today</span></div>
-                            </div>
-                          </div>
+                        <div class="outgoing_msg" *ngIf="message.from === 'Me'">
+                          <div class="sent_msg">
+                            <p>{{message.content}}</p>
+                            <span class="time_date"> 11:01 AM    |    Today</span> </div>
                         </div>
-                        <div class="type_msg">
-                          <div class="input_msg_write">
-                            <input type="text" class="write_msg" placeholder="Type a message" #message (keyup.enter)="addMessageFromUser(message)"/>
-                            <button class="msg_send_btn" type="button" (click)="addMessageFromUser(message)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+
+                        <div class="incoming_msg" *ngIf="message.from === 'Bot'">
+                          <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                          <div class="received_msg">
+                            <div class="received_withd_msg">
+                              <p>{{message.content}}</p>
+                              <span class="time_date"> 11:01 AM    |    Today</span></div>
                           </div>
                         </div>
                       </div>
+                      <div class="type_msg">
+                        <div class="input_msg_write">
+                          <input type="text" class="write_msg" placeholder="Type a message" #message (keyup.enter)="addMessageFromUser(message)"/>
+                          <button class="msg_send_btn" type="button" (click)="addMessageFromUser(message)"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                      </div>
                     </div>
-<<<<<<< HEAD
-
-
-
-                  </div>-->
-=======
-                    
-                    
-                 
                   </div>
-                
->>>>>>> b7cf791328ed16b01bb50ed552db1159e0ada9ae
+
+
+
+                </div>
