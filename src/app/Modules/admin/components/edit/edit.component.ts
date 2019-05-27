@@ -44,7 +44,7 @@ export class EditComponent implements OnInit {
     this.event.Description = Description;
     this.event.temps = temps;
     this.ES.updateEvent(params.id, this.event);
-    this.router.navigate(['/admin/listEvent']);
+    this.router.navigate(['/admin/eventss']);
   });
   }
 
