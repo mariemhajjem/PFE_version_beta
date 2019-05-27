@@ -1,26 +1,10 @@
-<!--
-<mat-List>
-<mat-List-item *ngFor="let message of conversation">
-  <mat-icon>{{message.avatar}}</mat-icon>
-  <h3 matLine>{{message.from}}</h3>
-  <p matLine>
-    <span>{{message.content}}</span>
-  </p>
-</mat-List-item>
-</mat-List>
-<mat-divider></mat-divider>
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput #message (keyup.enter)="addMessageFromUser(message)">
-    <mat-icon matSuffix (click)="addMessageFromUser(message)">envoyer</mat-icon>
-  </mat-form-field>
-</form>
- -->
+
  <header id="site-header">
     <div class="container">
-        <h1> </h1>
+        <h1> Chatbot</h1>
     </div>
   </header>
+<<<<<<< HEAD
          <!-- Comments -->
          <div class="comments_container">
             <ul class="comments_list">
@@ -62,17 +46,26 @@
 
 
                           <div class="outgoing_msg">
+=======
+         <div class="container">
+               
+              <div class="messaging">
+                      <div class="mesgs">
+                        <div *ngFor="let message of conversation  ; let i=index">
+                          
+                     
+                          <div class="outgoing_msg" *ngIf="message.from === 'Me'">
+>>>>>>> b7cf791328ed16b01bb50ed552db1159e0ada9ae
                             <div class="sent_msg">
                               <p>{{message.content}}</p>
                               <span class="time_date"> 11:01 AM    |    Today</span> </div>
                           </div>
-                          <div class="incoming_msg">
+
+                          <div class="incoming_msg" *ngIf="message.from === 'Bot'">
                             <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
                             <div class="received_msg">
                               <div class="received_withd_msg">
-                                <p>We work directly with our designers and suppliers,
-                                  and sell direct to you, which means quality, exclusive
-                                  products, at a price anyone can afford.</p>
+                                <p>{{message.content}}</p>
                                 <span class="time_date"> 11:01 AM    |    Today</span></div>
                             </div>
                           </div>
@@ -85,7 +78,15 @@
                         </div>
                       </div>
                     </div>
+<<<<<<< HEAD
 
 
 
                   </div>-->
+=======
+                    
+                    
+                 
+                  </div>
+                
+>>>>>>> b7cf791328ed16b01bb50ed552db1159e0ada9ae

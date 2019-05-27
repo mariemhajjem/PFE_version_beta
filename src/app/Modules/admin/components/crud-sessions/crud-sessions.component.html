@@ -1,10 +1,12 @@
+<br><br>
+<button class="btn btn-accent" routerLink="/admin/addSession">Créer session</button><br><br>
 <h3>Liste sessions</h3>
 <p-table [value]="Sessions">
     <ng-template pTemplate="header">
         <tr>
 
             <th>Nom session</th>
-            <th>Date session</th>
+            <th>Nombres d'heures</th>
             <th>Modifier</th>
             <th>Supprimer</th>
         </tr>
@@ -13,7 +15,7 @@
         <tr >
 
             <td>{{ session.name }}</td>
-            <td>{{ session.dateDebut | date :"dd/MM" }}</td>
+            <td>{{ session.Horaires }}</td>
             <td><a [routerLink]="['/admin/editSessions', session._id]" class="btn btn-primary">Modifier</a></td>
             <td><a (click) = "deleteSession(session)" class="btn btn-danger">Supprimer</a></td>
         </tr>

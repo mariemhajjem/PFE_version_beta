@@ -8,4 +8,5 @@ export class Session {
         NbPlaces :  Number;
         Horaires : string;
         NbHeures : Number;
+        quanti :Number
 }

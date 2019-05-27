@@ -43,6 +43,7 @@ router.route('/add').post(upload.single('imageUrl'),function (req, res) {
   const Description = req.body.Description;
   const Plan = req.body.Plan;
   const Sujet =req.body.Sujet;
+  const Categorie=req.body.Categorie;
   const imageUrl = "assets/uploads/"+req.file.filename ;
   let formation = new Formation ({
     nameFormation: nameFormation,
@@ -50,7 +51,8 @@ router.route('/add').post(upload.single('imageUrl'),function (req, res) {
     imageUrl: imageUrl,
     Description: Description,
     Plan: Plan,
-    Sujet: Sujet
+    Sujet: Sujet,
+    Categorie : Categorie
 
   });
   formation.save()

@@ -14,7 +14,7 @@ partenaires :any;
     this.getAll();
   }
 getAll(){
-  return this.partenaireService.getDemandes().subscribe(
+  return this.partenaireService.getPartenaires().subscribe(
    data =>  {
      this.partenaires = data;
     },

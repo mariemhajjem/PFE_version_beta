@@ -20,6 +20,9 @@ let Formation = new Schema({
    Description : {
      type : String
    },
+   Categorie : {
+    type : String
+  },
    Sessions:[{type: mongoose.Schema.Types.ObjectId, ref:'Session'}],
    Cmts:[{type: mongoose.Schema.Types.ObjectId, ref:'Comment'}]
 },{

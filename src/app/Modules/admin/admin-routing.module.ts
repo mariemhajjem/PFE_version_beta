@@ -22,6 +22,7 @@ import { AddSessionComponent } from './components/add-session/add-session.compon
 import { MessagesComponent } from './components/messages/messages.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { EventsComponent } from './components/events/events.component';
+import { CrudPartenairesComponent } from './components/crud-partenaires/crud-partenaires.component';
 
 
 
@@ -45,6 +46,7 @@ const routes: Routes = [
     { path: 'users', component: ListUserComponent },
     { path: 'editUser/:id', component: CrudUsersComponent },
     { path: 'listFormation', component: FormListComponent },
+    { path: 'listPartenaires', component: CrudPartenairesComponent },
     { path: 'listSessions', component: CrudSessionsComponent },
     {path: 'editFormation/:id', component: EditFormationComponent},
     {path: 'editSessions/:id', component: EditSessionComponent},

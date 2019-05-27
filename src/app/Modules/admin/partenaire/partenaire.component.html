@@ -4,7 +4,7 @@
   <form [formGroup]="form" (submit)="send()"enctype="multipart/form-data">
       <div class="section"><span>1</span>formateur</div>
       <div class="inner-wrap">
-          <label>name<input id="feFirstName" type="text" name="field1" formControlName="name" /></label>
+          <label>Nom<input id="feFirstName" type="text" name="field1" formControlName="name" /></label>
           <label>emploi<input id="feFPre" type="text" name="field2" formControlName="job" /></label>
           <label>image</label><input type="file" name="field12" (change)="onFilePicked($event)"/><br><br>
       </div>

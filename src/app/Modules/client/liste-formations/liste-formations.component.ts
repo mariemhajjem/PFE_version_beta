@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SearchingService } from '../service/searching.service';
 import { FormationService } from '../../admin/components/services/formation.service';
+import { SessionService } from '../service/session.service';
+import { NavbarService } from '../service/navbar.service';
 
 @Component({
   selector: 'app-liste-formations',
@@ -15,7 +17,10 @@ export class ListeFormationsComponent implements OnInit {
   searchTerm$ = new Subject<string>();
   sessions: any;
   bestFormations: any;
-  constructor(private searchService: SearchingService,private formationService:FormationService) {
+  categorie: any;
+  selectedLevel: any;
+  Categories =  ['Tous','Web','Mobile','Design','Marketing Digital'];
+  constructor(private searchService: SearchingService,private formationService:FormationService,private sessionService:SessionService,public nav: NavbarService) {
     this.searchService.search(this.searchTerm$)
       .subscribe(results => {
         this.results = results ;
@@ -28,15 +33,30 @@ export class ListeFormationsComponent implements OnInit {
   search() {
   return this.searchService.searchBestFormation().subscribe(data =>{
     this.bestFormations = data;
+    console.log(data);
   },
   error => {
     console.log(error);
   })
   }
-  
+   selected(){
+    this.categorie = this.selectedLevel;
+      console.log(this.categorie)
+      
+    }
   searchRecherche(){
-
+    if(this.categorie==="Tous"){
+      this.getAll();
+    }else{
+    this.searchService.searchByCategorie(this.categorie).subscribe(data =>{
+      this.sessions = data;
+    })}
   }
+  rechercheParCategorie(categorie){
+    console.log("Web");
+     
+  }
+ 
  
   getAll(){
     return this.formationService.getBusinesses().subscribe(data =>

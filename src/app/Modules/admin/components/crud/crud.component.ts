@@ -14,6 +14,9 @@ export class CrudComponent implements OnInit {
     imageUrl: any;
     isLoading = false;
     formation: Formation;
+  categorie: any;
+  selectedLevel: any;
+  Categories =  ['Web','Mobile','Design','Marketing Digital'];
   constructor(private fs: FormationService) {}
 
   ngOnInit() {
@@ -26,6 +29,7 @@ export class CrudComponent implements OnInit {
       D: new FormControl(null, { validators: [Validators.required] }),
       Plan: new FormControl(null, { validators: [Validators.required] }),
       Sujet: new FormControl(null, { validators: [Validators.required] }),
+      selectedLevel: new FormControl(null, { validators: [Validators.required] }),
     });
 
   }
@@ -39,6 +43,11 @@ export class CrudComponent implements OnInit {
     };
     reader.readAsDataURL(file);
   }
+  selected(){
+    this.categorie = this.form.value.selectedLevel;
+      console.log(this.form.value.selectedLevel)
+    }
+    
   submit() {
       this.fs.addFormation(
         this.form.value.nameFormation,
@@ -46,7 +55,8 @@ export class CrudComponent implements OnInit {
         this.form.value.imageUrl,
         this.form.value.D,
         this.form.value.Sujet,
-        this.form.value.Plan
+        this.form.value.Plan,
+        this.categorie
       );
     }
   }
