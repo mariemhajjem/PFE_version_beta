@@ -27,8 +27,8 @@ export class FormationDetailsComponent implements OnInit  {
         this.formationService.editBusiness(params.id).subscribe(res => {
           this.formation = res as Formation;
         });
-    }) }, 100000);
-  
+    }) }, 1000);
+
   }
 
   ngOnInit() {
@@ -39,8 +39,8 @@ export class FormationDetailsComponent implements OnInit  {
       });
     });
     if(this.auth.isLoggedIn()){
-      this.nav.LoggedIn = true; 
-     }  
+      this.nav.LoggedIn = true;
+     }
   }
   AjouterCmt(){
     this.cmtService.sendCmt(this.idformation,this.cmt);

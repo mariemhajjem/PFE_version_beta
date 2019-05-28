@@ -26,15 +26,22 @@ Session: any[];
       this.Session.forEach(element => {
         this.chartData.push(...Object.values([element.name]));
         this.chart.push(...Object.values([element.quanti]));
+        this.chartLen.push(...Object.values([element.NbPlaces]));
         this.data = {
           labels: this.chartData,
           datasets: [
               {
-                  label: 'nombres de ',
+                  label: 'nombres de réservations',
                   backgroundColor: '#42A5F5',
                   borderColor: '#1E88E5',
                   data: this.chart
-              }
+              },
+              {
+                label: 'nombres de palces disponibles',
+                backgroundColor: '#9CCC65',
+                borderColor: '#7CB342',
+                data: this.chartLen
+            }
           ]
       }
       });

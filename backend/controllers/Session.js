@@ -229,7 +229,7 @@ router.route('/deleteOrder/:id').get(function (req, res) {
 });
 
 router.route('/statSession').get(function (req, res){
-  Session.find({},{name: 1,quanti: 1,_id: 0}, function(err, session){
+  Session.find({},{name: 1,quanti: 1,NbPlaces: 1, _id: 0}, function(err, session){
     if (err) res.json(err);
     else res.json(session);
   })
