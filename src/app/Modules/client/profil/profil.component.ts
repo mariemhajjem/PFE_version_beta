@@ -30,6 +30,8 @@ export class ProfilComponent implements OnInit {
   email:string;
  id: string;
  updated : boolean;
+ Categories =  ['Bac','Licence','Master','Doctorat'];
+  categorie: any;
   constructor(
     private authService: AuthService, 
     private userService: UserService,
@@ -45,11 +47,16 @@ export class ProfilComponent implements OnInit {
       email: ['', [Validators.required,Validators.email]] ,
       nom :    ['', Validators.required] ,            
       prenom : ['', Validators.required] ,    
-      tel :    ['', Validators.required] ,    
+      tel :    ['', Validators.required] , 
+      age :    ['', Validators.required] ,
+      selectedLevel: ['',Validators.required] ,    
     });
   }
  
- 
+  selected(){
+    this.categorie = this.updateForm.value.selectedLevel;
+      console.log(this.categorie)
+    }
   ngOnInit() {
        this.authService.getProfile().subscribe((data : any) => {
        this.currentUser= data ; 
@@ -58,22 +65,25 @@ export class ProfilComponent implements OnInit {
        this.updateForm.get('nom').setValue(this.currentUser.nom);
        this.updateForm.get('prenom').setValue(this.currentUser.prenom);
        this.updateForm.get('tel').setValue(this.currentUser.tel);
+       this.updateForm.get('age').setValue(this.currentUser.age);
        }); 
   }
 
 
        // Updates the document with input data and redirects to  
-updateUser(currentUser,email,nom,prenom,tel) {
+updateUser(currentUser,email,nom,prenom,tel,age) {
  
   currentUser.email=email;
   currentUser.nom=nom;
   currentUser.prenom=prenom;
   currentUser.tel=tel;
-   console.log(this.currentUser.id)
+  currentUser.age=age;
+  currentUser.Niveau=this.categorie;
+ 
   this.userService.updateUser(this.currentUser._id,currentUser).subscribe(() => {
     
     this.messageService.add({severity: 'info', summary: 'Succès', detail: 'Profil modifié'});
-    this.router.navigate(['/']);
+    
 })}
 
 }

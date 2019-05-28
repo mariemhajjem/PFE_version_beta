@@ -10,6 +10,9 @@ var UserSchema = new mongoose.Schema({
   resetToken: String,
   resetTokenExpiration: Date,
   tel: Number,
+  age : { type: Number, default: 0 },
+  Niveau : { type: String, default: '' },
+
   cart: {
     items: [
       {

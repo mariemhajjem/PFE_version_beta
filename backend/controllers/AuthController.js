@@ -47,7 +47,7 @@ router.post('/register', function(req, res) {
       prenom: req.body.prenom,
       tel: req.body.tel,
       age: req.body.age,
-      Niveau : req.body.Nivea,
+      Niveau : req.body.Niveau,
       etude: req.body.etude,
       competences: req.body.competences,
     },

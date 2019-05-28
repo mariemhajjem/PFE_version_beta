@@ -40,7 +40,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
        this.authService.getProfile().subscribe((data :any) => {
        this.currentUser= data as User;
-       console.log(data._id)
+        this.id=data._id;
        this.updateForm.get('email').setValue(this.currentUser.email);
        this.updateForm.get('nom').setValue(this.currentUser.nom);
        this.updateForm.get('prenom').setValue(this.currentUser.prenom);
@@ -57,7 +57,7 @@ updateUser(currentUser,email,nom,prenom,tel) {
   currentUser.prenom=prenom;
   currentUser.tel=tel;
  
-  this.userService.updateUser(this.currentUser.id,currentUser).subscribe(() => {
+  this.userService.updateUser(this.id,currentUser).subscribe(() => {
     this.router.navigate(['/admin/profileadmin']);
   
 })}

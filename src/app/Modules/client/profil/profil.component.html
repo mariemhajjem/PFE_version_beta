@@ -19,15 +19,17 @@
         <div class="card-header border-bottom text-center">
           <div class="mb-3 mx-auto">
             <img class="rounded-circle" src="./assets/client/images/team_1.jpg" alt="User Avatar" width="110"> </div>
-          <h4 class="mb-0" *ngIf="currentUser">{{currentUser.prenom}}</h4>
-          <span class="text-muted d-block mb-2">Project Manager</span>
-          
+          <h4 class="mb-0" *ngIf="currentUser">{{currentUser.prenom}} {{currentUser.nom}}</h4>
+          <span class="text-muted d-block mb-2">{{currentUser.email}}</span>
+          <span class="text-muted d-block mb-2">{{currentUser.tel}}</span>
+          <span class="text-muted d-block mb-2">Age : {{currentUser.age}}</span>
+          <span class="text-muted d-block mb-2">Niveau : {{currentUser.Niveau}}</span>
         </div>
         <ul class="list-group list-group-flush">
         
           <li class="list-group-item p-4">
             <strong class="text-muted d-block mb-2">Réservations</strong>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. </span>
+            <span> </span>
           </li>
         </ul>
       </div>
@@ -67,9 +69,20 @@
                       <label for="feDescription">Téléphone</label>
                       <input class="form-control" name="feDescription"  formControlName="tel"
                       #tel >
+                      <label for="feDescription">Age</label>
+                      <input class="form-control" name="feDescription"  formControlName="age"
+                      #age >
                     </div>
                   </div>
-                  <button type="button" class="btn btn-accent" name="register" (click)="updateUser(currentUser,email.value,nom.value,prenom.value,tel.value)">Modifier profil</button>
+                    <div class="form-row">
+                    <label for="feDescription">Niveau d'étude</label><br>
+                     <select class="browser-default custom-select" formControlName="selectedLevel" name="delect" (change)="selected()">
+                      
+                      <option *ngFor="let categorie of Categories" [ngValue]="categorie">{{categorie}}</option>
+                     </select>
+                  </div>
+                  <br>
+                  <button type="button" class="btn btn-accent" name="register" (click)="updateUser(currentUser,email.value,nom.value,prenom.value,tel.value,age.value)">Modifier profil</button>
                 </form>
               </div>
             </div>
