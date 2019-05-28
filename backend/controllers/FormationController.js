@@ -95,7 +95,10 @@ router.route('/edit/:id').get(function (req, res) {
     path: 'User',
     model: 'User',
     select: { 'email': 1,'imageUrl': 1}
-  }},{path:'Sessions', model:'Session'}]).exec(function (err, formation){
+  }},{path:'Sessions', model:'Session',  populate: {
+    path: 'Formateur',
+    model: 'partenaire', 
+  } }]).exec(function (err, formation){
       res.json(formation);
   });
 });

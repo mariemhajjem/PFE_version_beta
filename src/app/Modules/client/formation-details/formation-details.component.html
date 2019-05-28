@@ -117,25 +117,25 @@
                         <ul class="dropdowns">
                           <li class="has_children">
                             <div class="dropdown_item">
-                              <div class="dropdown_item_title"><span>Lecture 1:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
+                              <div class="dropdown_item_title"><span>Lecture 1:</span>  </div>
                               <div class="dropdown_item_text">
-                                <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
+                                <p> </p>
                               </div>
                             </div>
                             <ul>
                               <li>
                                 <div class="dropdown_item">
-                                  <div class="dropdown_item_title"><span>Lecture 1.1:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
+                                  <div class="dropdown_item_title"><span>Lecture 1.1:</span>  .</div>
                                   <div class="dropdown_item_text">
-                                    <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
+                                    <p> .</p>
                                   </div>
                                 </div>
                               </li>
                               <li>
                                 <div class="dropdown_item">
-                                  <div class="dropdown_item_title"><span>Lecture 1.2:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
+                                  <div class="dropdown_item_title"><span>Lecture 1.2:</span>  .</div>
                                   <div class="dropdown_item_text">
-                                    <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
+                                    <p> .</p>
                                   </div>
                                 </div>
                               </li>
@@ -143,25 +143,25 @@
                           </li>
                           <li class="has_children">
                             <div class="dropdown_item">
-                              <div class="dropdown_item_title"><span>Lecture 2:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
+                              <div class="dropdown_item_title"><span>Lecture 2:</span>  .</div>
                               <div class="dropdown_item_text">
-                                <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
+                                <p> .</p>
                               </div>
                             </div>
                             <ul>
                               <li>
                                 <div class="dropdown_item">
-                                  <div class="dropdown_item_title"><span>Lecture 2.1:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
+                                  <div class="dropdown_item_title"><span>Lecture 2.1:</span>  </div>
                                   <div class="dropdown_item_text">
-                                    <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
+                                    <p> .</p>
                                   </div>
                                 </div>
                               </li>
                               <li>
                                 <div class="dropdown_item">
-                                  <div class="dropdown_item_title"><span>Lecture 2.2:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
+                                  <div class="dropdown_item_title"><span>Lecture 2.2:</span>  .</div>
                                   <div class="dropdown_item_text">
-                                    <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
+                                    <p> .</p>
                                   </div>
                                 </div>
                               </li>
@@ -169,28 +169,13 @@
                           </li>
                           <li>
                             <div class="dropdown_item">
-                              <div class="dropdown_item_title"><span>Lecture 3:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
+                              <div class="dropdown_item_title"><span>Lecture 3:</span>  .</div>
                               <div class="dropdown_item_text">
-                                <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
+                                <p> .</p>
                               </div>
                             </div>
                           </li>
-                          <li>
-                            <div class="dropdown_item">
-                              <div class="dropdown_item_title"><span>Lecture 4:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-                              <div class="dropdown_item_text">
-                                <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-                              </div>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="dropdown_item">
-                              <div class="dropdown_item_title"><span>Lecture 5:</span> Lorem Ipsn gravida nibh vel velit auctor aliquet.</div>
-                              <div class="dropdown_item_text">
-                                <p>Lorem Ipsn gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auci elit consequat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus.</p>
-                              </div>
-                            </div>
-                          </li>
+                          
                         </ul>
                       </div>
                     </div>
@@ -290,6 +275,8 @@
                     <div class="latest_image"><div><img src="../../../../assets/client/images/latest_1.jpg" alt=""></div></div>
                     <div class="latest_content">
                       <div class="latest_title"> {{session.name}}</div>
+                      <div class="latest_title">Formateur: {{session.Formateur.name}}</div>
+                      
                       <button (click)="AjouterAuPanier(session._id)">Ajouter au panier</button>
                     </div>
                   </div>
