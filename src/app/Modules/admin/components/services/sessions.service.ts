@@ -17,7 +17,7 @@ export class SessionsService {
     return this.refreshNeeds;
   }
   sendsession(Session,id,formateur) {
-    return this.http.post(`${this.url}/${id}/${formateur}`, Session).subscribe(res => console.log('Done'));
+    return this.http.post(`${this.url}/session/${id}/${formateur}`, Session).subscribe(res => console.log('Done'));
    }
   getSessions() {
      return this.http.get(`${this.url}/`);

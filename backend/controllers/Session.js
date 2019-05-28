@@ -124,7 +124,7 @@ router.route('/delete/:id').get(function (req, res) {
     });
 });
 
-router.route('/:id/:ida').post(async (req, res)=> {
+router.route('/session/:id/:ida').post(async (req, res)=> {
   let id = req.params.id;
   let ida = req.params.ida;
   const formation = await Formation.findOne({_id : id});
