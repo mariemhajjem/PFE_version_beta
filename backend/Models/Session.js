@@ -13,7 +13,7 @@ let Session = new Schema({
       type: mongoose.Schema.Types.ObjectId, ref:'Formation'
     },
     Formateur : {
-      type : String
+      type :  mongoose.Schema.Types.ObjectId, ref:'partenaire'
     },
     NbPlaces : {
       type : Number
