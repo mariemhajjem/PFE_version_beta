@@ -11,6 +11,7 @@ router.use(bodyParser.json());
 // Require formation model in our routes module
 let Formation = require('../Models/formation');
 let Session = require('../Models/Session');
+let formateur = require('../Models/Partenaire');
 let User = require('../Models/User');
 let Order = require('../Models/order');
 
@@ -123,15 +124,19 @@ router.route('/delete/:id').get(function (req, res) {
     });
 });
 
-router.route('/:id').post(async (req, res)=> {
+router.route('/:id/:ida').post(async (req, res)=> {
   let id = req.params.id;
+  let ida = req.params.ida;
   const formation = await Formation.findOne({_id : id});
+  const formateu = await formateur.findOne({_id : ida});
   var session = new Session();
   session.name = req.body.name;
   session.date = req.body.date;
   session.Formations= formation._id;
   session.NbPlaces = req.body.NbPlaces;
   session.Horaires=req.body.Horaires;
+  session.NbHeures=req.body.NbHeures;
+  session.Formateur=formateu._id;
   session.save();
 
   formation.Sessions.push(session);

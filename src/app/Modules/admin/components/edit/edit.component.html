@@ -2,7 +2,7 @@
 <div class="col-lg-8">
   <div class="card card-small mb-4">
     <div class="card-header border-bottom">
-      <h6 class="m-0">Session details</h6>
+      <h6 class="m-0">Event details</h6>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item p-3">
@@ -11,22 +11,28 @@
             <form [formGroup]="form">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="feFirstName">Nom session</label>
+                  <label for="feFirstName">Nom de l'evènement</label>
                   <input type="text" class="form-control" id="feFirstName" formControlName="name" #name [value]="event.name" name="name"> </div>
-                <div class="form-group col-md-6">
-                  <label for="feLastName"> Date</label>
-                  <input type="text" class="form-control" id="feLastName" #date formControlName="date" [value]="event.date" > </div>
+                  <div class="form-group col-md-6">
+                    <label for="feLastName">Date de l'évènement</label>
+                    <br>
+                    <p-calendar formControlName="date" #date name="date" [showTime]="true"  [monthNavigator]="true" [yearNavigator]="true" yearRange="2019:2050"></p-calendar>
+                   </div>
               </div>
+
               <div class="form-group">
-                <label for="feInputAddress">Nombres de places</label>
+                <label for="feInputAddress">Description</label>
                 <input type="text" class="form-control" id="feInputAddress" #Description formControlName="Description" [value]="event.Description" name="Description"> </div>
               <div class="form-row">
 
 
-                <div class="form-group col-md-2">
-                  <label for="inputZip">temps</label>
-                  <input type="text" class="form-control" id="inputZip" #temps formControlName="temps" [value]="event.temps" name="temps"> </div>
-              </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="feInputCity">Temps de l'évènement</label>
+                     <br>
+                     <p-calendar type="date" formControlName="temps" name="temps"  [timeOnly]="true" #temps></p-calendar>
+                     </div>
+              </div></div>
               <button type="button" class="btn btn-accent" (click)="submit(name.value,date.value,temps.value,Description.value)">modifier formation</button>
             </form>
           </div>

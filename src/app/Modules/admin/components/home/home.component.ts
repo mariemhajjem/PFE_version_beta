@@ -16,9 +16,7 @@ Session: any[];
   chart = [];
   chartLen = [];
 
-  constructor(private ss: SessionsService) {
-
-  }
+  constructor(private ss: SessionsService) {}
 
   ngOnInit() {  this.ss
     .getSessionsname()
@@ -32,13 +30,12 @@ Session: any[];
           labels: this.chartData,
           datasets: [
               {
-                  label: 'les sessions',
+                  label: 'nombres de ',
                   backgroundColor: '#42A5F5',
                   borderColor: '#1E88E5',
                   data: this.chart
               }
           ]
-      // tslint:disable-next-line:semicolon
       }
       });
       console.log(this.chartData)

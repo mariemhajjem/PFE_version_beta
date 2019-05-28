@@ -16,8 +16,8 @@ export class SessionsService {
   get refreshNeed() {
     return this.refreshNeeds;
   }
-  sendsession(Session,id) {
-    return this.http.post(`${this.url}/${id}`, Session).subscribe(res => console.log('Done'));
+  sendsession(Session,id,formateur) {
+    return this.http.post(`${this.url}/${id}/${formateur}`, Session).subscribe(res => console.log('Done'));
    }
   getSessions() {
      return this.http.get(`${this.url}/`);
@@ -68,5 +68,8 @@ export class SessionsService {
   }
   getSessionsname() {
     return this.http.get(`${this.url}/statSession`);
+  }
+  getffReservation() {
+    return this.http.get(`${this.url}/getReservations`);
   }
 }

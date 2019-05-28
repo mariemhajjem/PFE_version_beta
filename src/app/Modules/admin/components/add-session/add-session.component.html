@@ -24,8 +24,8 @@
                     <div class="form-group col-md-6">
                       <label for="feInputCity">Horaires</label>
                   <input type="text" class="form-control" id="feInputAddress" name="Horaires" [(ngModel)]="session.Horaires"> </div>
-                
-                
+
+
                 <div class="ui-g-12 ui-md-4">
                     <label for="feDescription">Période</label><br>
                     <p-calendar [(ngModel)]="session.date" name="date" type="date" selectionMode="range" [readonlyInput]="true"></p-calendar>
@@ -36,9 +36,17 @@
                   <option [ngValue]="formation">--Sélectionnez une formation--</option>
                     <option *ngFor="let formation of Formations" [ngValue]="formation">{{formation.nameFormation}}</option>
                 </select>
-               
+
                 </div>
-                
+                <div class="form-group col-md-6">
+                  <label for="feDescription">Formateur</label><br>
+              <select class="browser-default custom-select" [(ngModel)]="selectedFor" name="delect" (change)="selectedFormateur()">
+                <option [ngValue]="formateur">--Sélectionnez un formateur--</option>
+                  <option *ngFor="let formateur of Formateur" [ngValue]="formateur">{{formateur.name}}</option>
+              </select>
+
+              </div>
+
                 </div>
                 <button type="submit" class="btn btn-accent">créer session</button>
               </form>
@@ -48,4 +56,4 @@
       </ul>
     </div>
   </div>
-  
+
