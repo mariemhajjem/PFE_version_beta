@@ -14,7 +14,7 @@ export class CrudSessionsComponent implements OnInit {
         {
           this.Sessions = data as any; 
         })
-    }, 10000);
+    }, 100000);
    }
   Sessions : any[];
   ngOnInit() {

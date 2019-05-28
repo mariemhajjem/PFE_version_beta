@@ -27,7 +27,7 @@ export class FormationDetailsComponent implements OnInit  {
         this.formationService.editBusiness(params.id).subscribe(res => {
           this.formation = res as Formation;
         });
-    }) }, 1000);
+    }) }, 100000);
   
   }
 

@@ -135,6 +135,7 @@ router.route('/session/:id/:ida').post(async (req, res)=> {
   session.Formations= formation._id;
   session.NbPlaces = req.body.NbPlaces;
   session.Horaires=req.body.Horaires;
+  session.quanti = 0;
   session.NbHeures=req.body.NbHeures;
   session.Formateur=formateu._id;
   session.save();
@@ -165,9 +166,10 @@ router.route('/addCart/:id').post(VerifyToken, function(req, res){
       User.findById(req.userId, { password: 0 }, function (err, user) {
         if (err) return res.status(500).send("There was a problem finding the user.");
         if (user){ user.addToCart(session);
-          session.userId.push(user);
+          session.addToUserId(user);
           session.quanti = session.userId.length;
-          return  session.save();}
+          return  session.save();
+        }
       });
     })
     .then(result => {

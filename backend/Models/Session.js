@@ -12,7 +12,7 @@ let Session = new Schema({
     Formations:{
       type: mongoose.Schema.Types.ObjectId, ref:'Formation'
     },
-    Formateur : {
+    Formateur :{
       type :  mongoose.Schema.Types.ObjectId, ref:'partenaire'
     },
     NbPlaces : {
@@ -36,6 +36,19 @@ let Session = new Schema({
   {
     collection: 'sessions'
   }, {timestamps: true});
+
+  Session.methods.addToUserId = function(User) {
+    const cartSessionIndex = this.userId.findIndex(cp => {
+      return cp._id.toString() === User._id.toString();
+    });
+    const updatedCartItems = [...this.userId];
+
+    if (cartSessionIndex >= 0) {
+    } else {
+      updatedCartItems.push(User._id);
+    }
+    this.userId = updatedCartItems;
+  };
 
 
 module.exports = mongoose.model('Session', Session);
