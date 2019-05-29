@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { FormationService } from './../services/formation.service';
 import Formation from '../models/formation';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-crud',
@@ -17,7 +18,7 @@ export class CrudComponent implements OnInit {
   categorie: any;
   selectedLevel: any;
   Categories =  ['Web','Mobile','Design','Marketing Digital'];
-  constructor(private fs: FormationService) {}
+  constructor(private fs: FormationService , private router: Router) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -58,6 +59,7 @@ export class CrudComponent implements OnInit {
         this.form.value.Plan,
         this.categorie
       );
+      this.router.navigate(['/admin/listFormation']);
     }
   }
 

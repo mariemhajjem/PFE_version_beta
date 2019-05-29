@@ -33,8 +33,8 @@
 
                 <!-- Course Info Item -->
                 <div class="course_info_item">
-                  <div class="course_info_title">Formateur:</div>
-                  <div class="course_info_text">Meriem Fellah</div>
+                  <div class="course_info_title">Catégorie:</div>
+                  <div class="course_info_text">{{formation.Categorie}} </div>
                 </div>
 
                 <!-- Course Info Item
@@ -89,14 +89,41 @@
                         <!-- Accordions -->
 
                         <p-accordion [multiple]="true">
-                          <p-accordionTab header="Question I">
-                              The story begins  as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son ichael has just come home from the war, but does not intend to become part of his father's business. T hrough Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+                          <p-accordionTab header="Qu'est-ce qu'un virus informatique ?">
+                            
+                            Un virus informatique est un programme ou petit logiciel spécialement conçu (on dit spécialement codé) pour se reproduire et se propager tout seul d’ordinateur en ordinateur. 
+
+A l’origine, le virus n’était absolument pas dangereux. Il l’est devenu par l’ajout de codes malveillants, conçus pour qu’il exécute tout seul certaines actions prédéfinies comme supprimer des données, les dupliquer à l’infini, afficher un message impossible à fermer dans une fenêtre, perturber le fonctionnement des périphériques de l’ordinateur (souris, clavier, lecteur), empêcher un programme légitime de démarrer, changer les extensions de fichier, etc. 
+
+La liste est longue mais il faut savoir qu’un virus peut nuire plus ou moins gravement au bon fonctionnement du système d’exploitation d’un ordinateur, handicapant ainsi son utilisation. 
+
+Selon son type, un virus peut se propager via Internet (téléchargements, mails, sites web,…) et les réseaux locaux (ordinateurs interconnectés en local) mais aussi via les clés USB, CD et DVD, disquettes, et cartes mémoires. 
+
+La majeure partie des virus informatiques connus aujourd’hui (plus de 90%) s’attaquent uniquement au système d’exploitation Windows de Microsoft.
                           </p-accordionTab>
-                          <p-accordionTab header="Question II">
-                              Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows.
+                          <p-accordionTab header="Comment l'informatique a-t-elle vu le jour ?">
+                            Le mot « informatique » est né de la combinaison de deux mots : information et automatique. Ce qui signifie qu’à l’origine, l’informatique est vu comme le traitement automatique de l’information. 
+
+                            Suivant cette définition, on peut affirmer que l’informatique a existé bien avant l’apparition des premiers ordinateurs, plus précisément avec les premiers concepts sur la programmation. De Joseph Jacquard et son métier à tisser utilisant des cartes perforées (souvent considéré comme un ancêtre de l’ordinateur), à George Boole, père de la logique moderne et de sa structure algébrique, en passant par Ada Lovelace qui écrivit le premier algorithme au monde destiné à être lu sur une machine (environ 100 ans avant l’apparition du premier ordinateur), plusieurs inventeurs et mathématiciens conceptualisèrent l’idée d’une machine traitant automatiquement des tâches sans intervention humaine. Cette période est située vers le milieu des années 1800. 
+                            
+                            Au fil des découvertes et de l’évolution des techniques, on a vu ensuite l’informatique continuer sa course vers la mécanographie avec des appareils stockant des informations sur des cartes perforées. L’exemple le plus frappant sur cette période est sûrement le succès du norvégien Fredrik Rosing Bull, fondateur de la société du même nom, toujours en activité aujourd’hui. Ses équipements mécanographiques envahirent la Suisse dès les années 30 avant de rencontrer le même succès en France.
+                            
+                            Le début de l’ère de l’informatique moderne telle que nous la connaissons aujourd’hui est la conséquence de l’invention du transistor en 1947, une invention qui offrait de meilleures performances que les lampes radio utilisées alors. Évidemment, plusieurs inventions virent successivement le jour : circuit intégré, relais, processeurs et micro processeurs, etc. Elles permirent d’imaginer et de fabriquer des machines de calcul de plus en plus fiables, petites, complexes et surtout performantes.
+                            
+                            
                           </p-accordionTab>
-                          <p-accordionTab header="Question III">
-                              After a break of more than  15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate.
+                          <p-accordionTab header="Combien de temps passe-t-on sur internet chaque jour ?">
+                            Chaque année, dans le monde entier, le temps passé sur internet quotidiennement ne cesse d'augmenter. Non seulement les ordinateurs se sont invités dans la plupart des foyers, mais d'autres appareils comme les tablettes et surtout les téléphones permettent aujourd'hui de surfer sur la toile.
+
+En France, on passerait en moyenne 3h40 par jour sur internet depuis un ordinateur, et 1h08 depuis son téléphone, soit 4h48 à naviguer sur le net.
+
+Mais les Français ne sont pas les plus accros au réseau : c'est le Brésil (pays pourtant de la plage et du football) qui bat des records dans ce domaine. Près de 5 heures sur l'ordinateur et 3h56 sur un téléphone, soit quasiment 9 heures passées sur internet !
+
+Les Brésiliens sont suivis de près par l'Afrique du Sud (8h à surfer sur le web) et le Mexique (7h09 passées sur les sites).
+
+A l'inverse, les Japonais semblent raisonnables dans leur consommation de bande passante : 4h06 consacrées quotidiennement à la navigation sur internet.
+
+A noter que c'est en Chine que l'on trouve un certain équilibre entre l'utilisation de l'ordinateur et celle du téléphone pour accéder au net : 3h17 pour le premier et 3h04 pour le second.
                           </p-accordionTab>
                         </p-accordion>
 
@@ -110,7 +137,8 @@
                       <div class="tab_panel_title">{{formation.nameFormation}}</div>
                       <div class="tab_panel_content">
                         <div class="tab_panel_text">
-                          <p>Contenu de la formation</p>
+                          <p>Plan de la formation :  </p>
+                          <p> {{formation.Plan}} </p>
                         </div>
                       </div>
                     </div>
@@ -166,42 +194,11 @@
           <div class="col-lg-4">
             <div class="sidebar">
 
-              <!-- Feature -->
-              <div class="sidebar_section">
-                <div class="sidebar_section_title">Les détails de la prochaine</div><br>
-                <div class="sidebar_section_title">session</div>
-                <div class="sidebar_feature">
-                  <br>
-                  <div class="course_price">prix : 120 dt</div>
-
-                  <!-- Features -->
-                  <div class="feature_list">
-
-                    <!-- Feature -->
-                    <div class="feature d-flex flex-row align-items-center justify-content-start">
-                      <div class="feature_title"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Date:</span></div>
-                      <div class="feature_text ml-auto">2 semaines</div>
-                    </div>
-
-                    <!-- Feature -->
-                    <div class="feature d-flex flex-row align-items-center justify-content-start">
-                      <div class="feature_title"><i class="fa fa-list-alt" aria-hidden="true"></i><span>Nombres de places:</span></div>
-                      <div class="feature_text ml-auto">20</div>
-                    </div>
-
-                    <!-- Feature -->
-                    <div class="feature d-flex flex-row align-items-center justify-content-start">
-                      <div class="feature_title"><i class="fa fa-users" aria-hidden="true"></i><span>Nombres d'heures:</span></div>
-                      <div class="feature_text ml-auto">35 heures</div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+          
 
 
               <!-- Latest Course -->
-              <div class="sidebar_section">
+              <div class="sidebar_section"  >
                 <div class="sidebar_section_title">Les sessions</div>
                 <div class="sidebar_latest" *ngFor="let session of formation.Sessions  ; let i=index">
 
@@ -212,7 +209,7 @@
                       <div class="latest_title"> {{session.name}}</div>
                       <div class="latest_title">Formateur: {{session.Formateur.name}}</div>
 
-                    <div *ngIf="session.NbPlaces >session.quanti"> <button (click)="AjouterAuPanier(session._id)">Ajouter au panier</button></div>
+                       <div *ngIf="session.NbPlaces >session.quanti "> <button (click)="AjouterAuPanier(session._id)" >Ajouter au panier</button></div> 
                     <div *ngIf="session.NbPlaces <= session.quanti">Pas de places disponibles</div>
                     </div>
                   </div>
